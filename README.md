@@ -1,6 +1,5 @@
 # Astro & Tailwind CSS Starter Kit
 
-by https://lexingtonthemes.com
 
 ## License
 

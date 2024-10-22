@@ -6,6 +6,6 @@ vite: {
     plugins: [tailwindcss()],
   },
     // add yur domain name here
-   site: 'https://lexingtonthemes.com',
+   site: 'https://callsupport.ai',
   integrations: [sitemap()]
 });
