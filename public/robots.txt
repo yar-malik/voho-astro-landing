@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://callsupport.ai
+
+# Sitemaps
+Sitemap: https://callsupport.ai/sitemap.xml
