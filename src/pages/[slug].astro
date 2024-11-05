@@ -1,0 +1,40 @@
+---
+// Import necessary components and functions
+import BaseLayout from "../layouts/BaseLayout.astro";
+import BlogPost from "../components/infopages/BlogPost.astro";
+import { getCollection } from 'astro:content';
+
+// Export the getStaticPaths function to generate paths for all posts
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+  }));
+}
+
+// Get the dynamic slug from Astro params
+const { slug } = Astro.params;
+
+// Fetch the posts from the 'posts' collection
+const posts = await getCollection('posts');
+
+// Find the post that matches the slug
+const post = posts.find((p) => p.slug === slug);
+
+if (!post) {
+  throw new Error(`Post not found for slug: ${slug}`);
+}
+
+// Destructure the post data and body content
+const { data, body } = post;
+---
+
+<BaseLayout>
+  <BlogPost 
+    title={data.title} 
+    publishDate={data.publishDate} 
+    content={body} 
+    image={data.image}
+    description={data.description}
+  />
+</BaseLayout>
