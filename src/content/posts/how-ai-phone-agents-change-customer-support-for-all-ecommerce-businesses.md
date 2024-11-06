@@ -17,7 +17,7 @@ The true value of AI in customer support lies in its dual ability to enhance cus
 
 In this blog, we’ll explore why many businesses are moving beyond traditional tools like HubSpot Live Chat to adopt alternatives that better meet their evolving needs. We’ll examine various AI-powered Live Chat alternatives, highlighting their features and benefits to help you determine which tool could best enhance your customer support strategy and strengthen connections with your customers.
 
-![Random Image 1](drums-webapp.png)
+![Random Image 1](/public/drums-webapp.png)
 
 
 ## Looking Beyond HubSpot Live Chat
@@ -49,7 +49,7 @@ Choose platforms that allow for extensive customization, ensuring that every cus
 ### Support and Reliability
 Ensure that the alternative provides reliable customer support and service level agreements that match the business’s operational hours and geographical reach.
 
-![Random Image 1](drums-webapp.png)
+![Random Image 1](/public/drums-webapp.png)
 
 
 ## Best HubSpot Live Chat Alternatives
@@ -75,7 +75,7 @@ Exploring alternatives to HubSpot Live Chat can open doors to new functionalitie
 **Cost:** Starts at $19/month  
 **What Sets It Apart:** CallSupport excels with its cutting-edge AI that learns and adapts to customer interactions over time. This platform provides highly personalized customer service by continuously improving its responses based on interaction data. The ease of integration and extensive customization options make it an attractive choice for businesses looking to enhance their customer interaction strategies with advanced AI capabilities.
 
-![Random Image 1](drums-webapp.png)
+![Random Image 1](/public/drums-webapp.png)
 
 
 ### 2. Intercom
