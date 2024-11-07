@@ -5,7 +5,7 @@ description: 'Best Voice AI Tools'
 excerpt: 'best voice support tools'
 image: 'https://tx.shadcn.com/_next/image?url=%2Fimages%2Fblog%2Fblog-post-3.jpg&w=750&q=75'
 tags: [markdown, blog]
-slug: "newnenw"
+slug: "Understand-the-impact-of-AI-in-e-commerce-customer-service"
 ---
 # Transforming Customer Support with AI: A Look Beyond HubSpot Live Chat
 

@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^3.1.9",
+    "@vapi-ai/web": "^2.1.7",
+    "dotenv": "^16.4.5",
     "markdown-it": "^14.1.0",
     "zod": "^3.23.8"
   }
