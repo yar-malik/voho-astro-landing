@@ -2,7 +2,7 @@
 import Vapi from "@vapi-ai/web";
 ---
 
-// Hero Component with External Script
+
 <div class="min-h-[60vh] flex items-center justify-center bg-black relative overflow-hidden">
   <!-- Background Circle -->
   <div class="absolute top-1/4 left-[-10%] w-[300px] h-[300px] rounded-full bg-gradient-to-br from-blue-700 to-black blur-3xl opacity-30"></div>
@@ -40,8 +40,10 @@ import Vapi from "@vapi-ai/web";
 <script src="https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js" async defer></script>
 <script>
   var vapiInstance = null;
-  const assistant = "00d6a328-d20a-4e35-bbff-819f8a515d70";
-  const apiKey = "e5c00e52-3011-4a65-a46c-270c9d0fa091";
+  const apiKey = import.meta.env.PUBLIC_VAPI_API_KEY;
+const assistant = import.meta.env.PUBLIC_VAPI_ASSISTANT_ID;
+
+console.log(apiKey, assistant);
 
   window.onload = function () {
     if (window.vapiSDK) {
