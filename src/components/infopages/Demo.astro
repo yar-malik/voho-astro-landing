@@ -1,7 +1,6 @@
 ---
-import CallForm from '../Forms/CallForm.astro';
+import  CallForm from '../Forms/CallForm.astro'
 ---
-
 <section>
   <div
     class="mx-auto w-full lg:px-24 max-w-7xl md:px-12 items-center px-8 py-24"
@@ -31,6 +30,80 @@ import CallForm from '../Forms/CallForm.astro';
       </p>
     </div>
 
-<CallForm />
+    <section class="flex flex-col items-center">
+      <div class="flex flex-col md:flex-row items-center justify-center bg-gray-900 text-white rounded-lg overflow-hidden shadow-lg w-full max-w-4xl">
+        <!-- Left Side - Form -->
+        <div class="w-full md:w-1/2 p-6 sm:p-10">
+          <h1 class="text-xl sm:text-2xl font-bold text-blue-400 mb-6 text-center md:text-left">
+            Receive a live call from our agent
+          </h1>
+          <form id="callForm" class="space-y-4">
+            <!-- Phone Number -->
+            <div>
+              <label for="phone" class="block text-sm font-medium">Phone Number</label>
+              <input
+                type="text"
+                id="phone"
+                placeholder="123-456-7890"
+                class="mt-1 block w-full rounded-md border-gray-300 text-black shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-300"
+              />
+            </div>
+            <!-- Name -->
+            <div>
+              <label for="name" class="block text-sm font-medium">Name</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="John"
+                class="mt-1 block w-full rounded-md border-gray-300 text-black shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-300"
+              />
+            </div>
+            <!-- Email -->
+            <div>
+              <label for="email" class="block text-sm font-medium">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                placeholder="john@company.com"
+                class="mt-1 block w-full rounded-md border-gray-300 text-black shadow-sm focus:border-blue-500 focus:ring focus:ring-blue-300"
+              />
+            </div>
+            <!-- Language -->
+            <div>
+              <label for="language" class="block text-sm font-medium">Language</label>
+              <select
+                id="language"
+                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm text-black bg-white focus:border-blue-500 focus:ring focus:ring-blue-300"
+              >
+              <option value="english">🇬🇧 English</option>
+                <option value="german">🇩🇪 German</option>
+                <!-- <option value="spanish">🇪🇸 Spanish</option> -->
+              </select>
+            </div>
+            <!-- Submit Button -->
+            <div>
+              <button
+                type="submit"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition-colors"
+              >
+                GET A CALL
+              </button>
+            </div>
+          </form>
+        </div>
+    
+        <!-- Right Side - Image -->
+        <div class="w-full md:w-1/2">
+          <img
+            src="https://cdn.prod.website-files.com/64ada0f2685b2d18caa5e699/66d575f6156ebfcfe343fa7d_Firefly%20dental%20receptionist%20is%20picking%20up%20phone%2C%20background%20is%20clinic%20front%20desk%2076720.jpg"
+            alt="Agent on phone"
+            class="w-full h-60 sm:h-80 md:h-full object-cover"
+          />
+        </div>
+      </div>
+    
+    </section>
+    <CallForm />
   </div>
+  
 </section>

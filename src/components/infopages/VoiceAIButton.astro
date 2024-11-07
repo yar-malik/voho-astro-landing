@@ -25,10 +25,10 @@ console.log('Server-side API Key:', apiKey, 'Assistant ID:', assistant);
 
     <!-- Circular Button -->
     <div class="flex flex-col items-center">
-      <button id="vapi-support-btn" class="w-20 h-20 flex items-center justify-center  rounded-full shadow-lg   transition duration-300 ">
+      <!-- <button id="vapi-support-btn" class="w-20 h-20 flex items-center justify-center  rounded-full shadow-lg   transition duration-300 "> -->
         <!-- Button Content -->
         <!-- <span class="text-green-500">Call Assistant</span> -->
-      </button>
+      <!-- </button> -->
       <span class="mt-3 text-gray-300 text-base font-medium">Give it a try!</span>
     </div>
 
@@ -53,7 +53,7 @@ console.log('Server-side API Key:', apiKey, 'Assistant ID:', assistant);
   const assistant = import.meta.env.PUBLIC_VAPI_ASSISTANT_ID; // Substitute with your Assistant ID.
 
   const buttonConfig = {
-    // position: "bottom-right",
+    position: "bottom-right",
     offset: "50px",
     marginRight:'1000px',
     bottom: "26px",
