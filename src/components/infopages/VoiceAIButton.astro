@@ -1,0 +1,87 @@
+---
+import Vapi from "@vapi-ai/web";
+---
+
+// Hero Component with External Script
+<div class="min-h-[60vh] flex items-center justify-center bg-black relative overflow-hidden">
+  <!-- Background Circle -->
+  <div class="absolute top-1/4 left-[-10%] w-[300px] h-[300px] rounded-full bg-gradient-to-br from-blue-700 to-black blur-3xl opacity-30"></div>
+  
+  <!-- Main Content -->
+  <div class="relative z-10 text-center">
+    <!-- Heading -->
+    <h1 class="text-3xl font-bold text-gray-100 mb-2">Voice AI for developers</h1>
+    <p class="text-gray-400 mb-8 text-sm">Vapi lets developers build, test and deploy voice agents in minutes rather than months.</p>
+
+    <!-- Circular Button -->
+    <div class="flex flex-col items-center">
+      <button id="vapi-button" class="w-20 h-20 flex items-center justify-center bg-green-900/20 rounded-full shadow-lg border-2 border-green-500 hover:shadow-green-500/50 transition duration-300 cursor-pointer">
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-green-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 18c3.866 0 7-1.79 7-4V9a7 7 0 10-14 0v5c0 2.21 3.134 4 7 4z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 15v3m-3-3h6" />
+        </svg> -->
+      </button>
+      <span class="mt-3 text-gray-300 text-base font-medium">Give it a try!</span>
+    </div>
+
+    <!-- Footer Buttons -->
+    <div class="mt-8 flex justify-center gap-4">
+      <button class="px-5 py-2 bg-green-500 text-black font-semibold rounded-full hover:bg-green-400 transition cursor-pointer">
+        Try for free
+      </button>
+      <a href="https://app.callsupport.ai/" class="px-5 py-2 text-gray-400 font-semibold rounded-full hover:text-gray-100 transition cursor-pointer">
+        Get in touch →
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Vapi SDK Script -->
+<script src="https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js" async defer></script>
+<script>
+  var vapiInstance = null;
+  const assistant = "00d6a328-d20a-4e35-bbff-819f8a515d70";
+  const apiKey = "e5c00e52-3011-4a65-a46c-270c9d0fa091";
+
+  window.onload = function () {
+    if (window.vapiSDK) {
+      // Initialize the Vapi SDK instance
+      vapiInstance = window.vapiSDK.run({
+        apiKey: apiKey,
+        assistant: assistant,
+        config: {}, // Optional configurations
+      });
+
+      console.log("Vapi instance initialized:", vapiInstance);
+
+      // Add event listeners for Vapi events
+      if (vapiInstance) {
+        // Example: Listen for call-start
+        vapiInstance._events["call-start"] = () => {
+          console.log("Call started");
+        };
+
+        // Example: Listen for call-end
+        vapiInstance._events["call-end"] = () => {
+          console.log("Call ended");
+        };
+
+        // Example: Toggle assistant based on its started state
+        const vapiButton = document.getElementById("vapi-button");
+        if (vapiButton) {
+          vapiButton.addEventListener("click", () => {
+            if (vapiInstance.started) {
+              console.log("Ending call...");
+              vapiInstance._events["call-end"](); // Simulate call end
+            } else {
+              console.log("Starting call...");
+              vapiInstance._events["call-start"](); // Simulate call start
+            }
+          });
+        }
+      }
+    } else {
+      console.error("Vapi SDK did not load correctly.");
+    }
+  };
+</script>
