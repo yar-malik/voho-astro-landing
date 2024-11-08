@@ -10,34 +10,52 @@ const apiKeyString = JSON.stringify(apiKey);
 const assistantString = JSON.stringify(assistant);
 
 // Log server-side variables for debugging
-console.log('Server-side API Key:', apiKey, 'Assistant ID:', assistant);
+console.log("Server-side API Key:", apiKey, "Assistant ID:", assistant);
 ---
+
 <!-- HTML Markup -->
-<div class="min-h-[60vh] flex items-center justify-center bg-black relative overflow-hidden">
+<div
+  class="min-h-[60vh] flex items-center justify-center bg-black relative overflow-hidden"
+>
   <!-- Background Circle -->
-  <div class="absolute top-1/4 left-[-10%] w-[300px] h-[300px] rounded-full bg-gradient-to-br from-blue-700 to-black blur-3xl opacity-30"></div>
-  
+  <div
+    class="absolute top-1/4 left-[-10%] w-[300px] h-[300px] rounded-full bg-gradient-to-br from-blue-700 to-black blur-3xl opacity-30"
+  >
+  </div>
+
   <!-- Main Content -->
   <div class="relative z-10 text-center">
     <!-- Heading -->
-    <h1 class="text-3xl font-bold text-gray-100 mb-2">Voice AI for Developers</h1>
-    <p class="text-gray-400 mb-8 text-sm">Vapi lets developers build, test, and deploy voice agents in minutes rather than months.</p>
+    <h1 class="text-3xl font-bold text-gray-100 mb-2">
+      Voice AI for Developers
+    </h1>
+    <p class="text-gray-400 mb-8 text-sm">
+      Vapi lets developers build, test, and deploy voice agents in minutes
+      rather than months.
+    </p>
 
     <!-- Circular Button -->
     <div class="flex flex-col items-center">
       <!-- <button id="vapi-support-btn" class="w-20 h-20 flex items-center justify-center  rounded-full shadow-lg   transition duration-300 "> -->
-        <!-- Button Content -->
-        <!-- <span class="text-green-500">Call Assistant</span> -->
+      <!-- Button Content -->
+      <!-- <span class="text-green-500">Call Assistant</span> -->
       <!-- </button> -->
-      <span class="mt-3 text-gray-300 text-base font-medium">Give it a try!</span>
+      <span class="mt-3 text-gray-300 text-base font-medium"
+        >Give it a try!</span
+      >
     </div>
 
     <!-- Footer Buttons -->
     <div class="mt-8 flex justify-center gap-4">
-      <button class="px-5 py-2 bg-green-500 text-black font-semibold rounded-full hover:bg-green-400 transition cursor-pointer">
+      <button
+        class="px-5 py-2 bg-green-500 text-black font-semibold rounded-full hover:bg-green-400 transition cursor-pointer"
+      >
         Try for free
       </button>
-      <a href="https://app.callsupport.ai/" class="px-5 py-2 text-gray-400 font-semibold rounded-full hover:text-gray-100 transition cursor-pointer">
+      <a
+        href="https://app.callsupport.ai/"
+        class="px-5 py-2 text-gray-400 font-semibold rounded-full hover:text-gray-100 transition cursor-pointer"
+      >
         Get in touch →
       </a>
     </div>
@@ -49,19 +67,20 @@ console.log('Server-side API Key:', apiKey, 'Assistant ID:', assistant);
   var vapiInstance = null;
 
   // Replace these with your actual API key and Assistant ID
-  const apiKey =  import.meta.env.PUBLIC_VAPI_API_KEY;
+  const apiKey = import.meta.env.PUBLIC_VAPI_API_KEY;
   const assistant = import.meta.env.PUBLIC_VAPI_ASSISTANT_ID; // Substitute with your Assistant ID.
-
+console.log('apiKey',apiKey)
+console.log('assistant',assistant)
   const buttonConfig = {
     position: "bottom-right",
     offset: "50px",
-    marginRight:'1000px',
+    marginRight: "1000px",
     bottom: "26px",
-    left:" 44%",
+    left: " 44%",
     // width: "50px",
     // height: "50px",
     idle: {
-      color: `rgb(93, 254, 202)`, 
+      color: `rgb(93, 254, 202)`,
       type: "pill",
       title: "Have a quick question?",
       subtitle: "Talk with our AI assistant",
@@ -85,39 +104,40 @@ console.log('Server-side API Key:', apiKey, 'Assistant ID:', assistant);
 
   (function (d, t) {
     var g = d.createElement(t),
-        s = d.getElementsByTagName(t)[0];
-    g.src = "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+      s = d.getElementsByTagName(t)[0];
+    g.src =
+      "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
     g.defer = true;
     g.async = true;
     s.parentNode.insertBefore(g, s);
 
     g.onload = function () {
       vapiInstance = window.vapiSDK.run({
-        apiKey: apiKey,       // mandatory
+        apiKey: apiKey, // mandatory
         assistant: assistant, // mandatory
         config: buttonConfig, // optional
       });
 
       // Event listeners should be added after vapiInstance is initialized
-      vapiInstance.on('speech-start', () => {
-        console.log('Speech has started');
+      vapiInstance.on("speech-start", () => {
+        console.log("Speech has started");
       });
-      vapiInstance.on('speech-end', () => {
-        console.log('Speech has ended');
+      vapiInstance.on("speech-end", () => {
+        console.log("Speech has ended");
       });
-      vapiInstance.on('call-start', () => {
-        console.log('Call has started');
+      vapiInstance.on("call-start", () => {
+        console.log("Call has started");
       });
-      vapiInstance.on('call-end', () => {
-        console.log('Call has stopped');
+      vapiInstance.on("call-end", () => {
+        console.log("Call has stopped");
       });
-      vapiInstance.on('volume-level', (volume) => {
+      vapiInstance.on("volume-level", (volume) => {
         console.log(`Assistant volume level: ${volume}`);
       });
-      vapiInstance.on('message', (message) => {
+      vapiInstance.on("message", (message) => {
         console.log(message);
       });
-      vapiInstance.on('error', (e) => {
+      vapiInstance.on("error", (e) => {
         console.error(e);
       });
     };
