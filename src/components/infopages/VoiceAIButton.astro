@@ -1,89 +1,172 @@
----
-import Vapi from "@vapi-ai/web";
-
-// Import environment variables
-const apiKey = import.meta.env.PUBLIC_VAPI_API_KEY;
-const assistant = import.meta.env.PUBLIC_VAPI_ASSISTANT_ID;
-
-// Serialize the variables as JSON strings
-const apiKeyString = JSON.stringify(apiKey);
-const assistantString = JSON.stringify(assistant);
-
-// Log server-side variables for debugging
-console.log("Server-side API Key:", apiKey, "Assistant ID:", assistant);
----
-
 <!-- HTML Markup -->
-<div
-  class="min-h-[60vh] flex items-center justify-center bg-black relative overflow-hidden"
->
-  <!-- Background Circle -->
-  <div
-    class="absolute top-1/4 left-[-10%] w-[300px] h-[300px] rounded-full bg-gradient-to-br from-blue-700 to-black blur-3xl opacity-30"
-  >
+<div class="min-h-[60vh] flex flex-col items-center bg-gray-50 text-gray-800">
+  <!-- Header Section -->
+  <div class="w-full text-center py-12 bg-gradient-to-b from-gray-100 to-gray-50 px-4">
+    <h1 class="text-4xl font-bold mb-4 md:text-3xl">Drive more revenue with a personalized AI sales rep</h1>
+    <p class="text-lg text-gray-600 mb-8 md:text-base">
+      Instantly deploy a lifelike AI agent to call abandoned carts & convert them into profitable paying customers.
+    </p>
   </div>
 
-  <!-- Main Content -->
-  <div class="relative z-10 text-center">
-    <!-- Heading -->
-    <h1 class="text-3xl font-bold text-gray-100 mb-2">
-      Voice AI for Developers
-    </h1>
-    <p class="text-gray-400 mb-8 text-sm">
-      Vapi lets developers build, test, and deploy voice agents in minutes
-      rather than months.
-    </p>
-
-    <!-- Circular Button -->
-    <div class="flex flex-col items-center">
-      <!-- <button id="vapi-support-btn" class="w-20 h-20 flex items-center justify-center  rounded-full shadow-lg   transition duration-300 "> -->
-      <!-- Button Content -->
-      <!-- <span class="text-green-500">Call Assistant</span> -->
-      <!-- </button> -->
-      <span class="mt-3 text-gray-300 text-base font-medium"
-        >Give it a try!</span
-      >
+  <!-- Features -->
+  <div class="flex flex-wrap justify-center gap-4 mt-6 px-4">
+    <div class="flex items-center text-gray-600">
+      <span class="text-green-500 text-xl mr-2">✔</span> 10x ROI Guarantee
     </div>
+    <div class="flex items-center text-gray-600">
+      <span class="text-green-500 text-xl mr-2">✔</span> 3x Higher Cart Recovery
+    </div>
+    <div class="flex items-center text-gray-600">
+      <span class="text-green-500 text-xl mr-2">✔</span> 24/7 Interaction
+    </div>
+  </div>
 
-    <!-- Footer Buttons -->
-    <div class="mt-8 flex justify-center gap-4">
-      <button
-        class="px-5 py-2 bg-green-500 text-black font-semibold rounded-full hover:bg-green-400 transition cursor-pointer"
+  <!-- Steps Section -->
+  <div class="w-full mt-16 grid grid-cols-1 md:grid-cols-4 gap-6 px-6">
+    <!-- Step 1 -->
+    <div class="text-center">
+      <div class="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16c0 4 5 5 8 5s8-1 8-5M4 12c0 4 5 5 8 5s8-1 8-5M4 8c0 4 5 5 8 5s8-1 8-5"></path>
+        </svg>
+      </div>
+      <p class="font-medium">Our team creates a custom Revana bot for your store</p>
+    </div>
+    <!-- Step 2 -->
+    <div class="text-center">
+      <div
+        class="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-4"
       >
-        Try for free
-      </button>
-      <a
-        href="https://app.callsupport.ai/"
-        class="px-5 py-2 text-gray-400 font-semibold rounded-full hover:text-gray-100 transition cursor-pointer"
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8 text-green-500"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 10h11M9 21h6m-6-6h6"></path>
+        </svg>
+      </div>
+      <p class="font-medium">It starts calling missed customers immediately</p>
+    </div>
+    <!-- Step 3 -->
+    <div class="text-center">
+      <div
+        class="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-4"
       >
-        Get in touch →
-      </a>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8 text-green-500"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 10h11M9 21h6m-6-6h6"></path>
+        </svg>
+      </div>
+      <p class="font-medium">Your sales increase automatically</p>
+    </div>
+    <!-- Step 4 -->
+    <div class="text-center">
+      <div
+        class="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-4"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8 text-green-500"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 12h6m-6-6h6m-6 12h6"></path>
+        </svg>
+      </div>
+      <p class="font-medium">You unlock a new level of scale with your store</p>
     </div>
   </div>
 </div>
 
 <!-- Script -->
+<style>
+  /* General Styling */
+  .vapi-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(93, 254, 202);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+  .min-h-[60vh] {
+    min-height: 60vh;
+    padding: 1rem;
+  }
+
+  .grid-cols-1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .grid-cols-1.md\:grid-cols-4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  /* Adjust font sizes for smaller screens */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .text-center p {
+      font-size: 0.875rem;
+    }
+  }
+</style>
+
 <script>
   var vapiInstance = null;
 
-  // Replace these with your actual API key and Assistant ID
   const apiKey = import.meta.env.PUBLIC_VAPI_API_KEY;
-  const assistant = import.meta.env.PUBLIC_VAPI_ASSISTANT_ID; // Substitute with your Assistant ID.
-console.log('apiKey',apiKey)
-console.log('assistant',assistant)
+  const assistant = import.meta.env.PUBLIC_VAPI_ASSISTANT_ID;
+  console.log("API key and assistant ID set.");
+
   const buttonConfig = {
-    position: "bottom-right",
-    offset: "50px",
-    marginRight: "1000px",
-    bottom: "26px",
-    left: " 44%",
-    // width: "50px",
-    // height: "50px",
+    position: "bottom",
+    offset: "-40px",
+    right: "10px",
+    width: "50px",
+    height: "50px",
     idle: {
       color: `rgb(93, 254, 202)`,
-      type: "pill",
-      title: "Have a quick question?",
-      subtitle: "Talk with our AI assistant",
+      // type: "pill",
+      // title: "Have a quick question?",
+      // subtitle: "Talk with our AI assistant",
       icon: `https://unpkg.com/lucide-static@0.321.0/icons/phone.svg`,
     },
     loading: {
@@ -102,44 +185,41 @@ console.log('assistant',assistant)
     },
   };
 
+  // Load Vapi SDK
   (function (d, t) {
-    var g = d.createElement(t),
+    console.log("Starting to load Vapi SDK.");
+    const g = d.createElement(t),
       s = d.getElementsByTagName(t)[0];
     g.src =
       "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
     g.defer = true;
     g.async = true;
     s.parentNode.insertBefore(g, s);
+    console.log("Vapi SDK script tag inserted.");
 
     g.onload = function () {
+      console.log("Vapi SDK loaded successfully.");
+
       vapiInstance = window.vapiSDK.run({
-        apiKey: apiKey, // mandatory
-        assistant: assistant, // mandatory
-        config: buttonConfig, // optional
+        apiKey: apiKey,
+        assistant: assistant,
+        config: buttonConfig,
+      });
+      console.log("Vapi instance initialized.");
+
+      vapiInstance.on("call-start", () => {
+        console.log("Call started event received.");
       });
 
-      // Event listeners should be added after vapiInstance is initialized
-      vapiInstance.on("speech-start", () => {
-        console.log("Speech has started");
-      });
-      vapiInstance.on("speech-end", () => {
-        console.log("Speech has ended");
-      });
-      vapiInstance.on("call-start", () => {
-        console.log("Call has started");
-      });
       vapiInstance.on("call-end", () => {
-        console.log("Call has stopped");
+        console.log("Call ended event received.");
       });
-      vapiInstance.on("volume-level", (volume) => {
-        console.log(`Assistant volume level: ${volume}`);
+
+      vapiInstance.on("error", (error) => {
+        console.error("Vapi error event received:", error);
       });
-      vapiInstance.on("message", (message) => {
-        console.log(message);
-      });
-      vapiInstance.on("error", (e) => {
-        console.error(e);
-      });
+      console.log("Vapi event listeners set up.");
     };
   })(document, "script");
+  console.log("Vapi SDK loading function executed.");
 </script>
