@@ -233,10 +233,7 @@
 
       // Remove the default Vapi widget if it exists
       const unwantedButton = document.getElementById("vapi-support-btn");
-      if (unwantedButton) {
-        unwantedButton.style.display = "none";
-        console.log("Unwanted Vapi support button hidden.");
-      } 
+      
       vapiInstance = window.vapiSDK.run({
         apiKey: apiKey,
         assistant: assistant,
@@ -248,15 +245,15 @@
       console.log("Vapi instance initialized.");
 
       // Event listeners for Vapi
-      vapiInstance.on("call-start", () => {
-        console.log("Call started event received.");
-        updateButtonState("active");
-      });
+      // vapiInstance.on("call-start", () => {
+      //   console.log("Call started event received.");
+      //   updateButtonState("active");
+      // });
 
-      vapiInstance.on("call-end", () => {
-        console.log("Call ended event received.");
-        updateButtonState("idle");
-      });
+      // vapiInstance.on("call-end", () => {
+      //   console.log("Call ended event received.");
+      //   updateButtonState("idle");
+      // });
 
       vapiInstance.on("error", (error) => {
         console.error("Vapi error event received:", error);
@@ -267,6 +264,10 @@
       // Button click event listener
       playButton.addEventListener("click", () => {
         console.log("Play button clicked.");
+        vapiInstance.on("call-start", () => {
+        console.log("Call started event received.");
+        updateButtonState("active");
+      });
         if (!vapiInstance) {
           console.error("Vapi instance not initialized.");
           return;
@@ -275,13 +276,19 @@
         if (statusMessage.innerText === buttonStates.active.message) {
           // End the call if it's already active
           console.log("Ending the active call.");
-          vapiInstance.endCall();
+          vapiInstance.on("call-end", () => {
+        console.log("Call ended event received.");
+        updateButtonState("idle");
+      });
           updateButtonState("idle");
         } else {
           // Start the call
-          console.log("Starting a new call.");
-          updateButtonState("loading");
-          vapiInstance.startCall();
+          vapiInstance.on("error", (error) => {
+        console.error("Vapi error event received:", error);
+        updateButtonState("idle");
+      });
+          updateButtonState("idle");
+         
         }
       });
       console.log("Play button event listener added.");
