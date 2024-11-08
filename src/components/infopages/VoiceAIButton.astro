@@ -151,7 +151,7 @@ Ask the assistant to write something...
 
 
 
-<script src="/src/js/index.js"></script>
+<!-- <script src="/src/js/index.js"></script> -->
 <!-- Script -->
 <!-- <script>
   // Replace these with your actual API key and Assistant ID
@@ -216,3 +216,81 @@ Ask the assistant to write something...
   })(document, "script");
   console.log("Vapi SDK loading function executed.");
 </script> -->
+<script>
+  (function (d, t) {
+    var g = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    g.src =
+      "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+    g.defer = true;
+    g.async = true;
+    s.parentNode.insertBefore(g, s);
+
+    g.onload = function () {
+      const apiKey = "e5c00e52-3011-4a65-a46c-270c9d0fa091";
+      const assistant = "00d6a328-d20a-4e35-bbff-819f8a515d70";
+
+      const buttonConfig = {
+        triggerButton: document.getElementById("callWithVapi"),
+        statusDisplay: document.getElementById("status"),
+        speakerDisplay: document.getElementById("speaker"),
+        volumeDisplay: document.getElementById("volume"),
+        typingIndicator: document.getElementById("vapiTyping"),
+        chatWindow: document.getElementById("chat"),
+      };
+
+      const vapiInstance = window.vapiSDK.run({
+        apiKey: apiKey, // Mandatory
+        assistant: assistant, // Mandatory
+        config: buttonConfig, // Optional for custom configurations
+      });
+
+      // Vapi Event Listeners
+      vapiInstance.on("speech-start", () => {
+        console.log("Speech has started");
+      });
+
+      vapiInstance.on("speech-end", () => {
+        console.log("Speech has ended");
+      });
+
+      vapiInstance.on("call-start", () => {
+        console.log("Call has started");
+      });
+
+      vapiInstance.on("call-end", () => {
+        console.log("Call has stopped");
+      });
+
+      vapiInstance.on("volume-level", (volume) => {
+        console.log(`Assistant volume level: ${volume}`);
+      });
+
+      vapiInstance.on("message", (message) => {
+        console.log(message);
+        if (message.type === "conversation-update") {
+          updateChat(message.conversation);
+        }
+      });
+
+      vapiInstance.on("error", (e) => {
+        console.error(e);
+      });
+
+      // Update Chat
+      function updateChat(conversation) {
+        const chatWindow = document.getElementById("chat");
+        chatWindow.innerHTML = ""; // Clear chat
+
+        conversation.forEach((msg) => {
+          const messageDiv = document.createElement("div");
+          messageDiv.className = `message ${msg.role}`;
+          messageDiv.textContent = msg.content || "Processing...";
+          chatWindow.appendChild(messageDiv);
+        });
+
+        chatWindow.scrollTop = chatWindow.scrollHeight; // Scroll to bottom
+      }
+    };
+  })(document, "script");
+</script>
