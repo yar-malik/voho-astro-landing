@@ -1,145 +1,293 @@
----
-import Vapi from "@vapi-ai/web";
-
-// Import environment variables
-const apiKey = import.meta.env.PUBLIC_VAPI_API_KEY;
-const assistant = import.meta.env.PUBLIC_VAPI_ASSISTANT_ID;
-
-// Serialize the variables as JSON strings
-const apiKeyString = JSON.stringify(apiKey);
-const assistantString = JSON.stringify(assistant);
-
-// Log server-side variables for debugging
-console.log("Server-side API Key:", apiKey, "Assistant ID:", assistant);
----
-
 <!-- HTML Markup -->
-<div
-  class="min-h-[60vh] flex items-center justify-center bg-black relative overflow-hidden"
->
-  <!-- Background Circle -->
+<div class="min-h-[60vh] flex flex-col items-center bg-gray-50 text-gray-800">
+  <!-- Header Section -->
   <div
-    class="absolute top-1/4 left-[-10%] w-[300px] h-[300px] rounded-full bg-gradient-to-br from-blue-700 to-black blur-3xl opacity-30"
+    class="w-full text-center py-12 bg-gradient-to-b from-gray-100 to-gray-50"
   >
+    <h1 class="text-4xl font-bold mb-4">
+      Drive more revenue with a personalized AI sales rep
+    </h1>
+    <p class="text-lg text-gray-600 mb-8">
+      Instantly deploy a lifelike AI agent to call abandoned carts & convert
+      them into profitable paying customers.
+    </p>
+  </div>
+  <!-- Features -->
+  <div class="flex justify-center gap-8 mt-6">
+    <div class="flex items-center text-gray-600">
+      <span class="text-green-500 text-xl mr-2">✔</span> 10x ROI Guarantee
+    </div>
+    <div class="flex items-center text-gray-600">
+      <span class="text-green-500 text-xl mr-2">✔</span> 3x Higher Cart Recovery
+    </div>
+    <div class="flex items-center text-gray-600">
+      <span class="text-green-500 text-xl mr-2">✔</span> 24/7 Interaction
+    </div>
   </div>
 
-  <!-- Main Content -->
-  <div class="relative z-10 text-center">
-    <!-- Heading -->
-    <h1 class="text-3xl font-bold text-gray-100 mb-2">
-      Voice AI for Developers
-    </h1>
-    <p class="text-gray-400 mb-8 text-sm">
-      Vapi lets developers build, test, and deploy voice agents in minutes
-      rather than months.
-    </p>
-
-    <!-- Circular Button -->
-    <div class="flex flex-col items-center">
-      <!-- <button id="vapi-support-btn" class="w-20 h-20 flex items-center justify-center  rounded-full shadow-lg   transition duration-300 "> -->
-      <!-- Button Content -->
-      <!-- <span class="text-green-500">Call Assistant</span> -->
-      <!-- </button> -->
-      <span class="mt-3 text-gray-300 text-base font-medium"
-        >Give it a try!</span
-      >
+  <!-- Play Button Section -->
+  <div class="relative flex flex-col items-center mt-4">
+    <!-- Outer Glow Circle -->
+    <div
+      id="wave-effect"
+      class="absolute w-[150px] h-[150px] bg-green-200 rounded-full blur-3xl opacity-50"
+    >
     </div>
+    <!-- Play Button -->
+    <div
+      id="play-button"
+      class="w-[80px] h-[80px] bg-white rounded-full shadow-lg flex justify-center items-center relative cursor-pointer"
+    >
+      <div
+        id="loading-border"
+        class="absolute w-[95px] h-[95px] rounded-full border-2 border-green-200 animate-pulse hidden"
+      >
+      </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="w-10 h-10 text-green-500"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M6 4a1 1 0 011.707-.707l7 7a1 1 0 010 1.414l-7 7A1 1 0 016 18V4z"
+          clip-rule="evenodd"></path>
+      </svg>
+    </div>
+    <!-- Status Message -->
+    <p id="status-message" class="text-gray-500 mt-4 text-sm"></p>
+  </div>
 
-    <!-- Footer Buttons -->
-    <div class="mt-8 flex justify-center gap-4">
-      <button
-        class="px-5 py-2 bg-green-500 text-black font-semibold rounded-full hover:bg-green-400 transition cursor-pointer"
+  <!-- Steps Section -->
+  <div class="w-full mt-16 grid grid-cols-1 md:grid-cols-4 gap-6 px-12">
+    <!-- Step 1 -->
+    <div class="text-center">
+      <div
+        class="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-4"
       >
-        Try for free
-      </button>
-      <a
-        href="https://app.callsupport.ai/"
-        class="px-5 py-2 text-gray-400 font-semibold rounded-full hover:text-gray-100 transition cursor-pointer"
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8 text-green-500"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4 16c0 4 5 5 8 5s8-1 8-5M4 12c0 4 5 5 8 5s8-1 8-5M4 8c0 4 5 5 8 5s8-1 8-5"
+          ></path>
+        </svg>
+      </div>
+      <p class="font-medium">
+        Our team creates a custom Revana bot for your store
+      </p>
+    </div>
+    <!-- Step 2 -->
+    <div class="text-center">
+      <div
+        class="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-4"
       >
-        Get in touch →
-      </a>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8 text-green-500"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 10h11M9 21h6m-6-6h6"></path>
+        </svg>
+      </div>
+      <p class="font-medium">It starts calling missed customers immediately</p>
+    </div>
+    <!-- Step 3 -->
+    <div class="text-center">
+      <div
+        class="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-4"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8 text-green-500"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3 10h11M9 21h6m-6-6h6"></path>
+        </svg>
+      </div>
+      <p class="font-medium">Your sales increase automatically</p>
+    </div>
+    <!-- Step 4 -->
+    <div class="text-center">
+      <div
+        class="w-16 h-16 mx-auto bg-green-100 rounded-full flex items-center justify-center mb-4"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-8 w-8 text-green-500"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 12h6m-6-6h6m-6 12h6"></path>
+        </svg>
+      </div>
+      <p class="font-medium">You unlock a new level of scale with your store</p>
     </div>
   </div>
 </div>
 
 <!-- Script -->
 <script>
-  var vapiInstance = null;
+  // Get button and wave effect elements
+  const playButton = document.getElementById("play-button");
+  const waveEffect = document.getElementById("wave-effect");
+  const statusMessage = document.getElementById("status-message");
+  const loadingBorder = document.getElementById("loading-border");
+  console.log("DOM elements retrieved.");
 
   // Replace these with your actual API key and Assistant ID
-  const apiKey = import.meta.env.PUBLIC_VAPI_API_KEY;
-  const assistant = import.meta.env.PUBLIC_VAPI_ASSISTANT_ID; // Substitute with your Assistant ID.
-console.log('apiKey',apiKey)
-console.log('assistant',assistant)
-  const buttonConfig = {
-    position: "bottom-right",
-    offset: "50px",
-    marginRight: "1000px",
-    bottom: "26px",
-    left: " 44%",
-    // width: "50px",
-    // height: "50px",
+  const apiKey = import.meta.env.PUBLIC_VAPI_API_KEY; // or 'YOUR_API_KEY'
+  const assistant = import.meta.env.PUBLIC_VAPI_ASSISTANT_ID; // or 'YOUR_ASSISTANT_ID'
+  console.log("API key and assistant ID set.");
+
+  const buttonStates = {
     idle: {
-      color: `rgb(93, 254, 202)`,
-      type: "pill",
-      title: "Have a quick question?",
-      subtitle: "Talk with our AI assistant",
-      icon: `https://unpkg.com/lucide-static@0.321.0/icons/phone.svg`,
+      message: "Click to start the assistant.",
+      waveActive: false,
     },
     loading: {
-      color: `rgb(93, 124, 202)`,
-      type: "pill",
-      title: "Connecting...",
-      subtitle: "Please wait",
-      icon: `https://unpkg.com/lucide-static@0.321.0/icons/loader-2.svg`,
+      message: "Connecting...",
+      waveActive: false,
     },
     active: {
-      color: `rgb(255, 0, 0)`,
-      type: "pill",
-      title: "Call is in progress...",
-      subtitle: "End the call.",
-      icon: `https://unpkg.com/lucide-static@0.321.0/icons/phone-off.svg`,
+      message: "Call in progress... Waves vibrating.",
+      waveActive: true,
     },
   };
+  console.log("Button states initialized.");
 
+  // Function to update the button state
+  function updateButtonState(state) {
+    console.log(`Updating button state to: ${state}`);
+
+    // Update status message
+    statusMessage.innerText = buttonStates[state].message;
+    console.log(`Status message updated to: "${buttonStates[state].message}"`);
+
+    // Handle wave effect visibility
+    if (buttonStates[state].waveActive) {
+      waveEffect.classList.add("animate-ping");
+      console.log("Wave effect animation started.");
+    } else {
+      waveEffect.classList.remove("animate-ping");
+      console.log("Wave effect animation stopped.");
+    }
+
+    // Show loading border during "loading" state
+    if (state === "loading") {
+      loadingBorder.classList.remove("hidden");
+      console.log("Loading border displayed.");
+    } else {
+      loadingBorder.classList.add("hidden");
+      console.log("Loading border hidden.");
+    }
+  }
+
+  // Initialize state as idle
+  console.log("Initializing state to idle.");
+  updateButtonState("idle");
+
+  // Initialize Vapi instance
+  let vapiInstance = null;
+  console.log("Vapi instance set to null.");
+
+  // Load Vapi SDK
   (function (d, t) {
-    var g = d.createElement(t),
+    console.log("Starting to load Vapi SDK.");
+    const g = d.createElement(t),
       s = d.getElementsByTagName(t)[0];
     g.src =
       "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
     g.defer = true;
     g.async = true;
     s.parentNode.insertBefore(g, s);
+    console.log("Vapi SDK script tag inserted.");
 
     g.onload = function () {
+      console.log("Vapi SDK loaded successfully.");
+
+      // Remove the default Vapi widget if it exists
+      const unwantedButton = document.getElementById("vapi-support-btn");
+      if (unwantedButton) {
+        unwantedButton.style.display = "none";
+        console.log("Unwanted Vapi support button hidden.");
+      } 
       vapiInstance = window.vapiSDK.run({
-        apiKey: apiKey, // mandatory
-        assistant: assistant, // mandatory
-        config: buttonConfig, // optional
+        apiKey: apiKey,
+        assistant: assistant,
+        config: {
+          mode: "manual",
+          enableWidget: false,
+        },
+      });
+      console.log("Vapi instance initialized.");
+
+      // Event listeners for Vapi
+      vapiInstance.on("call-start", () => {
+        console.log("Call started event received.");
+        updateButtonState("active");
       });
 
-      // Event listeners should be added after vapiInstance is initialized
-      vapiInstance.on("speech-start", () => {
-        console.log("Speech has started");
-      });
-      vapiInstance.on("speech-end", () => {
-        console.log("Speech has ended");
-      });
-      vapiInstance.on("call-start", () => {
-        console.log("Call has started");
-      });
       vapiInstance.on("call-end", () => {
-        console.log("Call has stopped");
+        console.log("Call ended event received.");
+        updateButtonState("idle");
       });
-      vapiInstance.on("volume-level", (volume) => {
-        console.log(`Assistant volume level: ${volume}`);
+
+      vapiInstance.on("error", (error) => {
+        console.error("Vapi error event received:", error);
+        updateButtonState("idle");
       });
-      vapiInstance.on("message", (message) => {
-        console.log(message);
+      console.log("Vapi event listeners set up.");
+
+      // Button click event listener
+      playButton.addEventListener("click", () => {
+        console.log("Play button clicked.");
+        if (!vapiInstance) {
+          console.error("Vapi instance not initialized.");
+          return;
+        }
+
+        if (statusMessage.innerText === buttonStates.active.message) {
+          // End the call if it's already active
+          console.log("Ending the active call.");
+          vapiInstance.endCall();
+          updateButtonState("idle");
+        } else {
+          // Start the call
+          console.log("Starting a new call.");
+          updateButtonState("loading");
+          vapiInstance.startCall();
+        }
       });
-      vapiInstance.on("error", (e) => {
-        console.error(e);
-      });
+      console.log("Play button event listener added.");
     };
   })(document, "script");
+  console.log("Vapi SDK loading function executed.");
 </script>
+
+
