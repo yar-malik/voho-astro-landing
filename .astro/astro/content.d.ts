@@ -152,6 +152,41 @@ declare module 'astro:content' {
 
 	type ContentEntryMap = {
 		"posts": {
+"5-Key-Benefits-of-AI-Receptionist-Prompting-Technology.md": {
+	id: "5-Key-Benefits-of-AI-Receptionist-Prompting-Technology.md";
+  slug: "5-Key-Benefits-of-AI-Receptionist-Prompting-Technology";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"A-Dive-into-AI-Receptionists-Your-Help-at-the-Front-Desk.md": {
+	id: "A-Dive-into-AI-Receptionists-Your-Help-at-the-Front-Desk.md";
+  slug: "A-Dive-into-AI-Receptionists-Your-Help-at-the-Front-Desk";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"AI-Receptionist-Prompting-How-PixEla-Revolutionizes-Customer-Interaction.md": {
+	id: "AI-Receptionist-Prompting-How-PixEla-Revolutionizes-Customer-Interaction.md";
+  slug: "AI-Receptionist-Prompting-How-PixEla-Revolutionizes-Customer-Interaction";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"Can-AI-Answer-Phone-Calls-for-Me.md": {
+	id: "Can-AI-Answer-Phone-Calls-for-Me.md";
+  slug: "Can-AI-Answer-Phone-Calls-for-Me";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"Can-Human-Receptionists-Be-Replaced-by-AI-Receptionists.md": {
+	id: "Can-Human-Receptionists-Be-Replaced-by-AI-Receptionists.md";
+  slug: "Can-Human-Receptionists-Be-Replaced-by-AI-Receptionists";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
 "How-to-Leverage-AI-for-Better-E-commerce-Sales.md": {
 	id: "How-to-Leverage-AI-for-Better-E-commerce-Sales.md";
   slug: "How-to-Leverage-AI-for-Better-E-commerce-Sales";
@@ -162,6 +197,20 @@ declare module 'astro:content' {
 "Understand-the-impact-of-AI-in-e-commerce-customer-service.md": {
 	id: "Understand-the-impact-of-AI-in-e-commerce-customer-service.md";
   slug: "Understand-the-impact-of-AI-in-e-commerce-customer-service";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"What-Is-he-Hardest-Question-to-Ask-AI.md": {
+	id: "What-Is-he-Hardest-Question-to-Ask-AI.md";
+  slug: "What-Is-he-Hardest-Question-to-Ask-AI";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"Which-AI-is-Best-for-Answering-Questions.md": {
+	id: "Which-AI-is-Best-for-Answering-Questions.md";
+  slug: "Which-AI-is-Best-for-Answering-Questions";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">

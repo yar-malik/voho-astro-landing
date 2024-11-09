@@ -5,12 +5,15 @@ import { getCollection } from 'astro:content';
 // Initialize markdown-it
 const md = markdownIt({ html: true });
 const { slug } = Astro.params;
+console.log('slug',slug)
+
 // Fetch the posts collection
 const posts = await getCollection('posts');
+console.log('posts',posts)
 
 // Replace 'example-post' with your dynamic slug logic or variable
 const post = posts.find((p) => p.slug === slug);
-
+console.log('post',post)
 if (!post) {
   throw new Error(`Post not found for the given slug.`);
 }

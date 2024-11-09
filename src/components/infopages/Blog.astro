@@ -1,59 +1,113 @@
+---
+const blogs = [
+  {
+    id: 1,
+    title: "How AI Phone Agents Change Customer Support for All Ecommerce Businesses",
+    description: "Learn how AI can revolutionize your customer support.",
+    image: "https://tx.shadcn.com/_next/image?url=%2Fimages%2Fblog%2Fblog-post-1.jpg&w=750&q=75",
+    link: "/how-ai-phone-agents-change-customer-support-for-all-ecommerce-businesses",
+  },
+  {
+    id: 2,
+    title: "How to Improve and Optimize Voice AI Performance",
+    description: "Tips to optimize the performance of voice AI systems.",
+    image: "https://tx.shadcn.com/_next/image?url=%2Fimages%2Fblog%2Fblog-post-2.jpg&w=750&q=75",
+    link: "/how-to-improve-and-optimize-voice-ai-performance",
+  },
+  {
+    id: 3,
+    title: "How to Make Millions with Your E-commerce Store This Black Friday",
+    description: "Strategies to maximize your e-commerce sales this season.",
+    image: "https://tx.shadcn.com/_next/image?url=%2Fimages%2Fblog%2Fblog-post-4.jpg&w=750&q=75",
+    link: "/how-to-make-millions-with-your-ecommerce-store-this-black-friday",
+  },
+  {
+    id: 4,
+    title: "Understand the Impact of AI in E-commerce Customer Service",
+    description: "Understand the impact of AI in e-commerce customer service.",
+    image: "https://tx.shadcn.com/_next/image?url=%2Fimages%2Fblog%2Fblog-post-3.jpg&w=750&q=75",
+    link: "/Understand-the-impact-of-AI-in-e-commerce-customer-service",
+  },
+  {
+    id: 5,
+    title: "How to Leverage AI for Better E-commerce Sales",
+    description: "Explore how AI tools can boost your sales strategy.",
+    image: "https://callsupport-old.netlify.app/_next/image?url=%2F3.png&w=750&q=75",
+    link: "/How-to-Leverage-AI-for-Better-E-commerce-Sales",
+  },
+  {
+    id: 6,
+    title: "5 Key Benefits of AI Receptionist Prompting Technology",
+    description: "Explore how AI tools can boost your sales strategy.",
+    image: "https://callsupport-old.netlify.app/_next/image?url=%2F3.png&w=750&q=75",
+    link: "/5-Key-Benefits-of-AI-Receptionist-Prompting-Technology",
+  },
+  {
+    id: 7,
+    title: "A Dive into AI Receptionists – Your Help at the Front Desk",
+    description: "Explore how AI tools can boost your sales strategy.",
+    image: "https://callsupport-old.netlify.app/_next/image?url=%2F3.png&w=750&q=75",
+    link: "/A-Dive-into-AI-Receptionists-Your-Help-at-the-Front-Desk",
+  },
+  {
+    id: 8,
+    title: "Can Human Receptionists Be Replaced by AI Receptionists?",
+    description: "Explore how AI tools can boost your sales strategy.",
+    image: "https://callsupport-old.netlify.app/_next/image?url=%2F3.png&w=750&q=75",
+    link: "/Can-Human-Receptionists-Be-Replaced-by-AI-Receptionists",
+  },
+  {
+    id: 9,
+    title: "AI Receptionist Prompting: How PixEla Revolutionizes Customer Interaction",
+    description: "Explore how AI tools can boost your sales strategy.",
+    image: "https://callsupport-old.netlify.app/_next/image?url=%2F3.png&w=750&q=75",
+    link: "/AI-Receptionist-Prompting-How-PixEla-Revolutionizes-Customer-Interaction",
+  },
+  {
+    id: 10,
+    title: " Can AI Answer Phone Calls for Me?",
+    description: "Explore how AI tools can boost your sales strategy.",
+    image: "https://callsupport-old.netlify.app/_next/image?url=%2F3.png&w=750&q=75",
+    link: "/Can-AI-Answer-Phone-Calls-for-Me",
+  },
+  {
+    id: 11,
+    title: "Which AI is Best for Answering Questions",
+    description: "Explore how AI tools can boost your sales strategy.",
+    image: "https://callsupport-old.netlify.app/_next/image?url=%2F3.png&w=750&q=75",
+    link: "/Which-AI-is-Best-for-Answering-Questions",
+  },
+  {
+    id: 12,
+    title: "What Is he Hardest Question to Ask AI?",
+    description: "Explore how AI tools can boost your sales strategy.",
+    image: "https://callsupport-old.netlify.app/_next/image?url=%2F3.png&w=750&q=75",
+    link: "/What-Is-he-Hardest-Question-to-Ask-AI",
+  },
+
+];
+
+---
+
+
 <section class="py-16 bg-white flex justify-center items-center">
   <div class="w-full max-w-4xl px-4 text-left">
     <h2 class="text-4xl font-bold mb-8">Blog</h2>
     <!-- Responsive Grid Layout -->
     <div id="blog-container" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-      <!-- Blog Cards -->
-      <div class="blog-card w-full mx-auto rounded-lg shadow-2xl overflow-hidden bg-white hover:shadow-2xl transition duration-300">
-        <a href={`/how-ai-phone-agents-change-customer-support-for-all-ecommerce-businesses`}>
-          <img src="https://tx.shadcn.com/_next/image?url=%2Fimages%2Fblog%2Fblog-post-1.jpg&w=750&q=75" alt="Blog Image 1" class="w-full h-48 object-cover">
-        </a>
-        <div class="p-4">
-          <h3 class="text-lg font-semibold mb-2">How AI Phone Agents Change Customer Support for All Ecommerce Businesses</h3>
-          <p class="text-gray-600 text-sm">Learn how AI can revolutionize your customer support.</p>
+      {blogs.map(blog => (
+        <div class="blog-card w-full mx-auto border border-gray-200 rounded-lg  overflow-hidden bg-white hover:shadow-2xl transition duration-300">
+          <a href={blog.link}>
+            <img src={blog.image} alt={`Image for ${blog.title}`} class="w-full h-48 object-cover" />
+          </a>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold mb-2">{blog.title}</h3>
+            <p class="text-gray-600 text-sm">{blog.description}</p>
+          </div>
         </div>
-      </div>
-      <!-- Blog Card 2 -->
-      <div class="blog-card w-full mx-auto rounded-lg shadow-2xl overflow-hidden bg-white hover:shadow-2xl transition duration-300">
-        <a href={`/how-to-improve-and-optimize-voice-ai-performance`}>
-          <img src="https://tx.shadcn.com/_next/image?url=%2Fimages%2Fblog%2Fblog-post-2.jpg&w=750&q=75" alt="Blog Image 2" class="w-full h-48 object-cover">
-        </a>
-        <div class="p-4">
-          <h3 class="text-lg font-semibold mb-2">How to Improve and Optimize Voice AI Performance</h3>
-          <p class="text-gray-600 text-sm">Tips to optimize the performance of voice AI systems.</p>
-        </div>
-      </div>
-      <!-- Blog Card 3 -->
-      <div class="blog-card w-full mx-auto rounded-lg shadow-2xl overflow-hidden bg-white hover:shadow-2xl transition duration-300">
-        <a href={`/how-to-make-millions-with-your-ecommerce-store-this-black-friday`}>
-          <img src="https://tx.shadcn.com/_next/image?url=%2Fimages%2Fblog%2Fblog-post-4.jpg&w=750&q=75" alt="Blog Image 3" class="w-full h-48 object-cover">
-        </a>
-        <div class="p-4">
-          <h3 class="text-lg font-semibold mb-2">How to Make Millions with Your E-commerce Store This Black Friday</h3>
-          <p class="text-gray-600 text-sm">Strategies to maximize your e-commerce sales this season.</p>
-        </div>
-      </div>
-      <!-- Blog Card 4 -->
-      <div class="blog-card w-full mx-auto rounded-lg shadow-2xl overflow-hidden bg-white hover:shadow-2xl transition duration-300">
-        <a href={`/Understand-the-impact-of-AI-in-e-commerce-customer-service`}>
-          <img src="https://tx.shadcn.com/_next/image?url=%2Fimages%2Fblog%2Fblog-post-3.jpg&w=750&q=75" alt="Blog Image 4" class="w-full h-48 object-cover">
-        </a>
-        <div class="p-4">
-          <h3 class="text-lg font-semibold mb-2">How AI Phone Agents Change Customer Support for All Ecommerce Businesses</h3>
-          <p class="text-gray-600 text-sm">Understand the impact of AI in e-commerce customer service.</p>
-        </div>
-      </div>
-      <!-- Blog Card 5 -->
-      <div class="blog-card w-full mx-auto rounded-lg shadow-2xl overflow-hidden bg-white hover:shadow-2xl transition duration-300">
-        <a href={`/How-to-Leverage-AI-for-Better-E-commerce-Sales`}>
-        <img src="https://callsupport-old.netlify.app/_next/image?url=%2F3.png&w=750&q=75" alt="Blog Image 5" class="w-full h-48 object-cover">
-      </a>
-        <div class="p-4">
-          <h3 class="text-lg font-semibold mb-2">How to Leverage AI for Better E-commerce Sales</h3>
-          <p class="text-gray-600 text-sm">Explore how AI tools can boost your sales strategy.</p>
-        </div>
-      </div>
+      ))}
     </div>
+
 
     <!-- Pagination Controls -->
     <div class="flex flex-col sm:flex-row items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6 mt-8">
