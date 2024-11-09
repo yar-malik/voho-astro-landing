@@ -20,7 +20,36 @@
       <span class="text-green-500 text-xl mr-2">✔</span> 24/7 Interaction
     </div>
   </div>
-
+  <div class="relative flex justify-center items-center mt-16">
+    <!-- Outer Glow Circle -->
+    <div class="absolute w-[150px] h-[150px] bg-green-200 rounded-full blur-3xl opacity-50"></div>
+    <!-- Play Button -->
+     
+    <div id="custom-vapi-button"
+    class="w-[80px] h-[80px] bg-white rounded-full shadow-lg flex justify-center items-center relative cursor-pointer">
+ <!-- Loading Indicator -->
+ <div id="loading-indicator" class="absolute w-[95px] h-[95px] rounded-full border-2 border-green-200 animate-pulse hidden"></div>
+ <!-- Button Icon -->
+ <svg id="button-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      class="w-10 h-10 text-green-500"
+      viewBox="0 0 20 20"
+      fill="currentColor">
+   <path fill-rule="evenodd"
+         d="M6 4a1 1 0 011.707-.707l7 7a1 1 0 010 1.414l-7 7A1 1 0 016 18V4z"
+         clip-rule="evenodd" />
+ </svg>
+</div>
+    <!-- Soundwave Effect -->
+    <div class="absolute flex items-center space-x-1">
+      <div class="w-1 h-8 bg-gray-300 rounded"></div>
+      <div class="w-1 h-6 bg-gray-300 rounded"></div>
+      <div class="w-1 h-10 bg-gray-300 rounded"></div>
+      <div class="w-1 h-5 bg-gray-300 rounded"></div>
+      <div class="w-1 h-7 bg-gray-300 rounded"></div>
+      <div class="w-1 h-4 bg-gray-300 rounded"></div>
+    </div>
+  </div>
   <!-- Steps Section -->
   <div class="w-full mt-16 grid grid-cols-1 md:grid-cols-4 gap-6 px-6">
     <!-- Step 1 -->
@@ -218,8 +247,5 @@
       vapiInstance.on("error", (error) => {
         console.error("Vapi error event received:", error);
       });
-      console.log("Vapi event listeners set up.");
-    };
-  })(document, "script");
-  console.log("Vapi SDK loading function executed.");
+    }});
 </script>
