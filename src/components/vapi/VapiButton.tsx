@@ -1,7 +1,7 @@
-import React from 'react';
+import * as React from 'react';
 import { FaSpinner } from 'react-icons/fa';
-
-interface ButtonProps {
+import Button from './Button'
+interface VapiButton {
   children: React.ReactNode; // Text or other elements inside the button
   onClick?: () => void; // Click handler
   type?: 'button' | 'submit' | 'reset'; // Button type
@@ -10,7 +10,7 @@ interface ButtonProps {
   className?: string; // Additional CSS classes
 }
 
-const Button: React.FC<ButtonProps> = ({
+const Button: React.FC<VapiButton> = ({
   children,
   onClick,
   type = 'button',
@@ -19,7 +19,7 @@ const Button: React.FC<ButtonProps> = ({
   className = '',
 }) => {
   return (
-    <button
+    <Button
       type={type}
       onClick={onClick}
       disabled={disabled || isLoading}
@@ -37,8 +37,8 @@ const Button: React.FC<ButtonProps> = ({
       ) : (
         children
       )}
-    </button>
+    </Button>
   );
 };
 
-export default Button;
+export default VapiButton;

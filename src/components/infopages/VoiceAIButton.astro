@@ -1,4 +1,9 @@
+---
+import Orb from '../vapi/Orb'
+---
+
 <!-- HTML Markup -->
+<Orb />
 <div class="min-h-[60vh] flex flex-col items-center bg-gray-50 text-gray-800">
   <!-- Header Section -->
   <div class="w-full text-center py-12 bg-gradient-to-b from-gray-100 to-gray-50 px-4">
@@ -18,36 +23,6 @@
     </div>
     <div class="flex items-center text-gray-600">
       <span class="text-green-500 text-xl mr-2">✔</span> 24/7 Interaction
-    </div>
-  </div>
-  <div class="relative flex justify-center items-center mt-16">
-    <!-- Outer Glow Circle -->
-    <div class="absolute w-[150px] h-[150px] bg-green-200 rounded-full blur-3xl opacity-50"></div>
-    <!-- Play Button -->
-     
-    <div id="custom-vapi-button"
-    class="w-[80px] h-[80px] bg-white rounded-full shadow-lg flex justify-center items-center relative cursor-pointer">
- <!-- Loading Indicator -->
- <div id="loading-indicator" class="absolute w-[95px] h-[95px] rounded-full border-2 border-green-200 animate-pulse hidden"></div>
- <!-- Button Icon -->
- <svg id="button-icon"
-      xmlns="http://www.w3.org/2000/svg"
-      class="w-10 h-10 text-green-500"
-      viewBox="0 0 20 20"
-      fill="currentColor">
-   <path fill-rule="evenodd"
-         d="M6 4a1 1 0 011.707-.707l7 7a1 1 0 010 1.414l-7 7A1 1 0 016 18V4z"
-         clip-rule="evenodd" />
- </svg>
-</div>
-    <!-- Soundwave Effect -->
-    <div class="absolute flex items-center space-x-1">
-      <div class="w-1 h-8 bg-gray-300 rounded"></div>
-      <div class="w-1 h-6 bg-gray-300 rounded"></div>
-      <div class="w-1 h-10 bg-gray-300 rounded"></div>
-      <div class="w-1 h-5 bg-gray-300 rounded"></div>
-      <div class="w-1 h-7 bg-gray-300 rounded"></div>
-      <div class="w-1 h-4 bg-gray-300 rounded"></div>
     </div>
   </div>
   <!-- Steps Section -->
@@ -127,125 +102,4 @@
   </div>
 </div>
 
-<!-- Script -->
-<style>
-  /* General Styling */
-  .vapi-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: rgb(93, 254, 202);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-  }
 
-  .min-h-[60vh] {
-    min-height: 60vh;
-    padding: 1rem;
-  }
-
-  .grid-cols-1 {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  @media (min-width: 768px) {
-    .grid-cols-1.md\:grid-cols-4 {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-
-  /* Adjust font sizes for smaller screens */
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 1.5rem;
-    }
-
-    p {
-      font-size: 1rem;
-    }
-
-    .text-center p {
-      font-size: 0.875rem;
-    }
-  }
-</style>
-
-<script>
-  var vapiInstance = null;
-
-  const apiKey = import.meta.env.PUBLIC_VAPI_API_KEY;
-  const assistant = import.meta.env.PUBLIC_VAPI_ASSISTANT_ID;
-  console.log("API key and assistant ID set.");
-
-  const buttonConfig = {
-    position: "bottom",
-    offset: "-40px",
-    right: "10px",
-    width: "50px",
-    height: "50px",
-    idle: {
-      color: `rgb(93, 254, 202)`,
-      // type: "pill",
-      // title: "Have a quick question?",
-      // subtitle: "Talk with our AI assistant",
-      icon: `https://unpkg.com/lucide-static@0.321.0/icons/phone.svg`,
-    },
-    loading: {
-      color: `rgb(93, 124, 202)`,
-      type: "pill",
-      title: "Connecting...",
-      subtitle: "Please wait",
-      icon: `https://unpkg.com/lucide-static@0.321.0/icons/loader-2.svg`,
-    },
-    active: {
-      color: `rgb(255, 0, 0)`,
-      type: "pill",
-      title: "Call is in progress...",
-      subtitle: "End the call.",
-      icon: `https://unpkg.com/lucide-static@0.321.0/icons/phone-off.svg`,
-    },
-  };
-
-  // Load Vapi SDK
-  (function (d, t) {
-    console.log("Starting to load Vapi SDK.");
-    const g = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    g.src =
-      "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
-    g.defer = true;
-    g.async = true;
-    s.parentNode.insertBefore(g, s);
-    console.log("Vapi SDK script tag inserted.");
-
-    g.onload = function () {
-      console.log("Vapi SDK loaded successfully.");
-
-      vapiInstance = window.vapiSDK.run({
-        apiKey: apiKey,
-        assistant: assistant,
-        config: buttonConfig,
-      });
-      console.log("Vapi instance initialized.");
-
-      vapiInstance.on("call-start", () => {
-        console.log("Call started event received.");
-      });
-
-      vapiInstance.on("call-end", () => {
-        console.log("Call ended event received.");
-      });
-
-      vapiInstance.on("error", (error) => {
-        console.error("Vapi error event received:", error);
-      });
-    }});
-</script>

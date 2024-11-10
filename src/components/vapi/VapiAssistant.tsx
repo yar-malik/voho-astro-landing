@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Vapi from '@vapi-ai/web';
 import { Mic, PhoneOff } from "lucide-react";
 import { FaSpinner } from "react-icons/fa";
-import Button from "./Button";
+import Button from "./VapiButton";
 
 const VapiAssistant = ({ assistantId }) => {
   const [vapi, setVapi] = useState(null);
