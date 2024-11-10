@@ -5,6 +5,11 @@ import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
 vite: {
+  resolve: {
+    alias: {
+      '@': '/src', // Add alias for cleaner imports
+    },
+  },
     plugins: [tailwindcss()],
   },
     // add yur domain name here
