@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import Vapi from "@vapi-ai/web";
 
-const publicKey = process.env.NEXT_PUBLIC_VAPI_PUBLIC_KEY || "e5c00e52-3011-4a65-a46c-270c9d0fa091"; // Replace with your actual public key
-const assistantId = process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID || "00d6a328-d20a-4e35-bbff-819f8a515d70"; // Replace with your actual assistant ID
+const publicKey = import.meta.env.PUBLIC_VAPI_PUBLIC_KEY || "e5c00e52-3011-4a65-a46c-270c9d0fa091"; // Replace with your actual public key
+const assistantId = import.meta.env.PUBLIC_VAPI_ASSISTANT_ID || "00d6a328-d20a-4e35-bbff-819f8a515d70"; // Replace with your actual assistant ID
+
 console.log('publicKey',publicKey)
 console.log('assistantId',assistantId)
 const useVapi = () => {
