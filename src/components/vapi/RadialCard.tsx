@@ -18,8 +18,9 @@ const RadialCard: React.FC = () => {
     }, [volumeLevel, isSessionActive]);
    
     const updateBars = (volume: number) => {
-      setBars(bars.map(() => Math.random() * volume * 50));
+      setBars((prevBars) => prevBars.map(() => Math.random() * volume * 50));
     };
+    
    
     const resetBars = () => {
       setBars(Array(50).fill(0));
@@ -31,14 +32,14 @@ const RadialCard: React.FC = () => {
             { isSessionActive ? 
             <MicOff
               size={24}
-              className="text-black dark:text-white"
+              className="text-black dark:text-black"
               onClick={toggleCall}
               style={{ cursor: 'pointer', zIndex: 10 }}
             />
             :
             <Mic
             size={28}
-            className="text-black dark:text-white"
+            className="text-black dark:text-black"
             onClick={toggleCall}
             style={{ cursor: 'pointer', zIndex: 10 }}
             />
@@ -59,7 +60,7 @@ const RadialCard: React.FC = () => {
                     y1={y1}
                     x2={x2}
                     y2={y2}
-                    className="stroke-current text-black dark:text-white dark:opacity-70 opacity-70"
+                    className="stroke-current text-black dark:text-black dark:opacity-70 opacity-70"
                     strokeWidth="2"
                     initial={{ x2: x1, y2: y1 }}
                     animate={{ x2, y2 }}
@@ -68,7 +69,7 @@ const RadialCard: React.FC = () => {
                 );
               })}
             </svg>
-            <span className="absolute top-48 w-[calc(100%-70%)] h-[calc(100%-70%)] bg-primary blur-[120px]"></span>
+            <span className="absolute top-48 w-[calc(100%-70%)] h-[calc(100%-70%)] bg-black blur-[120px]"></span>
           </div>
         </div>
     );
