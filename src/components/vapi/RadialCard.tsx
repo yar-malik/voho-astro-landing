@@ -1,21 +1,26 @@
 "use client";
-import * as React from 'react';
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Mic } from 'lucide-react';
-import useVapi from '../../hooks/use-vapi';
+import * as React from "react";
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Mic } from "lucide-react";
+import useVapi from "../../hooks/use-vapi";
 
 const RadialCard: React.FC = () => {
   const { volumeLevel, isSessionActive, toggleCall } = useVapi();
   const [bars, setBars] = useState(Array(50).fill(0));
+  const [statusText, setStatusText] = useState("Give it a try!");
 
   useEffect(() => {
     if (isSessionActive) {
-      updateBars(volumeLevel);
+      setStatusText("One sec...");
+      const timeout = setTimeout(() => {
+        setStatusText("Just talk");
+      }, 2000); // Simulating connection delay
+      return () => clearTimeout(timeout);
     } else {
-      resetBars();
+      setStatusText("Give it a try!");
     }
-  }, [volumeLevel, isSessionActive]);
+  }, [isSessionActive]);
 
   const updateBars = (volume: number) => {
     setBars((prevBars) => prevBars.map(() => Math.random() * volume * 50));
@@ -25,50 +30,52 @@ const RadialCard: React.FC = () => {
     setBars(Array(50).fill(0));
   };
 
+  useEffect(() => {
+    if (isSessionActive) {
+      updateBars(volumeLevel);
+    } else {
+      resetBars();
+    }
+  }, [volumeLevel, isSessionActive]);
+
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center relative">
+      {/* Button */}
       <motion.div
-        className={`relative w-20 h-20 rounded-full flex items-center justify-center ${
-          isSessionActive ? 'bg-[#4CAF50]' : 'bg-[#283CFF]'
-        } shadow-lg hover:scale-105 transition-transform duration-200`}
+        className={`relative w-20 h-20 rounded-full flex items-center justify-center shadow-lg hover:scale-105 transition-transform duration-200`}
         onClick={toggleCall}
-        style={{ cursor: 'pointer' }}
-        animate={isSessionActive ? { y: [0, -10, 0] } : {}}
-        transition={{ duration: 1, repeat: Infinity }}
+        style={{ cursor: "pointer" }}
+        animate={
+          isSessionActive
+            ? { backgroundColor: ["#283CFF", "#4CAF50", "#283CFF"] }
+            : {}
+        }
+        transition={{
+          duration: 2,
+          repeat: Infinity,
+        }}
       >
         {!isSessionActive && <Mic size={28} className="text-white" />}
-        {isSessionActive && (
-          <motion.div
-            className="absolute inset-0 rounded-full border-2 border-white/20"
-            style={{ boxShadow: '0 0 30px 5px rgba(255, 255, 255, 0.2)' }}
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.6, 0.3, 0.6],
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-            }}
-          />
-        )}
       </motion.div>
-      <div className="mt-4 px-4 py-1 border border-white/50 rounded-full bg-[#252d2954] text-sm text-white opacity-90">
-        Give it a try!
-      </div>
+
+      {/* Animated waves */}
       {isSessionActive && (
-        <div className="absolute flex space-x-1">
+        <div className="absolute inset-0 flex items-center justify-center">
           {bars.map((height, index) => (
             <motion.div
               key={index}
-              className="w-1 bg-[#4CAF50]"
+              className="absolute border-2 border-[#283CFF] rounded-full"
               style={{
-                height: `${height}px`,
+                width: `${40 + index * 2}px`,
+                height: `${40 + index * 2}px`,
+                opacity: 0.1,
               }}
               animate={{
-                height: [height, height + 5, height],
+                scale: [1, 1.2],
+                opacity: [0.2, 0],
               }}
               transition={{
-                duration: 0.3,
+                duration: 2,
                 repeat: Infinity,
                 delay: index * 0.05,
               }}
@@ -76,6 +83,11 @@ const RadialCard: React.FC = () => {
           ))}
         </div>
       )}
+
+      {/* Dynamic status text */}
+      <div className="mt-4 px-4 py-1 border border-white/50 rounded-full bg-[#252d2954] text-sm text-white opacity-90">
+        {statusText}
+      </div>
     </div>
   );
 };
