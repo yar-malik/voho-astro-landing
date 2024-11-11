@@ -13,19 +13,23 @@ const useVapi = () => {
   const [conversation, setConversation] = useState<
     { role: string; text: string; timestamp: string; isFinal: boolean }[]
   >([]);
+  const [statusText, setStatusText] = useState("Give it a try!");
   const vapiRef = useRef<any>(null);
 
   const initializeVapi = useCallback(() => {
+    // setStatusText("One sec...");
     if (!vapiRef.current) {
       const vapiInstance = new Vapi(publicKey);
       vapiRef.current = vapiInstance;
-
+    
       vapiInstance.on("call-start", () => {
         setIsSessionActive(true);
+        setStatusText("Just talk");
       });
 
       vapiInstance.on("call-end", () => {
         setIsSessionActive(false);
+        setStatusText("Give it a try!");
         setConversation([]); // Reset conversation on call end
       });
 
@@ -116,6 +120,7 @@ const useVapi = () => {
 
   const toggleCall = async () => {
     try {
+      setStatusText("One sec...");
       if (isSessionActive) {
         await vapiRef.current.stop();
       } else {
@@ -157,6 +162,7 @@ const useVapi = () => {
     sendMessage,
     say,
     toggleMute,
+    statusText,
     isMuted,
   };
 };
