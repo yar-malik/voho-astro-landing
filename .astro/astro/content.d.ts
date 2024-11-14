@@ -168,7 +168,7 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 "AI-Receptionist-Prompting-How-PixEla-Revolutionizes-Customer-Interaction.md": {
 	id: "AI-Receptionist-Prompting-How-PixEla-Revolutionizes-Customer-Interaction.md";
-  slug: "AI-Receptionist-Prompting-How-PixEla-Revolutionizes-Customer-Interaction";
+  slug: "ai-receptionist-prompting-how-pixela-revolutionizes-customer-interaction";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">
