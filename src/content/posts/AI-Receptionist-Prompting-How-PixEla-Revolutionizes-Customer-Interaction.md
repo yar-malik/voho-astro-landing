@@ -1,8 +1,7 @@
 ---
-
 publishDate: ''
 title: ''
-description: 'Discover how PixEla's AI receptionist prompting enhances customer interactions with seamless, efficient, and human-like communication for businesses.'
+description: "Discover how PixEla's AI receptionist prompting enhances customer interactions with seamless, efficient, and human-like communication for businesses."
 excerpt: ''
 image: ''
 tags: [AI receptionist, AI receptionist prompting]
