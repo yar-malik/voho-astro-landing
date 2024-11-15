@@ -44,7 +44,8 @@
            <!-- Use Case Dropdown -->
         <div class="relative" @click.away="useCaseOpen = false">
           <button
-            @click="useCaseOpen = !useCaseOpen"
+            @mouseover="useCaseOpen = true" 
+            @mouseleave="useCaseOpen = false"
             class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400 flex items-center">
             Use Cases
             <svg class="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -53,7 +54,9 @@
           </button>
           <div
             x-show="useCaseOpen"
-            class="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10"
+            @mouseover="useCaseOpen = true" 
+             @mouseleave="useCaseOpen = false"
+            class="absolute left-0 mt- w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10"
             x-cloak>
             <a href="/ecommerce" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Ecommerce</a>
             <a href="/estate" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Real Estate</a>
