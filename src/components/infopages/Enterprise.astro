@@ -70,7 +70,7 @@
             <input
               type="text"
               id="first-name"
-              class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 focus:ring-indigo-500 focus:border-indigo-500"
+              class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900  focus:ring-black focus:border-black"
               placeholder="Enter first name"
             />
           </div>
@@ -81,7 +81,7 @@
             <input
               type="text"
               id="last-name"
-              class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 focus:ring-indigo-500 focus:border-indigo-500"
+              class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900  focus:ring-black focus:border-black"
               placeholder="Enter last name"
             />
           </div>
@@ -95,7 +95,7 @@
           <input
             type="email"
             id="work-email"
-            class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 focus:ring-indigo-500 focus:border-indigo-500"
+            class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900  focus:ring-black focus:border-black"
             placeholder="Enter work email"
           />
         </div>
@@ -106,15 +106,18 @@
             How many calls do you expect to make per month?
           </label>
           <select
-            id="calls"
-            class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 focus:ring-indigo-500 focus:border-indigo-500"
-          >
-            <option value="">Select</option>
-            <option value="1-100">1-100</option>
-            <option value="101-500">101-500</option>
-            <option value="501-1000">501-1000</option>
-            <option value="1001+">1001+</option>
-          </select>
+          id="calls"
+          class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900  focus:ring-black focus:border-black"
+        >
+          <option value="">Select</option>
+          <option value="less-than-30000">Less than 30,000 min</option>
+          <option value="30000-55000">30,000 - 55,000 min</option>
+          <option value="55000-100000">55,000 - 100,000 min</option>
+          <option value="100000-250000">100,000 - 250,000 min</option>
+          <option value="250000-1000000">250,000 - 1,000,000 min</option>
+          <option value="over-1000000">Over 1,000,000 min</option>
+        </select>
+        
         </div>
 
         <!-- Use Case -->
