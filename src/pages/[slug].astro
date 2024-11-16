@@ -28,7 +28,9 @@ if (!post) {
 // Destructure the post data and body content
 const { data, body } = post;
 ---
-
+<head>
+  <title>Blog | {data.title}  </title>
+</head>
 <BaseLayout>
   <BlogPost 
     title={data.title} 
