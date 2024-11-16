@@ -161,7 +161,7 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 "A-Dive-into-AI-Receptionists-Your-Help-at-the-Front-Desk.md": {
 	id: "A-Dive-into-AI-Receptionists-Your-Help-at-the-Front-Desk.md";
-  slug: "A-Dive-into-AI-Receptionists-Your-Help-at-the-Front-Desk";
+  slug: "a-dive-into-ai-receptionists-your-help-at-the-front-desk";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">
@@ -182,7 +182,7 @@ declare module 'astro:content' {
 } & { render(): Render[".md"] };
 "Can-Human-Receptionists-Be-Replaced-by-AI-Receptionists.md": {
 	id: "Can-Human-Receptionists-Be-Replaced-by-AI-Receptionists.md";
-  slug: "Can-Human-Receptionists-Be-Replaced-by-AI-Receptionists";
+  slug: "can-human-receptionists-be-replaced-by-ai-receptionists";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">

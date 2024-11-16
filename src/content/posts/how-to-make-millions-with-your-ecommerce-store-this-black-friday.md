@@ -1,7 +1,7 @@
 ---
 publishDate: 'Oct 7 2024'
 title: 'How to Make Millions with Your E-commerce Store This Black Friday'
-description: ''
+description: 'Black Friday presents an unparalleled opportunity for ecommerce store owners to skyrocket their sales and potentially make millions.'
 excerpt: ''
 image: 'https://tx.shadcn.com/_next/image?url=%2Fimages%2Fblog%2Fblog-post-4.jpg&w=750&q=75'
 tags: [markdown, blog]

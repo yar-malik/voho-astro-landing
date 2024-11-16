@@ -1,6 +1,6 @@
 ---
 publishDate: ''
-title: ''
+title: '5 Key Benefits of AI Receptionist Prompting Technology'
 description: '5 key benefits of AI receptionist prompting technology, from never missing a call to reducing errors, boosting efficiency, and enhancing customer service.'
 excerpt: ''
 image: ''
