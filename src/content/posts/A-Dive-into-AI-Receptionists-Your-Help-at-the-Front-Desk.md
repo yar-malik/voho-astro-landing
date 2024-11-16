@@ -1,8 +1,8 @@
 ---
 
 publishDate: ''
-title: ''
-description: ''
+title: 'A Dive into AI Receptionists – Your Help at the Front Desk'
+description: 'AI receptionists are transforming the customer service landscape, bringing the efficiency and consistency of advanced technology to businesses' front desks.'
 excerpt: ''
 image: '<https://tx.shadcn.com/_next/image?url=%2Fimages%2Fblog%2Fblog-post-1.jpg&w=750&q=75>'
 tags: [markdown, blog]

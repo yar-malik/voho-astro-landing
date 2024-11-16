@@ -29,7 +29,8 @@ if (!post) {
 const { data, body } = post;
 ---
 <head>
-  <title>Blog | {data.title}  </title>
+  <title>{data.title }</title>
+  <meta name="description" content={data.description || 'Read our latest blog post to learn more!'} />
 </head>
 <BaseLayout>
   <BlogPost 
