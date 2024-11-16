@@ -2,7 +2,7 @@
 
 publishDate: ''
 title: 'Can Human Receptionists Be Replaced by AI Receptionists?'
-description: 'Discover if AI can truly replace human receptionists, exploring AI's capabilities, limitations, and the future of front-desk roles in the workplace.   '
+description: 'Discover the toughest questions AI call answering services face, from emotional nuances to cultural context, and how Call Support bridges AI with human empathy.  '
 excerpt: ''
 image: '<https://tx.shadcn.com/_next/image?url=%2Fimages%2Fblog%2Fblog-post-1.jpg&w=750&q=75>'
 tags: [AI receptionist , AI receptionist prompting ]
