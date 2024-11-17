@@ -33,7 +33,7 @@
           Fill in your details below to receive a personalized phone call from
           our intelligent AI agent, Julia.
         </p>
-        <form class="space-y-6">
+        <form id="vapiForm" class="space-y-6">
           <!-- Name Field -->
           <div>
             <label class="block text-sm text-black mb-2" for="name"
@@ -42,8 +42,10 @@
             <input
               id="name"
               type="text"
-              class="w-full px-4 py-3 bg-white text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-white placeholder-gray-500"
+               name="name"
+              class="w-full px-4 py-3 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-white placeholder-gray-500"
               placeholder="Julia"
+              required
             />
           </div>
           <!-- Email Field -->
@@ -54,8 +56,10 @@
             <input
               id="email"
               type="email"
-              class="w-full px-4 py-3 bg-white text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-white placeholder-gray-500"
+               name="email"
+              class="w-full px-4 py-3 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-white placeholder-gray-500"
               placeholder="julia@CallSupport.com"
+              required
             />
           </div>
           <!-- Phone Number Field -->
@@ -66,8 +70,10 @@
             <input
               id="phone"
               type="tel"
-              class="w-full px-4 py-3 bg-white text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-white placeholder-gray-500"
+              name="phone"
+              class="w-full px-4 py-3 bg-white text-black rounded-lg focus:outline-none focus:ring-2 focus:ring-white placeholder-gray-500"
               placeholder="+1 123 456 7890"
+              required
             />
           </div>
           <!-- Submit Button -->
@@ -1077,4 +1083,22 @@
     const secs = Math.floor(seconds % 60);
     return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
   }
+</script>
+<script>
+  document.getElementById("vapiForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Collect form data
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+
+    // Construct VAPI URL with query parameters
+    const vapiUrl = `https://vapi.ai?demo=true&shareKey=d164f8de-d636-448f-b060-714352684dc2&assistantId=32d49254-2074-4ee8-95f8-22fbfa41d5c4&name=${encodeURIComponent(
+      name
+    )}&email=${encodeURIComponent(email)}&phone=${encodeURIComponent(phone)}`;
+
+    // Open VAPI demo in a new tab
+    window.open(vapiUrl, "_blank");
+  });
 </script>
