@@ -100,8 +100,9 @@ import MakeCall from "../../pages/api/makeCall";
 <script>
   // Ensure the API key is loaded correctly
   const API_KEY = import.meta.env.PUBLIC_VAPI_PIVATE_KEY;
-  const Phone_KEY = import.meta.env.PUBLIC_VAPI_PHONE_KEY;
-  console.log("Phone_KEY", Phone_KEY);
+  const PHONE_KEY = import.meta.env.PUBLIC_VAPI_PHONE_KEY;
+  console.log("Phone_KEY", PHONE_KEY);
+  console.log("API_KEY", API_KEY);
 
   document
     .getElementById("callForm")
@@ -111,10 +112,10 @@ import MakeCall from "../../pages/api/makeCall";
       // Collect form data
       const form = event.target;
       const formData = new FormData(form);
-      const data = Object.fromEntries(formData.entries()); // Convert FormData to JSON-like object
+      const data = Object.fromEntries(formData.entries()); 
 
-      const { phone, language } = data; // Extract `phone` and `language` fields
-      const sanitizedPhone = phone.replace(/\D/g, ""); // Sanitize phone number (remove non-digits)
+      const { phone, language } = data; 
+      const sanitizedPhone = phone.replace(/\D/g, ""); 
       console.log("sanitizedPhone", sanitizedPhone);
       // Ensure required fields
       if (!sanitizedPhone || !language) {
@@ -145,7 +146,7 @@ import MakeCall from "../../pages/api/makeCall";
 
       // Prepare payload for VAPI API
       const payload = {
-        phoneNumberId: Phone_KEY,
+        phoneNumberId: PHONE_KEY,
         assistantId: config.apiEndpoint.split("&assistantId=")[1],
         customer: {
           number: `+${sanitizedPhone}`,
