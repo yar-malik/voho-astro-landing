@@ -1,7 +1,3 @@
----
-
----
-
 <section class="bg-white text-gray-500 min-h-screen py-16 px-8">
   <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
     <!-- Left Section -->
@@ -49,18 +45,16 @@
           </div>
         </li>
       </ul>
-      <!-- <div class="mt-12 flex space-x-6">
-          <img src="/justcall.png" alt="JustCall" class="h-8" />
-          <img src="/calcom.png" alt="Cal.com" class="h-8" />
-          <img src="/ro.png" alt="Ro" class="h-8" />
-          <img src="/spare.png" alt="Spare" class="h-8" />
-          <img src="/pwc.png" alt="PwC" class="h-8" />
-        </div> -->
     </div>
 
     <!-- Right Section -->
-    <div class="rounded-3xl bg-gray-50 p-8  shadow-md">
-      <form class="space-y-4">
+    <div class="rounded-3xl bg-gray-50 p-8 shadow-md">
+      <form
+        action="https://hook.eu2.make.com/xtcsw8p9cscj3gy7eufhk9vdk6txltju"
+        method="POST"
+        class="space-y-4"
+        id="submissionForm"
+      >
         <!-- First Name & Last Name -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
@@ -70,7 +64,9 @@
             <input
               type="text"
               id="first-name"
-              class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900  focus:ring-black focus:border-black"
+              required
+              name="first_name"
+              class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 focus:ring-black focus:border-black"
               placeholder="Enter first name"
             />
           </div>
@@ -81,7 +77,9 @@
             <input
               type="text"
               id="last-name"
-              class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900  focus:ring-black focus:border-black"
+              required
+              name="last_name"
+              class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 focus:ring-black focus:border-black"
               placeholder="Enter last name"
             />
           </div>
@@ -95,7 +93,9 @@
           <input
             type="email"
             id="work-email"
-            class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900  focus:ring-black focus:border-black"
+            name="work_email"
+            required
+            class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 focus:ring-black focus:border-black"
             placeholder="Enter work email"
           />
         </div>
@@ -106,18 +106,19 @@
             How many calls do you expect to make per month?
           </label>
           <select
-          id="calls"
-          class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900  focus:ring-black focus:border-black"
-        >
-          <option value="">Select</option>
-          <option value="less-than-30000">Less than 30,000 min</option>
-          <option value="30000-55000">30,000 - 55,000 min</option>
-          <option value="55000-100000">55,000 - 100,000 min</option>
-          <option value="100000-250000">100,000 - 250,000 min</option>
-          <option value="250000-1000000">250,000 - 1,000,000 min</option>
-          <option value="over-1000000">Over 1,000,000 min</option>
-        </select>
-        
+            id="calls"
+            required
+            name="calls"
+            class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 focus:ring-black focus:border-black"
+          >
+            <option value="">Select</option>
+            <option value="less-than-30000">Less than 30,000 min</option>
+            <option value="30000-55000">30,000 - 55,000 min</option>
+            <option value="55000-100000">55,000 - 100,000 min</option>
+            <option value="100000-250000">100,000 - 250,000 min</option>
+            <option value="250000-1000000">250,000 - 1,000,000 min</option>
+            <option value="over-1000000">Over 1,000,000 min</option>
+          </select>
         </div>
 
         <!-- Use Case -->
@@ -127,6 +128,8 @@
           </label>
           <textarea
             id="use-case"
+            name="use_case"
+            required
             rows="3"
             class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 focus:ring-black focus:border-black"
             placeholder="Describe your use case"></textarea>
@@ -139,6 +142,8 @@
           </label>
           <select
             id="find-us"
+            name="find_us"
+            required
             class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 text-gray-900 focus:ring-black focus:border-black"
           >
             <option value="">Select</option>
@@ -152,7 +157,7 @@
         <!-- Submit Button -->
         <button
           type="submit"
-         class="w-full h-10 bg-gradient-to-r items-center justify-center focus-visible:outline-black focus:outline-none inline-flex bg-black border-2 border-black focus-visible:ring-black hover:bg-transparent hover:border-black hover:text-black px-6 py-3 text-center text-white rounded-lg transition duration-300 shadow-lg"
+          class="w-full h-10 bg-gradient-to-r items-center justify-center focus-visible:outline-black focus:outline-none inline-flex bg-black border-2 border-black focus-visible:ring-black hover:bg-transparent hover:border-black hover:text-black px-6 py-3 text-center text-white rounded-lg transition duration-300 shadow-lg"
         >
           Send message
         </button>
@@ -160,3 +165,56 @@
     </div>
   </div>
 </section>
+
+<script>
+  document
+    .getElementById("submissionForm")
+    .addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const form = e.target;
+      const formData = new FormData(form);
+
+      const jsonData = {};
+      formData.forEach((value, key) => {
+        jsonData[key] = value;
+      });
+
+      const submitButton = form.querySelector("button[type='submit']");
+      const defaultButtonText = submitButton.textContent;
+
+      try {
+        submitButton.textContent = "Sending...";
+        submitButton.disabled = true;
+
+        const response = await fetch(form.action, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(jsonData),
+        });
+
+        if (response.ok) {
+          submitButton.textContent = "Submitted!";
+          setTimeout(() => {
+            submitButton.textContent = "Thanks!";
+            setTimeout(() => {
+              submitButton.textContent = defaultButtonText;
+              submitButton.disabled = false;
+              form.reset();
+            }, 2000);
+          }, 1000);
+        } else {
+          alert("Error submitting the form.");
+          submitButton.textContent = defaultButtonText;
+          submitButton.disabled = false;
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("There was an error while submitting the form.");
+        submitButton.textContent = defaultButtonText;
+        submitButton.disabled = false;
+      }
+    });
+</script>
