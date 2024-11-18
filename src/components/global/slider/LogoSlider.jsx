@@ -3,9 +3,6 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/splide/dist/css/splide.min.css";
 
-import Bubble from './logos/Bubble.png';
-// import Cal from '../../../public/images/logos/Cal.com.png';
-// import ElevenLabs from '/public/images/logos/ElevenLabs.png';
 
 // Define the style for the images in the carousel
 const imageStyle = {
@@ -36,7 +33,7 @@ function LogoSlider() {
                     extensions={{ AutoScroll }} // Use the AutoScroll extension
                 >
                     <SplideSlide>
-                        <img src={Bubble} alt="Poster Brooklyn" style={imageStyle} />
+                        <img src={'/images/logos/Bubble.png'} alt="Poster Brooklyn" style={imageStyle} />
                     </SplideSlide>
                     <SplideSlide>
                         <img src={'/images/logos/Cal.com.png'} alt="Poster Macao" style={imageStyle} />
@@ -45,31 +42,31 @@ function LogoSlider() {
                         <img src={'/images/logos/ElevenLabs.png'} alt="Poster Navada" style={imageStyle} />
                     </SplideSlide>
                     <SplideSlide>
-                        <img src={'/public/images/logos/GoHighLevel.png'} alt="Poster Brooklyn" style={imageStyle} />
+                        <img src={'/images/logos/GoHighLevel.png'} alt="Poster Brooklyn" style={imageStyle} />
                     </SplideSlide>
                     <SplideSlide>
-                        <img src={'/public/images/logos/hubspot.png'} alt="Poster Macao" style={imageStyle} />
+                        <img src={'/images/logos/hubspot.png'} alt="Poster Macao" style={imageStyle} />
                     </SplideSlide>
                     <SplideSlide>
-                        <img src={'/public/images/logos/icons8-google-meet.svg.png'} alt="Poster Navada" style={imageStyle} />
+                        <img src={'/images/logos/icons8-google-meet.svg.png'} alt="Poster Navada" style={imageStyle} />
                     </SplideSlide>
                     <SplideSlide>
-                        <img src={'/public/images/logos/Make.png'} alt="Poster Brooklyn" style={imageStyle} />
+                        <img src={'/images/logos/Make.png'} alt="Poster Brooklyn" style={imageStyle} />
                     </SplideSlide>
                     <SplideSlide>
-                        <img src={'/public/images/logos/Stripe.png'} alt="Poster Macao" style={imageStyle} />
+                        <img src={'/images/logos/Stripe.png'} alt="Poster Macao" style={imageStyle} />
                     </SplideSlide>
                     <SplideSlide>
-                        <img src={'/public/images/logos/Twilio.png'} alt="Poster Navada" style={imageStyle} />
+                        <img src={'/images/logos/Twilio.png'} alt="Poster Navada" style={imageStyle} />
                     </SplideSlide>
                     <SplideSlide>
-                        <img src={'/public/images/logos/Zapier.png'} alt="Poster Brooklyn" style={imageStyle} />
+                        <img src={'/images/logos/Zapier.png'} alt="Poster Brooklyn" style={imageStyle} />
                     </SplideSlide>
                     <SplideSlide>
-                        <img src={'/public/Figma.svg'} alt="Poster Macao" style={imageStyle} />
+                        <img src={'/Figma.svg'} alt="Poster Macao" style={imageStyle} />
                     </SplideSlide>
                     <SplideSlide>
-                        <img src={'/public/Gitlab.svg'} alt="Poster Navada" style={imageStyle} />
+                        <img src={'/Gitlab.svg'} alt="Poster Navada" style={imageStyle} />
                     </SplideSlide>
                 </Splide>
             </div>
