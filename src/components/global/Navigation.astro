@@ -32,9 +32,48 @@
       <nav
         :class="{'flex': open, 'hidden': !open}"
         class="flex-col items-center flex-grow hidden md:pb-0 md:flex md:justify-end md:flex-row">
-        <a
+        <div x-data="{ productOpen: false }" class="relative">
+          <!-- Dropdown Trigger -->
+          <button
+            @mouseover="productOpen = true" 
+            @mouseleave="productOpen = false"
+            class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400 flex items-center">
+            Products
+            <svg
+              class="w-4 h-4 ml-1"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+        
+          <!-- Dropdown Menu -->
+          <div
+            x-show="productOpen"
+            @mouseover="productOpen = true" 
+            @mouseleave="productOpen = false"
+            class="absolute left-0  w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10"
+            x-cloak>
+            <a href="/receptionist" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">
+              AI Receptionist
+            </a>
+            <a href="/ai-answering-service" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">
+              AI Answering Service
+            </a>
+            <!-- Uncomment for additional menu items -->
+            <!--
+            <a href="/estate" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">
+              Real Estate
+            </a>
+            -->
+          </div>
+        </div>
+        
+        <!-- <a
           class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400 lg:ml-auto"
-          href="/#features">Features</a>
+          href="/#features">Features</a> -->
         <a
           class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400 lg:ml-auto"
           href="https://call-support.affonso.io/" target="_blank">Affiliate</a>
@@ -67,9 +106,9 @@
             <a href="/car-dealership" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Car Dearlership </a>
           </div>
         </div>
-        <a
+        <!-- <a
           class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
-          href="/faq">Faq</a>
+          href="/faq">Faq</a> -->
 
        
         <div class="inline-flex items-center gap-2 list-none lg:ml-auto">
