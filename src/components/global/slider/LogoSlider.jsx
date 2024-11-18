@@ -1,12 +1,11 @@
-'use client'
 import React from 'react';
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 import "@splidejs/splide/dist/css/splide.min.css";
 
-import Bubble from '../../../public/images/logos/Bubble.png';
-import Cal from '../../../public/images/logos/Cal.com.png';
-import ElevenLabs from '/public/images/logos/ElevenLabs.png';
+import Bubble from './logos/Bubble.png';
+// import Cal from '../../../public/images/logos/Cal.com.png';
+// import ElevenLabs from '/public/images/logos/ElevenLabs.png';
 
 // Define the style for the images in the carousel
 const imageStyle = {
@@ -37,13 +36,13 @@ function LogoSlider() {
                     extensions={{ AutoScroll }} // Use the AutoScroll extension
                 >
                     <SplideSlide>
-                        <img src={'/public/images/logos/Bubble.png'} alt="Poster Brooklyn" style={imageStyle} />
+                        <img src={Bubble} alt="Poster Brooklyn" style={imageStyle} />
                     </SplideSlide>
                     <SplideSlide>
-                        <img src={'/public/images/logos/Cal.com.png'} alt="Poster Macao" style={imageStyle} />
+                        <img src={'/images/logos/Cal.com.png'} alt="Poster Macao" style={imageStyle} />
                     </SplideSlide>
                     <SplideSlide>
-                        <img src={'/public/images/logos/ElevenLabs.png'} alt="Poster Navada" style={imageStyle} />
+                        <img src={'/images/logos/ElevenLabs.png'} alt="Poster Navada" style={imageStyle} />
                     </SplideSlide>
                     <SplideSlide>
                         <img src={'/public/images/logos/GoHighLevel.png'} alt="Poster Brooklyn" style={imageStyle} />
