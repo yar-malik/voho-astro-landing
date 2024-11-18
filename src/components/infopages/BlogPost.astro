@@ -1,47 +1,58 @@
 ---
 import markdownIt from "markdown-it";
-import { getCollection } from 'astro:content';
+import { getCollection } from "astro:content";
 
 // Initialize markdown-it
 const md = markdownIt({ html: true });
 const { slug } = Astro.params;
-console.log('slug',slug)
+console.log("slug", slug);
 
 // Fetch the posts collection
-const posts = await getCollection('posts');
-console.log('posts',posts)
+const posts = await getCollection("posts");
+console.log("posts", posts);
 
 // Replace 'example-post' with your dynamic slug logic or variable
 const post = posts.find((p) => p.slug === slug);
-console.log('post',post)
+console.log("post", post);
 if (!post) {
   throw new Error(`Post not found for the given slug.`);
 }
-console.log('post', post)
+console.log("post", post);
 const content = md.render(post.body);
 ---
 
+<head>
+  <title>{post.data.title}</title>
+  <meta
+    name="description"
+    content={post.data.description ||
+      "Read our latest blog post to learn more!"}
+  />
+</head>
 <section class="mx-auto py-8 sm:py-16 lg:py-20 bg-white text-black">
   <article>
-    <header class={post.data.image ? 'text-center' : ''}>
+    <!-- <header class={post.data.image ? "text-center" : ""}>
       <p class="mx-auto max-w-3xl px-4 sm:px-6">
         <time datetime={post.data.publishDate}>{post.data.publishDate}</time>
       </p>
-      <h1 class="leading-tighter font-heading mx-auto mb-8 max-w-3xl px-4 text-4xl font-bold tracking-tighter sm:px-6 md:text-5xl">
+      <h1
+        class="leading-tighter font-heading mx-auto mb-8 max-w-3xl px-4 text-4xl font-bold tracking-tighter sm:px-6 md:text-5xl"
+      >
         {post.data.title}
       </h1>
-      {post.data.image && (
-        <img
-          src={post.data.image}
-          class="mx-auto mt-4 mb-6 max-w-full sm:rounded-md lg:max-w-6xl"
-          alt={post.data.description}
-        />
-      )}
-    </header>
+      {
+        post.data.image && (
+          <img
+            src={post.data.image}
+            class="mx-auto mt-4 mb-6 max-w-full sm:rounded-md lg:max-w-6xl"
+            alt={post.data.description}
+          />
+        )
+      }
+    </header> -->
     <div
-        class="prose-md prose-headings:font-heading prose-headings:leading-tighter container prose prose-lg mx-auto mt-8 max-w-3xl px-6 prose-headings:font-bold prose-headings:tracking-tighter prose-a:text-primary-600 prose-img:rounded-md prose-img:shadow-lg"
-        set:html={content}
-    
-      />
+      class="prose-md prose-headings:font-heading prose-headings:leading-tighter container prose prose-lg mx-auto mt-8 max-w-3xl px-6 prose-headings:font-bold prose-headings:tracking-tighter prose-a:text-primary-600 prose-img:rounded-md prose-img:shadow-lg"
+      set:html={content}
+    />
   </article>
 </section>
