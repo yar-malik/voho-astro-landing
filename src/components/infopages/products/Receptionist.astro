@@ -3,12 +3,20 @@ import Pricing from '../../landing/Pricing.astro'
 ---
 <div class="bg-gray-50 max-w-6xl mx-auto  justify-center text-gray-800">
     <!-- Hero Section -->
-    <div class="hero-section bg-black text-white text-center py-16 px-4">
-      <h1 class="text-4xl font-bold">AI Receptionist</h1>
-      <p class="mt-4 text-lg">Automate your inbound calls with our 24/7 AI-powered receptionist.</p>
-      <a href="/get-started" class="inline-block mt-6 bg-white text-blue-600 font-semibold py-3 px-6 rounded-lg hover:bg-gray-200">
-        Get Started for Free
-      </a>
+    <div class="hero-section bg-black text-white text-center py-16 px-4 relative">
+      <!-- Background Image -->
+      <div class="absolute inset-0 bg-cover bg-top" style="background-image: url('/images/Industry/ai.jpeg');"></div>
+      <!-- Light Color Overlay -->
+      <div class="absolute inset-0 bg-black opacity-50"></div>
+      
+      <!-- Content -->
+      <div class="relative">
+        <h1 class="text-4xl font-bold">AI Receptionist</h1>
+        <p class="mt-4 text-lg">Automate your inbound calls with our 24/7 AI-powered receptionist.</p>
+        <a href="/get-started" class="inline-block mt-6 bg-white text-black font-semibold py-3 px-6 rounded-lg hover:bg-gray-200">
+          Get Started for Free
+        </a>
+      </div>
     </div>
   
     
@@ -43,8 +51,57 @@ import Pricing from '../../landing/Pricing.astro'
       </div>
     </div>
   
+        <!-- Discover Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-8">Discover What Businesses Are Building with CallSupport</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div class="bg-white shadow-lg rounded-lg p-6">
+            <img src="/images/Discover/appoitment.webp" alt="Automated appointment booking" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Automated appointment booking</h3>
+            <p class="text-gray-600 mb-4">
+              AI phone assistants can book appointments with any live calendar and send out notifications. Return on investment is guaranteed.
+            </p>
+            <a href="#" class="text-black font-medium flex items-center justify-center">
+              View Details
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 ml-2">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-white shadow-lg rounded-lg p-6">
+            <img src="/images/Discover/customer_feedback.webp" alt="Outbound Lead Qualification" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Outbound Lead Qualification</h3>
+            <p class="text-gray-600 mb-4">
+              Enhance lead generation with AI that makes outbound calls to potential customers, asks qualifying questions, and gathers essential information.
+            </p>
+            <a href="#" class="text-black font-medium flex items-center justify-center">
+              View Details
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 ml-2">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-white shadow-lg rounded-lg p-6">
+            <img src="/images/Discover/outbound_lead.webp" alt="Customer Feedback Collection" class="w-full h-48 object-cover rounded-t-lg mb-4">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Customer Feedback Collection</h3>
+            <p class="text-gray-600 mb-4">
+              Automate post-call surveys to gather valuable customer feedback and improve services.
+            </p>
+            <a href="#" class="text-black font-medium flex items-center justify-center">
+              View Details
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-4 h-4 ml-2">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
     
-  
     <!-- Integration Section -->
 
       <div class="bg-white py-16 px-4">
@@ -53,7 +110,7 @@ import Pricing from '../../landing/Pricing.astro'
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           <!-- Card 1 -->
-          <div class="bg-gray-200 rounded-lg p-6 text-center">
+          <div class="bg-gray-50 rounded-lg p-6 text-center">
             <div class="mb-4">
               <img src="/images/Industry/restaurant.svg" alt="Fintech AI Icon" class="h-30 w-30 mx-auto">
             </div>
