@@ -14,7 +14,7 @@ const imageStyle = {
 
 function LogoSlider() {
     return (
-        <div className="relative flex h-full ">
+        <div className="relative flex h-full  overflow-x-hidden">
             <div className="container max-w-screen-xl mx-auto relative z-20 overflow-x-hidden">
                 <Splide
                     options={{

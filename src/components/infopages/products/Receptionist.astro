@@ -1,7 +1,7 @@
 ---
 import Pricing from "../../landing/Pricing.astro";
+import LogoSlider from "../../global/slider/LogoSlider.jsx";
 import Testimonial from "./ProduuctTestimonials.astro";
-import Slider from "../../global/slider/slider.astro";
 ---
 
 <div class="bg-white max-w-6xl mx-auto justify-center text-gray-500">
@@ -344,7 +344,7 @@ import Slider from "../../global/slider/slider.astro";
       </p>
     </div>
     <div>
-      <Slider  />
+      <LogoSlider client:only="react" />
     </div>
   </section>
 
