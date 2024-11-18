@@ -12,7 +12,7 @@ const styles = `
   height: 80px;
   font-size: 24px;
   color: #fff;
-  background: #6200ea;
+  background: #283CFF;
   border: none;
   border-radius: 50%;
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
@@ -74,7 +74,7 @@ const RadialCard: React.FC = () => {
         style={{ cursor: "pointer" }}
         animate={
           isSessionActive
-            ? { backgroundColor: ["#283CFF", "#87cefa", "#5454ff"] }
+            ? { backgroundColor: ["#283CFF", "#87cefa", "#283CFF"] }
             : { backgroundColor: ["#283CFF"] }
         }
         transition={{
@@ -82,7 +82,7 @@ const RadialCard: React.FC = () => {
           repeat: Infinity,
         }}
       >
-        {!isSessionActive && <Mic size={28} className="text-white" />}
+         <Mic size={28} className="text-white" />
       </motion.div>
 
       {/* Dynamic status text */}
