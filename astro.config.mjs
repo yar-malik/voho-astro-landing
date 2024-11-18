@@ -9,6 +9,9 @@ vite: {
     alias: {
       '@': '/src', // Add alias for cleaner imports
     },
+    ssr: {
+      noExternal: ["@splidejs/splide", "@splidejs/splide-extension-auto-scroll"],
+    },
   },
     plugins: [tailwindcss()],
   },
