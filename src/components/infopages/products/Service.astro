@@ -3,7 +3,8 @@ import LogoSlider from "../../global/slider/LogoSlider";
 import Pricing from "../../landing/Pricing.astro";
 import Faq from "./components/faq.astro";
 import Testimonial from "./components/ProduuctTestimonials.astro";
-import Integration  from './components/Integration.astro'
+import Integration from "./components/Integration.astro";
+import Discover from "./components/discover.astro";
 ---
 
 <section class="bg-g max-w-6xl mx-auto justify-center text-gray-800">
@@ -259,122 +260,14 @@ import Integration  from './components/Integration.astro'
   </div>
 
   <!-- Discover Section -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold text-gray-800 mb-8">
-        Discover How AI is Redefining Answering Services
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Card 1 -->
-        <div class="bg-white shadow-lg rounded-lg p-6">
-          <img
-            src="/images/Discover/appoitment.webp"
-            alt="Quick Responses"
-            class="w-full h-48 object-cover rounded-t-lg mb-4"
-          />
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">
-            Quick Responses
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Never leave your customers waiting. Our AI delivers instant
-            responses to common queries.
-          </p>
-          <!-- <a
-            href="#"
-            class="text-black font-medium flex items-center justify-center"
-          >
-            Learn More
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              class="w-4 h-4 ml-2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
-          </a> -->
-        </div>
-        <!-- Card 2 -->
-        <div class="bg-white shadow-lg rounded-lg p-6">
-          <img
-            src="/images/Discover/customer_feedback.webp"
-            alt="Customer Engagement"
-            class="w-full h-48 object-cover rounded-t-lg mb-4"
-          />
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">
-            Enhanced Customer Engagement
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Build stronger relationships with personalized interactions driven
-            by AI.
-          </p>
-          <!-- <a
-            href="#"
-            class="text-black font-medium flex items-center justify-center"
-          >
-            Learn More
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              class="w-4 h-4 ml-2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
-          </a> -->
-        </div>
-        <!-- Card 3 -->
-        <div class="bg-white shadow-lg rounded-lg p-6">
-          <img
-            src="/images/Discover/outbound_lead.webp"
-            alt="Advanced Analytics"
-            class="w-full h-48 object-cover rounded-t-lg mb-4"
-          />
-          <h3 class="text-xl font-semibold text-gray-800 mb-2">
-            Advanced Analytics
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Gain insights into call patterns and customer needs to optimize your
-            business strategy.
-          </p>
-          <!-- <a
-            href="#"
-            class="text-black font-medium flex items-center justify-center"
-          >
-            Learn More
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              class="w-4 h-4 ml-2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
-          </a> -->
-        </div>
-      </div>
-    </div>
-  </section>
+  <Discover />
 
   <!--  Slider -->
   <section class="my-12 py-12 px-6">
     <div class="text-left gap-10 mb-8 flex justify-between">
-      <h2 class="text-5xl font-bold mb-4 text-black">
+      <h2
+        class="text-4xl tracking-tight font-semibold text-black md:text-5xl font-display"
+      >
         Connect CallSupport to Your Existing System
       </h2>
       <p class="text-gray-500 max-w-2xl text-2xl mx-auto mb-8">
