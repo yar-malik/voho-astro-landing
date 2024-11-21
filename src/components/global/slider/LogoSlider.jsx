@@ -6,8 +6,8 @@ import "@splidejs/splide/dist/css/splide.min.css";
 
 // Define the style for the images in the carousel
 const imageStyle = {
-    width: '75px',
-    height: '64px',
+    // width: '75px',
+    // height: '64px',
     // borderRadius: '20px',
     // border: '1px solid #FFFFFF33',
 };
@@ -28,12 +28,13 @@ function LogoSlider() {
                         arrows: false, // Hide navigation arrows
                         pagination: false, // Hide pagination dots
                         fixedWidth: '95px', // Fixed width for each slide
+                        focus: 'center',
                         gap: '0.5rem', // Gap between slides
                     }}
                     extensions={{ AutoScroll }} // Use the AutoScroll extension
                 >
                     <SplideSlide>
-                        <img src={'/images/logos/Bubble.png'} alt="Poster Brooklyn" style={imageStyle} />
+                        <img src={'/images/logos/Bubble.png'} alt="Poster Brooklyn"  style={imageStyle} />
                     </SplideSlide>
                     <SplideSlide>
                         <img src={'/images/logos/Cal.com.png'} alt="Poster Macao" style={imageStyle} />
@@ -54,7 +55,7 @@ function LogoSlider() {
                         <img src={'/images/logos/Make.png'} alt="Poster Brooklyn" style={imageStyle} />
                     </SplideSlide>
                     <SplideSlide>
-                        <img src={'/images/logos/Stripe.png'} alt="Poster Macao" style={imageStyle} />
+                        <img src={'/images/logos/Stripe.png'} alt="Poster Macao" style={{ height: '80px' }} />
                     </SplideSlide>
                     <SplideSlide>
                         <img src={'/images/logos/Twilio.png'} alt="Poster Navada" style={imageStyle} />
@@ -63,10 +64,10 @@ function LogoSlider() {
                         <img src={'/images/logos/Zapier.png'} alt="Poster Brooklyn" style={imageStyle} />
                     </SplideSlide>
                     <SplideSlide>
-                        <img src={'/Figma.svg'} alt="Poster Macao" style={imageStyle} />
+                        <img src={'/Figma.svg'} alt="Poster Macao" style={{ height: '80px' }} />
                     </SplideSlide>
                     <SplideSlide>
-                        <img src={'/Gitlab.svg'} alt="Poster Navada" style={imageStyle} />
+                        <img src={'/Gitlab.svg'} alt="Poster Navada" style={{ height: '70px' }} />
                     </SplideSlide>
                 </Splide>
             </div>

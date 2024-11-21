@@ -1,20 +1,25 @@
 ---
 import Pricing from "../../landing/Pricing.astro";
 import LogoSlider from "../../global/slider/LogoSlider.jsx";
-import Testimonial from "./ProduuctTestimonials.astro";
+import Testimonial from "./components/ProduuctTestimonials.astro";
+import Faq from './components/faq.astro'
+import Integration  from './components/Integration.astro'
 ---
 
 <div class="bg-white max-w-6xl mx-auto justify-center text-gray-500">
   <!-- Hero Section -->
-  <div class="hero-section bg-black rounded-lg text-white text-center py-16 px-4 relative overflow-hidden">
+  <div
+    class="hero-section bg-black rounded-lg text-white text-center py-16 px-4 relative overflow-hidden"
+  >
     <!-- Background Image -->
     <div
       class="absolute inset-0 bg-cover bg-top rounded-lg"
       style="background-image: url('/images/Industry/ai.jpeg');"
-    ></div>
+    >
+    </div>
     <!-- Light Color Overlay -->
     <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div>
-  
+
     <!-- Content -->
     <div class="relative z-10">
       <h1 class="text-4xl font-bold">AI Receptionist</h1>
@@ -29,7 +34,6 @@ import Testimonial from "./ProduuctTestimonials.astro";
       </a>
     </div>
   </div>
-  
 
   <!-- Features Section -->
   <div class="features-section text-center container mx-auto py-16 px-4">
@@ -43,26 +47,11 @@ import Testimonial from "./ProduuctTestimonials.astro";
             <div
               class="items-center justify-center text-accent-500 bg-gray-100 rounded-xl flex h-10 w-10 lg:mx-auto"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#6271fc"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M8 3H5a2 2 0 0 0-2 2v3"></path>
-                <path d="M16 3h3a2 2 0 0 1 2 2v3"></path>
-                <path d="M8 21H5a2 2 0 0 1-2-2v-3"></path>
-                <path d="M16 21h3a2 2 0 0 0 2-2v-3"></path>
-              </svg>
+            <img src="/public/images/svgs/setup.svg" alt="       Quick Setup" />
             </div><p
               class="mt-4 text-lg font-semibold leading-6 text-black font-display tracking-tight"
             >
-            Quick Setup
+              Quick Setup
             </p>
           </div><div class="mt-4 text-gray-500 text-sm">
             Configure in minutes without developer assistance.
@@ -72,26 +61,12 @@ import Testimonial from "./ProduuctTestimonials.astro";
             <div
               class="items-center justify-center text-accent-500 bg-gray-100 rounded-xl flex h-10 w-10 lg:mx-auto"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#6271fc"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M8 3H5a2 2 0 0 0-2 2v3"></path>
-                <path d="M16 3h3a2 2 0 0 1 2 2v3"></path>
-                <path d="M8 21H5a2 2 0 0 1-2-2v-3"></path>
-                <path d="M16 21h3a2 2 0 0 0 2-2v-3"></path>
-              </svg>
+            <img src="/public/images/svgs/Cost-Efficient.svg" alt="Cost-Efficient" />
+
             </div><p
               class="mt-4 text-lg font-semibold leading-6 text-black font-display tracking-tight"
             >
-            Cost-Efficient
+              Cost-Efficient
             </p>
           </div><div class="mt-4 text-gray-500 text-sm">
             Scale your operations without increasing overhead.
@@ -101,26 +76,11 @@ import Testimonial from "./ProduuctTestimonials.astro";
             <div
               class="items-center justify-center text-accent-500 bg-gray-100 rounded-xl flex h-10 w-10 lg:mx-auto"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#6271fc"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M8 3H5a2 2 0 0 0-2 2v3"></path>
-                <path d="M16 3h3a2 2 0 0 1 2 2v3"></path>
-                <path d="M8 21H5a2 2 0 0 1-2-2v-3"></path>
-                <path d="M16 21h3a2 2 0 0 0 2-2v-3"></path>
-              </svg>
+            <img src="/public/images/svgs/24 Availability.svg" alt="24 Availability" />
             </div><p
               class="mt-4 text-lg font-semibold leading-6 text-black font-display tracking-tight"
             >
-            24/7 Availability
+              24/7 Availability
             </p>
           </div><div class="mt-4 text-gray-500 text-sm">
             Never miss a call, day or night.
@@ -130,26 +90,12 @@ import Testimonial from "./ProduuctTestimonials.astro";
             <div
               class="items-center justify-center text-accent-500 bg-gray-100 rounded-xl flex h-10 w-10 lg:mx-auto"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#6271fc"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M8 3H5a2 2 0 0 0-2 2v3"></path>
-                <path d="M16 3h3a2 2 0 0 1 2 2v3"></path>
-                <path d="M8 21H5a2 2 0 0 1-2-2v-3"></path>
-                <path d="M16 21h3a2 2 0 0 0 2-2v-3"></path>
-              </svg>
+            <img src="/public/images/svgs/Customizable.svg" alt="Customizable" />
+ 
             </div><p
               class="mt-4 text-lg font-semibold leading-6 text-black font-display tracking-tight"
             >
-            Customizable
+              Customizable
             </p>
           </div><div class="mt-4 text-gray-500 text-sm">
             Tailor responses to fit your business needs.
@@ -159,26 +105,11 @@ import Testimonial from "./ProduuctTestimonials.astro";
             <div
               class="items-center justify-center text-accent-500 bg-gray-100 rounded-xl flex h-10 w-10 lg:mx-auto"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#6271fc"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M8 3H5a2 2 0 0 0-2 2v3"></path>
-                <path d="M16 3h3a2 2 0 0 1 2 2v3"></path>
-                <path d="M8 21H5a2 2 0 0 1-2-2v-3"></path>
-                <path d="M16 21h3a2 2 0 0 0 2-2v-3"></path>
-              </svg>
+            <img src="/public/images/svgs/Multilingual Support.svg" alt="Multilingual Support" />
             </div><p
               class="mt-4 text-lg font-semibold leading-6 text-black font-display tracking-tight"
             >
-            Multilingual Support
+              Multilingual Support
             </p>
           </div><div class="mt-4 text-gray-500 text-sm">
             Communicate with customers in multiple languages.
@@ -188,26 +119,11 @@ import Testimonial from "./ProduuctTestimonials.astro";
             <div
               class="items-center justify-center text-accent-500 bg-gray-100 rounded-xl flex h-10 w-10 lg:mx-auto"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="#6271fc"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M8 3H5a2 2 0 0 0-2 2v3"></path>
-                <path d="M16 3h3a2 2 0 0 1 2 2v3"></path>
-                <path d="M8 21H5a2 2 0 0 1-2-2v-3"></path>
-                <path d="M16 21h3a2 2 0 0 0 2-2v-3"></path>
-              </svg>
+            <img src="/public/images/svgs/User-Friendly Dashboard.svg" alt="User-Friendly Dashboard " />
             </div><p
               class="mt-4 text-lg font-semibold leading-6 text-black font-display tracking-tight"
             >
-            User-Friendly Dashboard
+              User-Friendly Dashboard
             </p>
           </div><div class="mt-4 text-gray-500 text-sm">
             Manage and monitor calls with ease.
@@ -216,7 +132,7 @@ import Testimonial from "./ProduuctTestimonials.astro";
       </div>
     </div>
   </div>
-  
+
   <!-- Discover Section -->
   <section class="py-16 bg-white">
     <div class="container mx-auto px-4 text-center">
@@ -238,7 +154,7 @@ import Testimonial from "./ProduuctTestimonials.astro";
             AI phone assistants can book appointments with any live calendar and
             send out notifications. Return on investment is guaranteed.
           </p>
-          <a
+          <!-- <a
             href="#"
             class="text-black font-medium flex items-center justify-center"
           >
@@ -256,7 +172,7 @@ import Testimonial from "./ProduuctTestimonials.astro";
                 stroke-width="2"
                 d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
             </svg>
-          </a>
+          </a> -->
         </div>
         <!-- Card 2 -->
         <div class="bg-white shadow-lg rounded-lg p-6">
@@ -273,7 +189,7 @@ import Testimonial from "./ProduuctTestimonials.astro";
             potential customers, asks qualifying questions, and gathers
             essential information.
           </p>
-          <a
+          <!-- <a
             href="#"
             class="text-black font-medium flex items-center justify-center"
           >
@@ -291,7 +207,7 @@ import Testimonial from "./ProduuctTestimonials.astro";
                 stroke-width="2"
                 d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
             </svg>
-          </a>
+          </a> -->
         </div>
         <!-- Card 3 -->
         <div class="bg-white shadow-lg rounded-lg p-6">
@@ -307,7 +223,7 @@ import Testimonial from "./ProduuctTestimonials.astro";
             Automate post-call surveys to gather valuable customer feedback and
             improve services.
           </p>
-          <a
+          <!-- <a
             href="#"
             class="text-black font-medium flex items-center justify-center"
           >
@@ -325,7 +241,7 @@ import Testimonial from "./ProduuctTestimonials.astro";
                 stroke-width="2"
                 d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
             </svg>
-          </a>
+          </a> -->
         </div>
       </div>
     </div>
@@ -333,7 +249,7 @@ import Testimonial from "./ProduuctTestimonials.astro";
 
   <!--  Slider -->
   <section class="my-12 py-12 px-6">
-    <div class="text-left gap-10  mb-8 flex justify-between">
+    <div class="text-left gap-10 mb-8 flex justify-between">
       <h2 class="text-5xl font-bold mb-4 text-black">
         Connect CallSupport to Your Existing System
       </h2>
@@ -349,169 +265,16 @@ import Testimonial from "./ProduuctTestimonials.astro";
   </section>
 
   <!-- Integration Section -->
-  <div class="bg-white py-16 px-4">
-    <div class="max-w-5xl mx-auto text-center">
-      <h2 class="text-3xl font-extrabold text-dark mb-8">
-        AI Solutions for Finance
-      </h2>
-    </div>
-    <div
-      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto"
-    >
-      <!-- Card 1 -->
-      <div class="bg-gray-50 rounded-lg p-6 text-center">
-        <div class="mb-4">
-          <img
-            src="/images/Industry/ecommerce.svg"
-            alt="CallSupport Ai AI Icon"
-            class="h-30 w-30 mx-auto"
-          />
-        </div>
-        <h3 class="text-black font-bold text-lg">
-          CallSupport AI For Ecommerce
-        </h3>
-      </div>
+ 
+  <Integration />
 
-      <!-- Card 2 -->
-      <div class="bg-gray-50 rounded-lg p-6 text-center">
-        <div class="mb-4">
-          <img
-            src="/images/Industry/Group-62.svg"
-            alt="Software Development Icon"
-            class="h-30 w-30 mx-auto"
-          />
-        </div>
-        <h3 class="text-black font-bold text-lg">
-          CallSupport AI For RealState
-        </h3>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="bg-gray-50 rounded-lg p-6 text-center">
-        <div class="mb-4">
-          <img
-            src="/images/Industry/Group-3014.svg"
-            alt="Banking Icon"
-            class="h-30 w-30 mx-auto"
-          />
-        </div>
-        <h3 class="text-black font-bold text-lg">
-          CallSupport AI For Recrutiment
-        </h3>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="bg-gray-50 rounded-lg p-6 text-center">
-        <div class="mb-4">
-          <img
-            src="/images/Industry/Healthcare.svg"
-            alt="Due Diligence Icon"
-            class="h-30 w-30 mx-auto"
-          />
-        </div>
-        <h3 class="text-black font-bold text-lg">CallSupport AI For Health</h3>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="bg-gray-50 rounded-lg p-6 text-center">
-        <div class="mb-4">
-          <img
-            src="/images/Industry/Group-33-3.svg"
-            alt="Compliance Icon"
-            class="h-30 w-30 mx-auto"
-          />
-        </div>
-        <h3 class="text-black font-bold text-lg">CallSupport AI For Solar</h3>
-      </div>
-
-      <!-- Card 6 -->
-      <div class="bg-gray-50 rounded-lg p-6 text-center">
-        <div class="mb-4">
-          <img
-            src="/images/Industry/Group-30-1.svg"
-            alt="Finance Icon"
-            class="h-30 w-30 mx-auto"
-          />
-        </div>
-        <h3 class="text-black font-bold text-lg">
-          CallSupport AI For CarDealerShip
-        </h3>
-      </div>
-    </div>
-  </div>
-  
   <!-- Testimonial Section -->
 
   <Testimonial />
-  
+
   <!-- Ai FAQ Section -->
-  <section class="py-12 ">
-    <div class="container mx-auto px-6 lg:px-20">
-      <h2 class="text-center text-3xl lg:text-4xl font-extrabold text-gray-900">
-        AI Answering Service Built for Businesses Like Yours
-      </h2>
-      <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <!-- Card 1 -->
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold text-gray-800">Medical</h3>
-          <p class="mt-2 text-gray-600">
-            24/7 patient support and appointment management, allowing staff to focus on care.
-          </p>
-        </div>
-        <!-- Card 2 -->
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold text-gray-800">Dental</h3>
-          <p class="mt-2 text-gray-600">
-            Automate patient communication and reminders to minimize missed appointments and increase satisfaction.
-          </p>
-        </div>
-        <!-- Card 3 -->
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold text-gray-800">Law Firms</h3>
-          <p class="mt-2 text-gray-600">
-            Handle client calls and consultations efficiently with AI-powered receptionists.
-          </p>
-        </div>
-        <!-- Card 4 -->
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold text-gray-800">Sales</h3>
-          <p class="mt-2 text-gray-600">
-            Increase efficiency by automating lead qualification and follow-ups, ensuring no potential client is overlooked.
-          </p>
-        </div>
-        <!-- Card 5 -->
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold text-gray-800">Plumbing</h3>
-          <p class="mt-2 text-gray-600">
-            Never miss an urgent call; manage inquiries and bookings seamlessly.
-          </p>
-        </div>
-        <!-- Card 6 -->
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold text-gray-800">Landscaping</h3>
-          <p class="mt-2 text-gray-600">
-            Streamline service requests and appointments with timely AI responses.
-          </p>
-        </div>
-        <!-- Card 7 -->
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold text-gray-800">Hotels & Restaurants</h3>
-          <p class="mt-2 text-gray-600">
-            Improve guest experiences by automating reservations and inquiries, allowing staff to focus on hospitality.
-          </p>
-        </div>
-        <!-- Card 8 -->
-        <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-          <h3 class="text-xl font-semibold text-gray-800">Call Centers</h3>
-          <p class="mt-2 text-gray-600">
-            Handle high call volumes with AI, improving response times and overall customer service.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  
+<Faq />
+
   <!-- Pricing Section -->
   <Pricing />
 </div>
