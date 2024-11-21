@@ -25,7 +25,7 @@ An AI phone answering system is a virtual receptionist that uses artificial inte
 
 ## **Key Cost Factors of an AI Virtual Receptionist**
 
-The cost of an AI virtual receptionist can vary widely based on several factors. Understanding these elements can help you gauge what you’ll pay and what features might be worth investing in for your specific business needs.
+The cost of an [AI virtual receptionist](https://callsupport.ai/)  can vary widely based on several factors. Understanding these elements can help you gauge what you’ll pay and what features might be worth investing in for your specific business needs.
 
 ### **1\. Setup and Installation Fees**
 
