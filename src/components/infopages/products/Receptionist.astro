@@ -2,8 +2,9 @@
 import Pricing from "../../landing/Pricing.astro";
 import LogoSlider from "../../global/slider/LogoSlider.jsx";
 import Testimonial from "./components/ProduuctTestimonials.astro";
-import Faq from './components/faq.astro'
-import Integration  from './components/Integration.astro'
+import Faq from "./components/faq.astro";
+import Integration from "./components/Integration.astro";
+import Discover from './components/discover.astro'
 ---
 
 <div class="bg-white max-w-6xl mx-auto justify-center text-gray-500">
@@ -37,7 +38,11 @@ import Integration  from './components/Integration.astro'
 
   <!-- Features Section -->
   <div class="features-section text-center container mx-auto py-16 px-4">
-    <h2 class="text-3xl font-bold text-center mb-8 text-black">Key Features</h2>
+    <h2
+      class="text-4xl tracking-tight font-semibold text-black md:text-5xl font-display mb-8"
+    >
+      Key Features
+    </h2>
     <div>
       <div
         class="grid gap-12 grid-cols-1 lg:space-y-0 lg:text-center md:grid-cols-3"
@@ -47,7 +52,7 @@ import Integration  from './components/Integration.astro'
             <div
               class="items-center justify-center text-accent-500 bg-gray-100 rounded-xl flex h-10 w-10 lg:mx-auto"
             >
-            <img src="/images/svgs/setup.svg" alt="       Quick Setup" />
+              <img src="/images/svgs/setup.svg" alt="       Quick Setup" />
             </div><p
               class="mt-4 text-lg font-semibold leading-6 text-black font-display tracking-tight"
             >
@@ -61,8 +66,7 @@ import Integration  from './components/Integration.astro'
             <div
               class="items-center justify-center text-accent-500 bg-gray-100 rounded-xl flex h-10 w-10 lg:mx-auto"
             >
-            <img src="/images/svgs/Cost-Efficient.svg" alt="Cost-Efficient" />
-
+              <img src="/images/svgs/Cost-Efficient.svg" alt="Cost-Efficient" />
             </div><p
               class="mt-4 text-lg font-semibold leading-6 text-black font-display tracking-tight"
             >
@@ -76,7 +80,10 @@ import Integration  from './components/Integration.astro'
             <div
               class="items-center justify-center text-accent-500 bg-gray-100 rounded-xl flex h-10 w-10 lg:mx-auto"
             >
-            <img src="/images/svgs/24 Availability.svg" alt="24 Availability" />
+              <img
+                src="/images/svgs/24 Availability.svg"
+                alt="24 Availability"
+              />
             </div><p
               class="mt-4 text-lg font-semibold leading-6 text-black font-display tracking-tight"
             >
@@ -90,8 +97,7 @@ import Integration  from './components/Integration.astro'
             <div
               class="items-center justify-center text-accent-500 bg-gray-100 rounded-xl flex h-10 w-10 lg:mx-auto"
             >
-            <img src="/images/svgs/Customizable.svg" alt="Customizable" />
- 
+              <img src="/images/svgs/Customizable.svg" alt="Customizable" />
             </div><p
               class="mt-4 text-lg font-semibold leading-6 text-black font-display tracking-tight"
             >
@@ -105,7 +111,10 @@ import Integration  from './components/Integration.astro'
             <div
               class="items-center justify-center text-accent-500 bg-gray-100 rounded-xl flex h-10 w-10 lg:mx-auto"
             >
-            <img src="/images/svgs/Multilingual Support.svg" alt="Multilingual Support" />
+              <img
+                src="/images/svgs/Multilingual Support.svg"
+                alt="Multilingual Support"
+              />
             </div><p
               class="mt-4 text-lg font-semibold leading-6 text-black font-display tracking-tight"
             >
@@ -119,7 +128,10 @@ import Integration  from './components/Integration.astro'
             <div
               class="items-center justify-center text-accent-500 bg-gray-100 rounded-xl flex h-10 w-10 lg:mx-auto"
             >
-            <img src="/images/svgs/User-Friendly Dashboard.svg" alt="User-Friendly Dashboard " />
+              <img
+                src="/images/svgs/User-Friendly Dashboard.svg"
+                alt="User-Friendly Dashboard "
+              />
             </div><p
               class="mt-4 text-lg font-semibold leading-6 text-black font-display tracking-tight"
             >
@@ -134,123 +146,14 @@ import Integration  from './components/Integration.astro'
   </div>
 
   <!-- Discover Section -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold text-black mb-8">
-        Discover What Businesses Are Building with CallSupport
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Card 1 -->
-        <div class="bg-white shadow-lg rounded-lg p-6">
-          <img
-            src="/images/Discover/appoitment.webp"
-            alt="Automated appointment booking"
-            class="w-full h-48 object-cover rounded-t-lg mb-4"
-          />
-          <h3 class="text-xl font-semibold text-gray-500 mb-2">
-            Automated appointment booking
-          </h3>
-          <p class="text-gray-600 mb-4">
-            AI phone assistants can book appointments with any live calendar and
-            send out notifications. Return on investment is guaranteed.
-          </p>
-          <!-- <a
-            href="#"
-            class="text-black font-medium flex items-center justify-center"
-          >
-            View Details
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              class="w-4 h-4 ml-2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
-          </a> -->
-        </div>
-        <!-- Card 2 -->
-        <div class="bg-white shadow-lg rounded-lg p-6">
-          <img
-            src="/images/Discover/customer_feedback.webp"
-            alt="Outbound Lead Qualification"
-            class="w-full h-48 object-cover rounded-t-lg mb-4"
-          />
-          <h3 class="text-xl font-semibold text-gray-500 mb-2">
-            Outbound Lead Qualification
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Enhance lead generation with AI that makes outbound calls to
-            potential customers, asks qualifying questions, and gathers
-            essential information.
-          </p>
-          <!-- <a
-            href="#"
-            class="text-black font-medium flex items-center justify-center"
-          >
-            View Details
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              class="w-4 h-4 ml-2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
-          </a> -->
-        </div>
-        <!-- Card 3 -->
-        <div class="bg-white shadow-lg rounded-lg p-6">
-          <img
-            src="/images/Discover/outbound_lead.webp"
-            alt="Customer Feedback Collection"
-            class="w-full h-48 object-cover rounded-t-lg mb-4"
-          />
-          <h3 class="text-xl font-semibold text-gray-500 mb-2">
-            Customer Feedback Collection
-          </h3>
-          <p class="text-gray-600 mb-4">
-            Automate post-call surveys to gather valuable customer feedback and
-            improve services.
-          </p>
-          <!-- <a
-            href="#"
-            class="text-black font-medium flex items-center justify-center"
-          >
-            View Details
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              class="w-4 h-4 ml-2"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-            </svg>
-          </a> -->
-        </div>
-      </div>
-    </div>
-  </section>
+<Discover />
 
   <!--  Slider -->
   <section class="my-12 py-12 px-6">
     <div class="text-left gap-10 mb-8 flex justify-between">
-      <h2 class="text-5xl font-bold mb-4 text-black">
+      <h2
+        class="text-4xl tracking-tight font-semibold text-black md:text-5xl font-display"
+      >
         Connect CallSupport to Your Existing System
       </h2>
       <p class="text-gray-500 max-w-2xl text-2xl mx-auto mb-8">
@@ -265,7 +168,7 @@ import Integration  from './components/Integration.astro'
   </section>
 
   <!-- Integration Section -->
- 
+
   <Integration />
 
   <!-- Testimonial Section -->
@@ -273,7 +176,7 @@ import Integration  from './components/Integration.astro'
   <Testimonial />
 
   <!-- Ai FAQ Section -->
-<Faq />
+  <Faq />
 
   <!-- Pricing Section -->
   <Pricing />

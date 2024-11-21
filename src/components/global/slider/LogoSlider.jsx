@@ -15,23 +15,24 @@ const imageStyle = {
 function LogoSlider() {
     return (
         <div className="relative flex h-full  overflow-hidden">
-            <div className="container max-w-screen-xl mx-auto relative z-20 overflow-x-hidden">
+            <div className="container max-w-screen-xl  mx-auto relative z-20 overflow-x-hidden">
                 <Splide
                     options={{
-                        type: "loop", // Loop back to the beginning when reaching the end
+                        type: "loop", 
                         autoScroll: {
-                            pauseOnHover: false, // Do not pause scrolling when hovering over the carousel
-                            pauseOnFocus: false, // Do not pause scrolling when the carousel is focused
-                            rewind: true, // Rewind to start when the end is reached
-                            speed: 1 // Scrolling speed
+                            pauseOnHover: false, 
+                            pauseOnFocus: false,
+                            rewind: true, 
+                            speed: 1 
                         },
-                        arrows: false, // Hide navigation arrows
-                        pagination: false, // Hide pagination dots
-                        fixedWidth: '95px', // Fixed width for each slide
+                        arrows: false, 
+                        pagination: false, 
+                        fixedWidth: 'auto',
                         focus: 'center',
-                        gap: '0.5rem', // Gap between slides
+                        gap: '3.5rem', 
                     }}
-                    extensions={{ AutoScroll }} // Use the AutoScroll extension
+                    extensions={{ AutoScroll }} 
+              
                 >
                     <SplideSlide>
                         <img src={'/images/logos/Bubble.png'} alt="Poster Brooklyn"  style={imageStyle} />
@@ -55,7 +56,7 @@ function LogoSlider() {
                         <img src={'/images/logos/Make.png'} alt="Poster Brooklyn" style={imageStyle} />
                     </SplideSlide>
                     <SplideSlide>
-                        <img src={'/images/logos/Stripe.png'} alt="Poster Macao" style={{ height: '80px' }} />
+                        <img src={'/images/logos/Stripe.png'} alt="Poster Macao" style={{ height: 'auto',  width:'auto' }} />
                     </SplideSlide>
                     <SplideSlide>
                         <img src={'/images/logos/Twilio.png'} alt="Poster Navada" style={imageStyle} />
@@ -64,10 +65,10 @@ function LogoSlider() {
                         <img src={'/images/logos/Zapier.png'} alt="Poster Brooklyn" style={imageStyle} />
                     </SplideSlide>
                     <SplideSlide>
-                        <img src={'/Figma.svg'} alt="Poster Macao" style={{ height: '80px' }} />
+                        <img src={'/images/logos/figma-logo.webp'} alt="Poster Macao" style={{ height: '8rem',   }} />
                     </SplideSlide>
                     <SplideSlide>
-                        <img src={'/Gitlab.svg'} alt="Poster Navada" style={{ height: '70px' }} />
+                        <img src={'/images/logos/git.png'} alt="Poster Navada" style={{ height: '8rem',  width:'auto' }} />
                     </SplideSlide>
                 </Splide>
             </div>
