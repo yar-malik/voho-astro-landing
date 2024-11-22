@@ -1,5 +1,55 @@
 ---
-const blogs = [
+
+---
+
+
+<section class="py-16 bg-white flex justify-center items-center">
+  <div class="w-full max-w-4xl px-4 text-left">
+    <h2 class="text-4xl font-bold mb-8">Blog</h2>
+    <!-- Responsive Grid Layout -->
+    <div id="blog-container" class="grid grid-cols-1 sm:grid-cols-2 gap-6"></div>
+
+    <!-- Pagination Controls -->
+    <div class="flex flex-col sm:flex-row items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6 mt-8">
+      <!-- Mobile Pagination -->
+      <div class="flex justify-between w-full sm:hidden">
+        <button id="prev-btn" class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Previous</button>
+        <button id="next-btn" class="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Next</button>
+      </div>
+      <!-- Desktop Pagination -->
+      <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+        <div>
+          <p class="text-sm text-gray-700">
+            Showing <span class="font-medium" id="start-count">1</span> to
+            <span class="font-medium" id="end-count">4</span> of
+            <span class="font-medium" id="total-count">5</span> results
+          </p>
+        </div>
+        <div>
+          <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
+            <button id="prev-btn-desktop" class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+              <span class="sr-only">Previous</span>
+              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
+              </svg>
+            </button>
+            <span id="pagination-numbers" class="inline-flex items-center"></span>
+            <button id="next-btn-desktop" class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+              <span class="sr-only">Next</span>
+              <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+              </svg>
+              
+            </button>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const blogs = [
   {
     id: 1,
     title: "How AI Phone Agents Change Customer Support for All Ecommerce Businesses",
@@ -102,176 +152,101 @@ const blogs = [
   
 ];
 
----
+ const reversedBlogs = [...blogs].reverse();
 
-
-<section class="py-16 bg-white flex justify-center items-center">
-  <div class="w-full max-w-4xl px-4 text-left">
-    <h2 class="text-4xl font-bold mb-8">Blog</h2>
-    <!-- Responsive Grid Layout -->
-    <div id="blog-container" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-      {blogs.map(blog => (
-        <div class="blog-card w-full mx-auto border border-gray-200 rounded-lg  overflow-hidden bg-white hover:shadow-2xl transition duration-300">
-          <a href={blog.link}>
-            <img src={blog.image} alt={`Image for ${blog.title}`} class="w-full h-48 object-cover" />
-          </a>
-          <div class="p-4">
-            <h3 class="text-lg font-semibold mb-2">{blog.title}</h3>
-            <p class="text-gray-600 text-sm">{blog.description}</p>
-          </div>
-        </div>
-      ))}
-    </div>
-
-
-    <!-- Pagination Controls -->
-    <div class="flex flex-col sm:flex-row items-center justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6 mt-8">
-      <!-- Mobile Pagination -->
-      <div class="flex justify-between w-full sm:hidden">
-        <button id="prev-btn" class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Previous</button>
-        <button id="next-btn" class="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">Next</button>
-      </div>
-      <!-- Desktop Pagination -->
-      <div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
-        <div>
-          <p class="text-sm text-gray-700">
-            Showing <span class="font-medium" id="start-count">1</span> to
-            <span class="font-medium" id="end-count">4</span> of
-            <span class="font-medium" id="total-count">5</span> results
-          </p>
-        </div>
-        <div>
-          <nav class="isolate inline-flex -space-x-px rounded-md shadow-sm" aria-label="Pagination">
-            <button id="prev-btn-desktop" class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-              <span class="sr-only">Previous</span>
-              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd" />
-              </svg>
-            </button>
-            <span id="pagination-numbers" class="inline-flex items-center"></span>
-            <button id="next-btn-desktop" class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-              <span class="sr-only">Next</span>
-              <svg class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
-              </svg>
-            </button>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<script>
- const blogCards = document.querySelectorAll('.blog-card');
-const nextBtn = document.getElementById('next-btn');
-const prevBtn = document.getElementById('prev-btn');
-const nextBtnDesktop = document.getElementById('next-btn-desktop');
-const prevBtnDesktop = document.getElementById('prev-btn-desktop');
-const pageNumberContainer = document.getElementById('pagination-numbers');
-const startCountEl = document.getElementById('start-count');
-const endCountEl = document.getElementById('end-count');
-const totalCountEl = document.getElementById('total-count');
+const blogContainer = document.getElementById("blog-container");
+const nextBtn = document.getElementById("next-btn");
+const prevBtn = document.getElementById("prev-btn");
+const nextBtnDesktop = document.getElementById("next-btn-desktop");
+const prevBtnDesktop = document.getElementById("prev-btn-desktop");
+const pageNumberContainer = document.getElementById("pagination-numbers");
+const startCountEl = document.getElementById("start-count");
+const endCountEl = document.getElementById("end-count");
+const totalCountEl = document.getElementById("total-count");
 
 let currentPage = 1;
 const blogsPerPage = 4;
-const totalBlogs = blogCards.length;
+const totalBlogs = reversedBlogs.length;
 const totalPages = Math.ceil(totalBlogs / blogsPerPage);
-const maxVisiblePages = 5; // Number of visible pages at a time
 
-// Function to show blogs for the current page
 function showBlogsForPage(page) {
   const start = (page - 1) * blogsPerPage;
   const end = Math.min(start + blogsPerPage, totalBlogs);
 
-  blogCards.forEach((card, index) => {
-    card.style.display = index >= start && index < end ? 'block' : 'none';
-  });
+  blogContainer.innerHTML = reversedBlogs
+    .slice(start, end)
+    .map(
+      (blog) => `
+        <div class="blog-card w-full mx-auto border border-gray-200 rounded-lg overflow-hidden bg-white hover:shadow-2xl transition duration-300">
+          <a href="${blog.link}">
+            <img src="${blog.image}" alt="Image for ${blog.title}" class="w-full h-48 object-cover" />
+          </a>
+          <div class="p-4">
+            <h3 class="text-lg font-semibold mb-2">${blog.title}</h3>
+            <p class="text-gray-600 text-sm">${blog.description}</p>
+          </div>
+        </div>
+      `
+    )
+    .join("");
 
   startCountEl.textContent = start + 1;
   endCountEl.textContent = end;
   totalCountEl.textContent = totalBlogs;
 
-  // Update pagination buttons
-  prevBtn.style.display = nextBtn.style.display = prevBtnDesktop.style.display = nextBtnDesktop.style.display = 'block';
-  if (page === 1) prevBtn.style.display = prevBtnDesktop.style.display = 'none';
-  if (page === totalPages) nextBtn.style.display = nextBtnDesktop.style.display = 'none';
+  prevBtn.style.display = nextBtn.style.display = prevBtnDesktop.style.display = nextBtnDesktop.style.display = "block";
+  if (page === 1) prevBtn.style.display = prevBtnDesktop.style.display = "none";
+  if (page === totalPages) nextBtn.style.display = nextBtnDesktop.style.display = "none";
 
   updatePaginationUI();
 }
 
-// Function to update the pagination UI
 function updatePaginationUI() {
-  pageNumberContainer.innerHTML = '';
+  pageNumberContainer.innerHTML = "";
 
-  const visiblePages = [];
-  if (totalPages <= maxVisiblePages) {
-    // Show all pages if total pages are less than or equal to maxVisiblePages
-    for (let i = 1; i <= totalPages; i++) {
-      visiblePages.push(i);
-    }
-  } else {
-    // Handle ellipses for pages
-    if (currentPage <= 3) {
-      visiblePages.push(1, 2, 3, 4, '...', totalPages);
-    } else if (currentPage >= totalPages - 2) {
-      visiblePages.push(1, '...', totalPages - 3, totalPages - 2, totalPages - 1, totalPages);
-    } else {
-      visiblePages.push(1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages);
-    }
-  }
-
-  visiblePages.forEach((page) => {
-    const pageButton = document.createElement('a');
-    if (page === '...') {
-      pageButton.textContent = '...';
-      pageButton.className = 'text-gray-400 px-3';
-    } else {
-      pageButton.href = '#';
-      pageButton.className = `relative inline-flex items-center px-4 py-2 text-sm font-semibold ${
-        page === currentPage ? 'bg-indigo-600 text-white' : 'text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50'
-      }`;
-      pageButton.textContent = page;
-      pageButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        currentPage = page;
-        showBlogsForPage(currentPage);
-      });
-    }
+  for (let i = 1; i <= totalPages; i++) {
+    const pageButton = document.createElement("a");
+    pageButton.href = "#";
+    pageButton.className = `relative inline-flex items-center px-4 py-2 text-sm font-semibold ${
+      i === currentPage ? "bg-indigo-600 text-white" : "text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50"
+    }`;
+    pageButton.textContent = i;
+    pageButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      currentPage = i;
+      showBlogsForPage(currentPage);
+    });
     pageNumberContainer.appendChild(pageButton);
-  });
+  }
 }
 
-// Event listeners for pagination
-nextBtn.addEventListener('click', () => {
+nextBtn.addEventListener("click", () => {
   if (currentPage < totalPages) {
     currentPage++;
     showBlogsForPage(currentPage);
   }
 });
 
-prevBtn.addEventListener('click', () => {
+prevBtn.addEventListener("click", () => {
   if (currentPage > 1) {
     currentPage--;
     showBlogsForPage(currentPage);
   }
 });
 
-nextBtnDesktop.addEventListener('click', () => {
+nextBtnDesktop.addEventListener("click", () => {
   if (currentPage < totalPages) {
     currentPage++;
     showBlogsForPage(currentPage);
   }
 });
 
-prevBtnDesktop.addEventListener('click', () => {
+prevBtnDesktop.addEventListener("click", () => {
   if (currentPage > 1) {
     currentPage--;
     showBlogsForPage(currentPage);
   }
 });
 
-// Initial state
 showBlogsForPage(currentPage);
-
 </script>
