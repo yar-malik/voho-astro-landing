@@ -3,25 +3,6 @@ import Monthly from "./components/monthly.astro";
 import Annual from "./components/annual.astro";
 ---
 
-<!-- <style>
-  .shining-text {
-    position: relative;
-    background: linear-gradient(90deg, #2f44ff, #ffffff00, #000);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 100%;
-    animation: shine 5s linear infinite;
-  }
-
-  @keyframes shine {
-    0% {
-      background-position: 200% 0;
-    }
-    100% {
-      background-position: -200% 0;
-    }
-  }
-</style> -->
 <section aria-labelledby="pricing-section" id="pricing">
   <div class="lg:px-16 max-w-7xl md:px-12 mx-auto px-8 py-24 scroll-mt-12">
     <div class="text-center max-w-3xl mx-auto">
@@ -42,7 +23,7 @@ import Annual from "./components/annual.astro";
       </button>
       <button
         id="annual-button"
-        class="px-6 py-3 ml-4 text-sm font-medium rounded-lg bg-gray-400  cursor-pointer text-black relative overflow-hidden"
+        class="px-6 py-3 ml-4 text-sm font-medium rounded-lg bg-gray-400   cursor-pointer text-black relative overflow-hidden"
       >
         <span class="shining-text">Annual (Save Upto 11%)</span>
       </button>
@@ -57,80 +38,139 @@ import Annual from "./components/annual.astro";
         <Annual />
       </div>
     </div>
-
-    <div class="mx-auto pt-12 gap-y-10">
-      <section
-        class="flex py-4 lg:py-20 flex-col lg:flex-row items-center justify-between px-6 lg:py-8 bg-black rounded-3xl relative text-white shadow-lg lg:gap-8"
+  <!-- Enterprise Pricing Section  -->
+  <div class="mx-auto pt-12 gap-y-10 ">
+    <section
+    class="flex py-4 flex-col lg:flex-row items-start justify-between px-6 lg:py-16 lg:px-12 bg-[url('/images/projects/EnterPrise.png')]  bg-center bg-no-repeat rounded-3xl relative text-white shadow-none lg:gap-4"
+  >
+      <!-- Dedicated Badge -->
+      <div
+        class="hidden md:flex absolute top-4 left-10 bg-gray-800 border-2 border-gray-100 text-sm px-3 py-1 rounded-full flex items-center"
       >
-        <!-- Dedicated Badge -->
-        <div
-          class="hidden md:flex absolute top-4 left-4 bg-gray-800 text-sm px-3 py-1 rounded-full flex items-center"
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="w-4 h-4 mr-2"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="white"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="w-4 h-4 mr-2"
-          >
-            <path
-              d="M11.2691 4.41115C11.5006 3.89177 11.6164 3.63208 11.7776 3.55211C11.9176 3.48263 12.082 3.48263 12.222 3.55211C12.3832 3.63208 12.499 3.89177 12.7305 4.41115L14.5745 8.54808C14.643 8.70162 14.6772 8.77839 14.7302 8.83718C14.777 8.8892 14.8343 8.93081 14.8982 8.95929C14.9705 8.99149 15.0541 9.00031 15.2213 9.01795L19.7256 9.49336C20.2911 9.55304 20.5738 9.58288 20.6997 9.71147C20.809 9.82316 20.8598 9.97956 20.837 10.1342C20.8108 10.3122 20.5996 10.5025 20.1772 10.8832L16.8125 13.9154C16.6877 14.0279 16.6252 14.0842 16.5857 14.1527C16.5507 14.2134 16.5288 14.2807 16.5215 14.3503C16.5132 14.429 16.5306 14.5112 16.5655 14.6757L17.5053 19.1064C17.6233 19.6627 17.6823 19.9408 17.5989 20.1002C17.5264 20.2388 17.3934 20.3354 17.2393 20.3615C17.0619 20.3915 16.8156 20.2495 16.323 19.9654L12.3995 17.7024C12.2539 17.6184 12.1811 17.5765 12.1037 17.56C12.0352 17.5455 11.9644 17.5455 11.8959 17.56C11.8185 17.5765 11.7457 17.6184 11.6001 17.7024L7.67662 19.9654C7.18404 20.2495 6.93775 20.3915 6.76034 20.3615C6.60623 20.3354 6.47319 20.2388 6.40075 20.1002C6.31736 19.9408 6.37635 19.6627 6.49434 19.1064L7.4341 14.6757C7.46898 14.5112 7.48642 14.429 7.47814 14.3503C7.47081 14.2807 7.44894 14.2134 7.41394 14.1527C7.37439 14.0842 7.31195 14.0279 7.18708 13.9154L3.82246 10.8832C3.40005 10.5025 3.18884 10.3122 3.16258 10.1342C3.13978 9.97956 3.19059 9.82316 3.29993 9.71147C3.42581 9.58288 3.70856 9.55304 4.27406 9.49336L8.77835 9.01795C8.94553 9.00031 9.02911 8.99149 9.10139 8.95929C9.16534 8.93081 9.2226 8.8892 9.26946 8.83718C9.32241 8.77839 9.35663 8.70162 9.42508 8.54808L11.2691 4.41115Z"
-            ></path>
-          </svg>
-          Dedicated
-        </div>
-
-        <!-- Enterprise Pricing Section Content -->
-        <div class="flex flex-col lg:flex-row items-center lg:items-start z-10">
-          <div class="lg:mr-8">
-            <h1 class="text-2xl font-semibold">Enterprise Plan</h1>
-            <div class="max-w-md mt-2">
-              <p class="text-sm text-gray-300">
-                For businesses which need top performance, scalability, and
-                support.
-              </p>
-            </div>
+          <path
+            d="M11.2691 4.41115C11.5006 3.89177 11.6164 3.63208 11.7776 3.55211C11.9176 3.48263 12.082 3.48263 12.222 3.55211C12.3832 3.63208 12.499 3.89177 12.7305 4.41115L14.5745 8.54808C14.643 8.70162 14.6772 8.77839 14.7302 8.83718C14.777 8.8892 14.8343 8.93081 14.8982 8.95929C14.9705 8.99149 15.0541 9.00031 15.2213 9.01795L19.7256 9.49336C20.2911 9.55304 20.5738 9.58288 20.6997 9.71147C20.809 9.82316 20.8598 9.97956 20.837 10.1342C20.8108 10.3122 20.5996 10.5025 20.1772 10.8832L16.8125 13.9154C16.6877 14.0279 16.6252 14.0842 16.5857 14.1527C16.5507 14.2134 16.5288 14.2807 16.5215 14.3503C16.5132 14.429 16.5306 14.5112 16.5655 14.6757L17.5053 19.1064C17.6233 19.6627 17.6823 19.9408 17.5989 20.1002C17.5264 20.2388 17.3934 20.3354 17.2393 20.3615C17.0619 20.3915 16.8156 20.2495 16.323 19.9654L12.3995 17.7024C12.2539 17.6184 12.1811 17.5765 12.1037 17.56C12.0352 17.5455 11.9644 17.5455 11.8959 17.56C11.8185 17.5765 11.7457 17.6184 11.6001 17.7024L7.67662 19.9654C7.18404 20.2495 6.93775 20.3915 6.76034 20.3615C6.60623 20.3354 6.47319 20.2388 6.40075 20.1002C6.31736 19.9408 6.37635 19.6627 6.49434 19.1064L7.4341 14.6757C7.46898 14.5112 7.48642 14.429 7.47814 14.3503C7.47081 14.2807 7.44894 14.2134 7.41394 14.1527C7.37439 14.0842 7.31195 14.0279 7.18708 13.9154L3.82246 10.8832C3.40005 10.5025 3.18884 10.3122 3.16258 10.1342C3.13978 9.97956 3.19059 9.82316 3.29993 9.71147C3.42581 9.58288 3.70856 9.55304 4.27406 9.49336L8.77835 9.01795C8.94553 9.00031 9.02911 8.99149 9.10139 8.95929C9.16534 8.93081 9.2226 8.8892 9.26946 8.83718C9.32241 8.77839 9.35663 8.70162 9.42508 8.54808L11.2691 4.41115Z"
+          ></path>
+        </svg>
+        Dedicated
+      </div>
+  
+      <!-- Enterprise Pricing Section Content -->
+      <div class="flex flex-col lg:flex-row items-center lg:items-start z-10 flex-grow">
+        <div class="lg:mr-8">
+          <h1 class="text-2xl font-semibold">Enterprise Plan</h1>
+          <div class="max-w-xl mt-2">
+            <p class="text-sm text-white">
+              For businesses with large volumes, data or deployment requirements, or support needs.
+            </p>
+            <!-- Feature List -->
+            <ul class="mt-4 space-y-2 text-sm text-white">
+              <li class="flex items-start">
+                <span class="mr-2 text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="white"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M20.285 6.223a1 1 0 0 1 .154 1.408l-10 12a1 1 0 0 1-1.518.06l-5-6a1 1 0 1 1 1.548-1.28L10 16.384 19.131 5.63a1 1 0 0 1 1.154-.407z"
+                    ></path>
+                  </svg>
+                </span>
+                Includes everything from pay as you go
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="white"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M20.285 6.223a1 1 0 0 1 .154 1.408l-10 12a1 1 0 0 1-1.518.06l-5-6a1 1 0 1 1 1.548-1.28L10 16.384 19.131 5.63a1 1 0 0 1 1.154-.407z"
+                    ></path>
+                  </svg>
+                </span>
+                Discounted pricing based on volumes (as low as $0.05 per minute)
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="white"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M20.285 6.223a1 1 0 0 1 .154 1.408l-10 12a1 1 0 0 1-1.518.06l-5-6a1 1 0 1 1 1.548-1.28L10 16.384 19.131 5.63a1 1 0 0 1 1.154-.407z"
+                    ></path>
+                  </svg>
+                </span>
+                Custom concurrent calls based on volumes
+              </li>
+              <li class="flex items-start">
+                <span class="mr-2 text-white">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="white"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M20.285 6.223a1 1 0 0 1 .154 1.408l-10 12a1 1 0 0 1-1.518.06l-5-6a1 1 0 1 1 1.548-1.28L10 16.384 19.131 5.63a1 1 0 0 1 1.154-.407z"
+                    ></path>
+                  </svg>
+                </span>
+                Premium private Slack channel support with dedicated support teams
+              </li>
+            </ul>
           </div>
         </div>
-
-        <!-- Call to Action Button -->
-        <a
-          class="inline-flex items-center justify-between cursor-pointer px-16 py-3 h-12 mt-8 text-center text-black transition duration-200 ease-in-out transform bg-white border-2 border-white hover:bg-transparent hover:border-white rounded-xl hover:text-white focus:outline-none"
-          aria-label="Indie hacker tier"
-          href="/enterprise"
+      </div>
+  
+      <!-- Call to Action Button -->
+      <a
+        class="inline-flex items-center justify-between cursor-pointer px-16 py-3 h-12 mt-auto text-center text-black transition duration-200 ease-in-out transform bg-white border-2 border-white hover:bg-transparent hover:border-white rounded-xl hover:text-white focus:outline-none"
+        aria-label="Enterprise tier"
+        href="/enterprise"
+      >
+        <div class="flex flex-row items-start">
+          <span class="text-sm font-medium">Contact</span>
+          <span class="text-sm font-medium">Us</span>
+        </div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-4 h-4 ml-2"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="black"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
         >
-          <div class="flex flex-row items-start">
-            <span class="text-sm font-medium">Contact</span>
-            <span class="text-sm font-medium">Us</span>
-          </div>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-4 h-4 ml-2"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="black"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <line x1="7" y1="17" x2="17" y2="7"></line>
-            <polyline points="7 7 17 7 17 17"></polyline>
-          </svg>
-        </a>
-
-        <!-- Background Icons -->
-        <!-- <div class="absolute top-0 right-0 h-full w-1/3 z-0">
-          <img
-            src="https://synthflow.ai/wp-content/uploads/2024/10/Group-1000011007.webp" 
-            alt="Background Icon"
-            class="opacity-10 object-cover w-full h-full"
-          />
-        </div> -->
-      </section>
-    </div>
+          <line x1="7" y1="17" x2="17" y2="7"></line>
+          <polyline points="7 7 17 7 17 17"></polyline>
+        </svg>
+      </a>
+    </section>
+  </div>
+  
+  
 
     <div class="mx-auto pt-12 lg:py-16">
       <div class="grid grid-cols-2 gap-0.5 lg:mt-8 md:grid-cols-6 mt-6">
@@ -143,9 +183,9 @@ import Annual from "./components/annual.astro";
         </div><div class="flex justify-center col-span-1 px-8">
           <img alt="logo" src="/Gitlab.svg" />
         </div><div class="flex justify-center col-span-1 px-8">
-          <img alt="logo" src="/Linear.svg" />
+          <img alt="logo"  src="/images/logos/magical.svg" />
         </div><div class="flex justify-center col-span-1 px-8">
-          <img alt="logo" src="/Gumroad.svg" />
+          <img alt="logo"  src="/images/logos/AWRENCE2.svg" />
         </div>
       </div>
     </div>
@@ -174,7 +214,7 @@ import Annual from "./components/annual.astro";
 
         // Update button styles
         monthlyButton.className =
-          "px-6 py-3 text-sm font-display rounded-lg bg-[#F9FAFB]   text-black";
+          "px-6 py-3 text-sm font-display rounded-lg bg-[#F9FAFB]  border-2 border-gray-300   text-black";
         annualButton.className =
           "px-6 py-3 ml-4 text-sm font-display rounded-lg bg-black   text-white";
       } else {
@@ -186,7 +226,7 @@ import Annual from "./components/annual.astro";
         monthlyButton.className =
           "px-6 py-3 text-sm font-display rounded-lg bg-black text-white";
         annualButton.className =
-          "px-6 py-3 ml-4 text-sm font-display rounded-lg bg-[#F9FAFB] text-black";
+          "px-6 py-3 ml-4 text-sm font-display rounded-lg bg-[#F9FAFB] border-2 border-gray-300 text-black";
       }
     };
 
