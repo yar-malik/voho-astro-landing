@@ -80,31 +80,45 @@
           class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
           href="/#pricing">Pricing</a>
            <!-- Use Case Dropdown -->
-        <div class="relative" @click.away="useCaseOpen = false">
-          <button
-            @mouseover="useCaseOpen = true" 
-            @mouseleave="useCaseOpen = false"
-            class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400 flex items-center">
-            Use Cases
-            <svg class="w-4 h-4 ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
-          <div
-            x-show="useCaseOpen"
-            @mouseover="useCaseOpen = true" 
-             @mouseleave="useCaseOpen = false"
-            class="absolute left-0 mt- w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10"
-            x-cloak>
-            <a href="/restaurant" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Restaurant</a>
-            <a href="/ecommerce" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Ecommerce</a>
-            <a href="/estate" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Real Estate</a>
-            <a href="/recruitment" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Recruitment</a>
-            <a href="/health" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Health</a>
-            <a href="/solar" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Solar </a>
-            <a href="/car-dealership" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Car Dearlership </a>
+           <div x-data="{ useCaseOpen: false }" class="relative">
+            <button
+              @mouseenter="useCaseOpen = true"
+              @mouseleave="useCaseOpen = false"
+              class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400 flex items-center"
+            >
+              Use Cases
+              <svg
+                class="w-4 h-4 ml-1"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div
+              x-show="useCaseOpen"
+              @mouseenter="useCaseOpen = true"
+              @mouseleave="useCaseOpen = false"
+              class="absolute left-0 mt- w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10"
+              x-cloak
+            >
+              <a href="/restaurant" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Restaurant</a>
+              <a href="/ecommerce" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Ecommerce</a>
+              <a href="/estate" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Real Estate</a>
+              <a href="/recruitment" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Recruitment</a>
+              <a href="/health" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Health</a>
+              <a href="/solar" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Solar</a>
+              <a href="/car-dealership" class="block px-4 py-2 text-sm text-black hover:bg-gray-100">Car Dealership</a>
+            </div>
           </div>
-        </div>
+          
         <!-- <a
           class="px-2 lg:px-6 py-2 md:px-3 text-sm font-medium text-black hover:text-accent-400"
           href="/faq">Faq</a> -->

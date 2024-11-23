@@ -163,84 +163,115 @@ const blogs = [
 </section>
 
 <script>
-  const blogCards = document.querySelectorAll('.blog-card');
-  const nextBtn = document.getElementById('next-btn');
-  const prevBtn = document.getElementById('prev-btn');
-  const nextBtnDesktop = document.getElementById('next-btn-desktop');
-  const prevBtnDesktop = document.getElementById('prev-btn-desktop');
-  const pageNumberContainer = document.getElementById('pagination-numbers');
-  const startCountEl = document.getElementById('start-count');
-  const endCountEl = document.getElementById('end-count');
-  const totalCountEl = document.getElementById('total-count');
+ const blogCards = document.querySelectorAll('.blog-card');
+const nextBtn = document.getElementById('next-btn');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtnDesktop = document.getElementById('next-btn-desktop');
+const prevBtnDesktop = document.getElementById('prev-btn-desktop');
+const pageNumberContainer = document.getElementById('pagination-numbers');
+const startCountEl = document.getElementById('start-count');
+const endCountEl = document.getElementById('end-count');
+const totalCountEl = document.getElementById('total-count');
 
-  let currentPage = 1;
-  const blogsPerPage = 4;
-  const totalBlogs = blogCards.length;
-  const totalPages = Math.ceil(totalBlogs / blogsPerPage);
+let currentPage = 1;
+const blogsPerPage = 4;
+const totalBlogs = blogCards.length;
+const totalPages = Math.ceil(totalBlogs / blogsPerPage);
+const maxVisiblePages = 5; // Number of visible pages at a time
 
-  // Function to show blogs for the current page
-  function showBlogsForPage(page) {
-    const start = (page - 1) * blogsPerPage;
-    const end = Math.min(start + blogsPerPage, totalBlogs);
+// Function to show blogs for the current page
+function showBlogsForPage(page) {
+  const start = (page - 1) * blogsPerPage;
+  const end = Math.min(start + blogsPerPage, totalBlogs);
 
-    blogCards.forEach((card, index) => {
-      card.style.display = index >= start && index < end ? 'block' : 'none';
-    });
+  blogCards.forEach((card, index) => {
+    card.style.display = index >= start && index < end ? 'block' : 'none';
+  });
 
-    startCountEl.textContent = start + 1;
-    endCountEl.textContent = end;
-    totalCountEl.textContent = totalBlogs;
+  startCountEl.textContent = start + 1;
+  endCountEl.textContent = end;
+  totalCountEl.textContent = totalBlogs;
 
-    // Update pagination buttons
-    prevBtn.style.display = nextBtn.style.display = prevBtnDesktop.style.display = nextBtnDesktop.style.display = 'block';
-    if (page === 1) prevBtn.style.display = prevBtnDesktop.style.display = 'none';
-    if (page === totalPages) nextBtn.style.display = nextBtnDesktop.style.display = 'none';
+  // Update pagination buttons
+  prevBtn.style.display = nextBtn.style.display = prevBtnDesktop.style.display = nextBtnDesktop.style.display = 'block';
+  if (page === 1) prevBtn.style.display = prevBtnDesktop.style.display = 'none';
+  if (page === totalPages) nextBtn.style.display = nextBtnDesktop.style.display = 'none';
 
-    // Update page numbers
-    pageNumberContainer.innerHTML = '';
+  updatePaginationUI();
+}
+
+// Function to update the pagination UI
+function updatePaginationUI() {
+  pageNumberContainer.innerHTML = '';
+
+  const visiblePages = [];
+  if (totalPages <= maxVisiblePages) {
+    // Show all pages if total pages are less than or equal to maxVisiblePages
     for (let i = 1; i <= totalPages; i++) {
-      const pageButton = document.createElement('a');
-      pageButton.href = '#';
-      pageButton.className = `relative inline-flex items-center px-4 py-2 text-sm font-semibold ${i === page ? 'bg-indigo-600 text-white' : 'text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50'}`;
-      pageButton.textContent = i;
-      pageButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        currentPage = i;
-        showBlogsForPage(currentPage);
-      });
-      pageNumberContainer.appendChild(pageButton);
+      visiblePages.push(i);
+    }
+  } else {
+    // Handle ellipses for pages
+    if (currentPage <= 3) {
+      visiblePages.push(1, 2, 3, 4, '...', totalPages);
+    } else if (currentPage >= totalPages - 2) {
+      visiblePages.push(1, '...', totalPages - 3, totalPages - 2, totalPages - 1, totalPages);
+    } else {
+      visiblePages.push(1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages);
     }
   }
 
-  // Event listeners for pagination
-  nextBtn.addEventListener('click', () => {
-    if (currentPage < totalPages) {
-      currentPage++;
-      showBlogsForPage(currentPage);
+  visiblePages.forEach((page) => {
+    const pageButton = document.createElement('a');
+    if (page === '...') {
+      pageButton.textContent = '...';
+      pageButton.className = 'text-gray-400 px-3';
+    } else {
+      pageButton.href = '#';
+      pageButton.className = `relative inline-flex items-center px-4 py-2 text-sm font-semibold ${
+        page === currentPage ? 'bg-indigo-600 text-white' : 'text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50'
+      }`;
+      pageButton.textContent = page;
+      pageButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        currentPage = page;
+        showBlogsForPage(currentPage);
+      });
     }
+    pageNumberContainer.appendChild(pageButton);
   });
+}
 
-  prevBtn.addEventListener('click', () => {
-    if (currentPage > 1) {
-      currentPage--;
-      showBlogsForPage(currentPage);
-    }
-  });
+// Event listeners for pagination
+nextBtn.addEventListener('click', () => {
+  if (currentPage < totalPages) {
+    currentPage++;
+    showBlogsForPage(currentPage);
+  }
+});
 
-  nextBtnDesktop.addEventListener('click', () => {
-    if (currentPage < totalPages) {
-      currentPage++;
-      showBlogsForPage(currentPage);
-    }
-  });
+prevBtn.addEventListener('click', () => {
+  if (currentPage > 1) {
+    currentPage--;
+    showBlogsForPage(currentPage);
+  }
+});
 
-  prevBtnDesktop.addEventListener('click', () => {
-    if (currentPage > 1) {
-      currentPage--;
-      showBlogsForPage(currentPage);
-    }
-  });
+nextBtnDesktop.addEventListener('click', () => {
+  if (currentPage < totalPages) {
+    currentPage++;
+    showBlogsForPage(currentPage);
+  }
+});
 
-  // Initial state
-  showBlogsForPage(currentPage);
+prevBtnDesktop.addEventListener('click', () => {
+  if (currentPage > 1) {
+    currentPage--;
+    showBlogsForPage(currentPage);
+  }
+});
+
+// Initial state
+showBlogsForPage(currentPage);
+
 </script>
