@@ -41,10 +41,10 @@ import Annual from "./components/annual.astro";
   <!-- Enterprise Pricing Section  -->
   <div class="mx-auto pt-12 gap-y-10 ">
     <section
-    class="flex py-4 flex-col lg:flex-row items-start justify-between px-6 lg:py-16 lg:px-12 bg-[url('/images/projects/EnterPrise.png')]  bg-center bg-no-repeat rounded-3xl relative text-white shadow-none lg:gap-4"
+    class="flex py-4 flex-col lg:flex-row items-start justify-between px-6 lg:py-8 lg:px-12 bg-[url('/images/projects/EnterPrise.png')]  bg-center bg-no-repeat rounded-3xl relative text-white shadow-none lg:gap-4"
   >
       <!-- Dedicated Badge -->
-      <div
+      <!-- <div
         class="hidden md:flex absolute top-4 left-10 bg-gray-800 border-2 border-gray-100 text-sm px-3 py-1 rounded-full flex items-center"
       >
         <svg
@@ -62,7 +62,7 @@ import Annual from "./components/annual.astro";
           ></path>
         </svg>
         Dedicated
-      </div>
+      </div> -->
   
       <!-- Enterprise Pricing Section Content -->
       <div class="flex flex-col lg:flex-row items-center lg:items-start z-10 flex-grow">
@@ -73,8 +73,8 @@ import Annual from "./components/annual.astro";
               For businesses with large volumes, data or deployment requirements, or support needs.
             </p>
             <!-- Feature List -->
-            <ul class="mt-4 space-y-2 text-sm text-white">
-              <li class="flex items-start">
+            <div class="mt-4 grid grid-cols-2 gap-4 text-sm text-white">
+              <div class="flex items-start">
                 <span class="mr-2 text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -89,8 +89,8 @@ import Annual from "./components/annual.astro";
                   </svg>
                 </span>
                 Includes everything from pay as you go
-              </li>
-              <li class="flex items-start">
+              </div>
+              <div class="flex items-start">
                 <span class="mr-2 text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -105,8 +105,8 @@ import Annual from "./components/annual.astro";
                   </svg>
                 </span>
                 Discounted pricing based on volumes (as low as $0.05 per minute)
-              </li>
-              <li class="flex items-start">
+              </div>
+              <div class="flex items-start">
                 <span class="mr-2 text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -121,8 +121,8 @@ import Annual from "./components/annual.astro";
                   </svg>
                 </span>
                 Custom concurrent calls based on volumes
-              </li>
-              <li class="flex items-start">
+              </div>
+              <div class="flex items-start">
                 <span class="mr-2 text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -137,8 +137,9 @@ import Annual from "./components/annual.astro";
                   </svg>
                 </span>
                 Premium private Slack channel support with dedicated support teams
-              </li>
-            </ul>
+              </div>
+            </div>
+            
           </div>
         </div>
       </div>
