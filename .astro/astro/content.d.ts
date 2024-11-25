@@ -157,112 +157,126 @@ declare module 'astro:content' {
   slug: "5-Key-Benefits-of-AI-Receptionist-Prompting-Technology";
   body: string;
   collection: "posts";
-  data: any
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 "A-Dive-into-AI-Receptionists-Your-Help-at-the-Front-Desk.md": {
 	id: "A-Dive-into-AI-Receptionists-Your-Help-at-the-Front-Desk.md";
   slug: "A-Dive-into-AI-Receptionists-Your-Help-at-the-Front-Desk";
   body: string;
   collection: "posts";
-  data: any
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"AI-Answering-Services-for-E-commerce-Providing-24.md": {
+	id: "AI-Answering-Services-for-E-commerce-Providing-24.md";
+  slug: "AI-Answering-Services-for-E-commerce-Providing-24";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 "AI-Receptionist-Prompting-How-PixEla-Revolutionizes-Customer-Interaction.md": {
 	id: "AI-Receptionist-Prompting-How-PixEla-Revolutionizes-Customer-Interaction.md";
   slug: "AI-Receptionist-Prompting-How-PixEla-Revolutionizes-Customer-Interaction";
   body: string;
   collection: "posts";
-  data: any
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 "AI-Voice-Agent – A-Complete-Guide.md": {
 	id: "AI-Voice-Agent – A-Complete-Guide.md";
   slug: "AI-Voice-Agent – A-Complete-Guide";
   body: string;
   collection: "posts";
-  data: any
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 "Can-AI-Answer-Phone-Calls-for-Me.md": {
 	id: "Can-AI-Answer-Phone-Calls-for-Me.md";
   slug: "Can-AI-Answer-Phone-Calls-for-Me";
   body: string;
   collection: "posts";
-  data: any
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 "Can-Human-Receptionists-Be-Replaced-by-AI-Receptionists.md": {
 	id: "Can-Human-Receptionists-Be-Replaced-by-AI-Receptionists.md";
   slug: "Can-Human-Receptionists-Be-Replaced-by-AI-Receptionists";
   body: string;
   collection: "posts";
-  data: any
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 "How-Much-Does-an-AI-Virtual-Receptionist-Cost.md": {
 	id: "How-Much-Does-an-AI-Virtual-Receptionist-Cost.md";
   slug: "How-Much-Does-an-AI-Virtual-Receptionist-Cost";
   body: string;
   collection: "posts";
-  data: any
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 "How-to-Leverage-AI-for-Better-E-commerce-Sales.md": {
 	id: "How-to-Leverage-AI-for-Better-E-commerce-Sales.md";
   slug: "How-to-Leverage-AI-for-Better-E-commerce-Sales";
   body: string;
   collection: "posts";
-  data: any
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 "Leveraging-AI-Answering-Services-to-Enhance-Customer-Support-and-Service-Delivery.md": {
 	id: "Leveraging-AI-Answering-Services-to-Enhance-Customer-Support-and-Service-Delivery.md";
   slug: "Leveraging-AI-Answering-Services-to-Enhance-Customer-Support-and-Service-Delivery";
   body: string;
   collection: "posts";
-  data: any
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 "To-AI-Answering-Service-for-2024-Rapid-Response-with-AI.md": {
 	id: "To-AI-Answering-Service-for-2024-Rapid-Response-with-AI.md";
   slug: "To-AI-Answering-Service-for-2024-Rapid-Response-with-AI";
   body: string;
   collection: "posts";
-  data: any
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 "Understand-the-impact-of-AI-in-e-commerce-customer-service.md": {
 	id: "Understand-the-impact-of-AI-in-e-commerce-customer-service.md";
   slug: "Understand-the-impact-of-AI-in-e-commerce-customer-service";
   body: string;
   collection: "posts";
-  data: any
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"Voice-AI-and-Storytelling-Creating-Immersive-Experiences.md": {
+	id: "Voice-AI-and-Storytelling-Creating-Immersive-Experiences.md";
+  slug: "Voice-AI-and-Storytelling-Creating-Immersive-Experiences";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 "What-Is-he-Hardest-Question-to-Ask-AI.md": {
 	id: "What-Is-he-Hardest-Question-to-Ask-AI.md";
   slug: "What-Is-he-Hardest-Question-to-Ask-AI";
   body: string;
   collection: "posts";
-  data: any
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 "Which-AI-is-Best-for-Answering-Questions.md": {
 	id: "Which-AI-is-Best-for-Answering-Questions.md";
   slug: "Which-AI-is-Best-for-Answering-Questions";
   body: string;
   collection: "posts";
-  data: any
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 "how-ai-phone-agents-change-customer-support-for-all-ecommerce-businesses.md": {
 	id: "how-ai-phone-agents-change-customer-support-for-all-ecommerce-businesses.md";
   slug: "how-ai-phone-agents-change-customer-support-for-all-ecommerce-businesses";
   body: string;
   collection: "posts";
-  data: any
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 "how-to-improve-and-optimize-voice-ai-performance.md": {
 	id: "how-to-improve-and-optimize-voice-ai-performance.md";
   slug: "how-to-improve-and-optimize-voice-ai-performance";
   body: string;
   collection: "posts";
-  data: any
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 "how-to-make-millions-with-your-ecommerce-store-this-black-friday.md": {
 	id: "how-to-make-millions-with-your-ecommerce-store-this-black-friday.md";
   slug: "how-to-make-millions-with-your-ecommerce-store-this-black-friday";
   body: string;
   collection: "posts";
-  data: any
+  data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
 };
 
@@ -274,5 +288,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = never;
+	export type ContentConfig = typeof import("./../../src/content/config.js");
 }
