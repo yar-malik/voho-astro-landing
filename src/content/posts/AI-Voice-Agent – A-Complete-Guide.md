@@ -5,7 +5,7 @@ description: "Discover a complete guide to AI voice agents, their benefits, appl
 excerpt: ''
 image: ''
 tags: [AI voice agent  ]
-slug: "AI-Voice-Agent – A-Complete-Guide"
+slug: "AI-Voice-Agent-A-Complete-Guide"
 ---
 
 
