@@ -18,7 +18,7 @@ This blog explores what an AI receptionist is, how it works, and the benefits it
 
 ## **What is an AI Receptionist?**
 
-An AI receptionist is an advanced software program powered by large language models like GPT, Llama, or Claude. These models have been trained on massive datasets to understand natural language, making it possible for them to respond to a wide array of customer needs in real time. With the right prompts, an AI receptionist can:
+An [AI receptionist](https://callsupport.ai/) is an advanced software program powered by large language models like GPT, Llama, or Claude. These models have been trained on massive datasets to understand natural language, making it possible for them to respond to a wide array of customer needs in real time. With the right prompts, an AI receptionist can:
 
 - **Greet callers** warmly and provide them with a welcoming experience.
 - **Schedule appointments** by managing available time slots in a calendar.

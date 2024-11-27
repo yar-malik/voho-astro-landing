@@ -36,7 +36,7 @@ AI receptionists use a combination of machine learning, natural language process
 
 ### **2\. AI Receptionist Prompting: A Key Innovation**
 
-One of the most important components of an AI receptionist is prompting. **AI receptionist prompting** refers to how well an AI system is trained to understand and generate responses that fit the context of the conversation. This capability is powered by extensive databases and machine learning algorithms, allowing AI receptionists to “learn” over time and improve their responses.
+One of the most important components of an AI receptionist is prompting. [**AI receptionist prompting**](https://callsupport.ai/) refers to how well an AI system is trained to understand and generate responses that fit the context of the conversation. This capability is powered by extensive databases and machine learning algorithms, allowing AI receptionists to “learn” over time and improve their responses.
 
 AI receptionist prompting makes it possible for these systems to:
 
