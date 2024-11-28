@@ -208,6 +208,13 @@ declare module 'astro:content' {
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
+"How-to-Build-an-AI-Voice-Agent-Call-Center.md": {
+	id: "How-to-Build-an-AI-Voice-Agent-Call-Center.md";
+  slug: "How-to-Build-an-AI-Voice-Agent-Call-Center";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
 "How-to-Leverage-AI-for-Better-E-commerce-Sales.md": {
 	id: "How-to-Leverage-AI-for-Better-E-commerce-Sales.md";
   slug: "How-to-Leverage-AI-for-Better-E-commerce-Sales";
@@ -225,6 +232,13 @@ declare module 'astro:content' {
 "To-AI-Answering-Service-for-2024-Rapid-Response-with-AI.md": {
 	id: "To-AI-Answering-Service-for-2024-Rapid-Response-with-AI.md";
   slug: "To-AI-Answering-Service-for-2024-Rapid-Response-with-AI";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
+"Top-Tips-and-Tricks-for-Building-Your-First-AI-Voice-Agent.md": {
+	id: "Top-Tips-and-Tricks-for-Building-Your-First-AI-Voice-Agent.md";
+  slug: "Top-Tips-and-Tricks-for-Building-Your-First-AI-Voice-Agent";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">

@@ -11,14 +11,27 @@ const SavingsCalculator = () => {
   const updateSavings = (event) => {
     const { id, value } = event.target;
 
-    if (id === "input-calls") setCalls(parseInt(value, 10));
-    if (id === "ai-percent") setAiPercentage(parseInt(value, 10));
-    if (id === "input-time") setMinutes(parseInt(value, 10));
+    let updatedCalls = calls;
+    let updatedAiPercentage = aiPercentage;
+    let updatedMinutes = minutes;
+
+    if (id === "input-calls") {
+      updatedCalls = parseInt(value, 10);
+      setCalls(updatedCalls);
+    }
+    if (id === "ai-percent") {
+      updatedAiPercentage = parseInt(value, 10);
+      setAiPercentage(updatedAiPercentage);
+    }
+    if (id === "input-time") {
+      updatedMinutes = parseInt(value, 10);
+      setMinutes(updatedMinutes);
+    }
 
     const updatedSavings = Math.round(
-      (id === "input-calls" ? parseInt(value, 10) : calls) *
-      ((id === "ai-percent" ? parseInt(value, 10) : aiPercentage) / 100) *
-      (id === "input-time" ? parseInt(value, 10) : minutes) *
+      updatedCalls *
+      (updatedAiPercentage / 100) *
+      updatedMinutes *
       0.5
     );
     setSavings(updatedSavings);
