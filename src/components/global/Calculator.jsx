@@ -155,7 +155,7 @@ const SavingsCalculator = () => {
 
         <div className="text-center">
           <a
-            href="#contact-us"
+            href="https://zcal.co/i/cL7eACvt"
             className="w-full inline-block px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600"
           >
             Schedule a demo
