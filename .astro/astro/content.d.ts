@@ -1,0 +1,341 @@
+declare module 'astro:content' {
+	interface Render {
+		'.mdx': Promise<{
+			Content: import('astro').MarkdownInstance<{}>['Content'];
+			headings: import('astro').MarkdownHeading[];
+			remarkPluginFrontmatter: Record<string, any>;
+			components: import('astro').MDXInstance<{}>['components'];
+		}>;
+	}
+}
+
+declare module 'astro:content' {
+	interface RenderResult {
+		Content: import('astro/runtime/server/index.js').AstroComponentFactory;
+		headings: import('astro').MarkdownHeading[];
+		remarkPluginFrontmatter: Record<string, any>;
+	}
+	interface Render {
+		'.md': Promise<RenderResult>;
+	}
+
+	export interface RenderedContent {
+		html: string;
+		metadata?: {
+			imagePaths: Array<string>;
+			[key: string]: unknown;
+		};
+	}
+}
+
+declare module 'astro:content' {
+	type Flatten<T> = T extends { [K: string]: infer U } ? U : never;
+
+	export type CollectionKey = keyof AnyEntryMap;
+	export type CollectionEntry<C extends CollectionKey> = Flatten<AnyEntryMap[C]>;
+
+	export type ContentCollectionKey = keyof ContentEntryMap;
+	export type DataCollectionKey = keyof DataEntryMap;
+
+	type AllValuesOf<T> = T extends any ? T[keyof T] : never;
+	type ValidContentEntrySlug<C extends keyof ContentEntryMap> = AllValuesOf<
+		ContentEntryMap[C]
+	>['slug'];
+
+	/** @deprecated Use `getEntry` instead. */
+	export function getEntryBySlug<
+		C extends keyof ContentEntryMap,
+		E extends ValidContentEntrySlug<C> | (string & {}),
+	>(
+		collection: C,
+		// Note that this has to accept a regular string too, for SSR
+		entrySlug: E,
+	): E extends ValidContentEntrySlug<C>
+		? Promise<CollectionEntry<C>>
+		: Promise<CollectionEntry<C> | undefined>;
+
+	/** @deprecated Use `getEntry` instead. */
+	export function getDataEntryById<C extends keyof DataEntryMap, E extends keyof DataEntryMap[C]>(
+		collection: C,
+		entryId: E,
+	): Promise<CollectionEntry<C>>;
+
+	export function getCollection<C extends keyof AnyEntryMap, E extends CollectionEntry<C>>(
+		collection: C,
+		filter?: (entry: CollectionEntry<C>) => entry is E,
+	): Promise<E[]>;
+	export function getCollection<C extends keyof AnyEntryMap>(
+		collection: C,
+		filter?: (entry: CollectionEntry<C>) => unknown,
+	): Promise<CollectionEntry<C>[]>;
+
+	export function getEntry<
+		C extends keyof ContentEntryMap,
+		E extends ValidContentEntrySlug<C> | (string & {}),
+	>(entry: {
+		collection: C;
+		slug: E;
+	}): E extends ValidContentEntrySlug<C>
+		? Promise<CollectionEntry<C>>
+		: Promise<CollectionEntry<C> | undefined>;
+	export function getEntry<
+		C extends keyof DataEntryMap,
+		E extends keyof DataEntryMap[C] | (string & {}),
+	>(entry: {
+		collection: C;
+		id: E;
+	}): E extends keyof DataEntryMap[C]
+		? Promise<DataEntryMap[C][E]>
+		: Promise<CollectionEntry<C> | undefined>;
+	export function getEntry<
+		C extends keyof ContentEntryMap,
+		E extends ValidContentEntrySlug<C> | (string & {}),
+	>(
+		collection: C,
+		slug: E,
+	): E extends ValidContentEntrySlug<C>
+		? Promise<CollectionEntry<C>>
+		: Promise<CollectionEntry<C> | undefined>;
+	export function getEntry<
+		C extends keyof DataEntryMap,
+		E extends keyof DataEntryMap[C] | (string & {}),
+	>(
+		collection: C,
+		id: E,
+	): E extends keyof DataEntryMap[C]
+		? Promise<DataEntryMap[C][E]>
+		: Promise<CollectionEntry<C> | undefined>;
+
+	/** Resolve an array of entry references from the same collection */
+	export function getEntries<C extends keyof ContentEntryMap>(
+		entries: {
+			collection: C;
+			slug: ValidContentEntrySlug<C>;
+		}[],
+	): Promise<CollectionEntry<C>[]>;
+	export function getEntries<C extends keyof DataEntryMap>(
+		entries: {
+			collection: C;
+			id: keyof DataEntryMap[C];
+		}[],
+	): Promise<CollectionEntry<C>[]>;
+
+	export function render<C extends keyof AnyEntryMap>(
+		entry: AnyEntryMap[C][string],
+	): Promise<RenderResult>;
+
+	export function reference<C extends keyof AnyEntryMap>(
+		collection: C,
+	): import('astro/zod').ZodEffects<
+		import('astro/zod').ZodString,
+		C extends keyof ContentEntryMap
+			? {
+					collection: C;
+					slug: ValidContentEntrySlug<C>;
+				}
+			: {
+					collection: C;
+					id: keyof DataEntryMap[C];
+				}
+	>;
+	// Allow generic `string` to avoid excessive type errors in the config
+	// if `dev` is not running to update as you edit.
+	// Invalid collection names will be caught at build time.
+	export function reference<C extends string>(
+		collection: C,
+	): import('astro/zod').ZodEffects<import('astro/zod').ZodString, never>;
+
+	type ReturnTypeOrOriginal<T> = T extends (...args: any[]) => infer R ? R : T;
+	type InferEntrySchema<C extends keyof AnyEntryMap> = import('astro/zod').infer<
+		ReturnTypeOrOriginal<Required<ContentConfig['collections'][C]>['schema']>
+	>;
+
+	type ContentEntryMap = {
+		"posts": {
+"5-Key-Benefits-of-AI-Receptionist-Prompting-Technology.md": {
+	id: "5-Key-Benefits-of-AI-Receptionist-Prompting-Technology.md";
+  slug: "5-Key-Benefits-of-AI-Receptionist-Prompting-Technology";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"A-Dive-into-AI-Receptionists-Your-Help-at-the-Front-Desk.md": {
+	id: "A-Dive-into-AI-Receptionists-Your-Help-at-the-Front-Desk.md";
+  slug: "A-Dive-into-AI-Receptionists-Your-Help-at-the-Front-Desk";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"AI-Answering-Services-for-E-commerce-Providing-24-7-Customer-Support.md": {
+	id: "AI-Answering-Services-for-E-commerce-Providing-24-7-Customer-Support.md";
+  slug: "AI-Answering-Services-for-E-commerce-Providing-24-7-Customer-Support";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"AI-Answering-Services-for-E-commerce-Providing-24.md": {
+	id: "AI-Answering-Services-for-E-commerce-Providing-24.md";
+  slug: "AI-Answering-Services-for-E-commerce-Providing-24";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"AI-Outbound-Calls-and-the-Future-of-Work.md": {
+	id: "AI-Outbound-Calls-and-the-Future-of-Work.md";
+  slug: "AI-Outbound-Calls-and-the-Future-of-Work";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"AI-Outbound-Calls-for-Appointment-Scheduling.md": {
+	id: "AI-Outbound-Calls-for-Appointment-Scheduling.md";
+  slug: "AI-Outbound-Calls-for-Appointment-Scheduling";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"AI-Receptionist-Prompting-How-PixEla-Revolutionizes-Customer-Interaction.md": {
+	id: "AI-Receptionist-Prompting-How-PixEla-Revolutionizes-Customer-Interaction.md";
+  slug: "AI-Receptionist-Prompting-How-PixEla-Revolutionizes-Customer-Interaction";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"AI-Voice-Agent – A-Complete-Guide.md": {
+	id: "AI-Voice-Agent – A-Complete-Guide.md";
+  slug: "AI-Voice-Agent-A-Complete-Guide";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"AI-Voice-Chatbot-for-Product-Demos-and-Trials.md": {
+	id: "AI-Voice-Chatbot-for-Product-Demos-and-Trials.md";
+  slug: "AI-Voice-Chatbot-for-Product-Demos-and-Trials";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"Can-AI-Answer-Phone-Calls-for-Me.md": {
+	id: "Can-AI-Answer-Phone-Calls-for-Me.md";
+  slug: "Can-AI-Answer-Phone-Calls-for-Me";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"Can-Human-Receptionists-Be-Replaced-by-AI-Receptionists.md": {
+	id: "Can-Human-Receptionists-Be-Replaced-by-AI-Receptionists.md";
+  slug: "Can-Human-Receptionists-Be-Replaced-by-AI-Receptionists";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"How-Much-Does-an-AI-Virtual-Receptionist-Cost.md": {
+	id: "How-Much-Does-an-AI-Virtual-Receptionist-Cost.md";
+  slug: "How-Much-Does-an-AI-Virtual-Receptionist-Cost";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"How-to-Build-an-AI-Voice-Agent-Call-Center.md": {
+	id: "How-to-Build-an-AI-Voice-Agent-Call-Center.md";
+  slug: "How-to-Build-an-AI-Voice-Agent-Call-Center";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"How-to-Leverage-AI-for-Better-E-commerce-Sales.md": {
+	id: "How-to-Leverage-AI-for-Better-E-commerce-Sales.md";
+  slug: "How-to-Leverage-AI-for-Better-E-commerce-Sales";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"Leveraging-AI-Answering-Services-to-Enhance-Customer-Support-and-Service-Delivery.md": {
+	id: "Leveraging-AI-Answering-Services-to-Enhance-Customer-Support-and-Service-Delivery.md";
+  slug: "Leveraging-AI-Answering-Services-to-Enhance-Customer-Support-and-Service-Delivery";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"Measuring-the-Effectiveness-of-Virtual-Assistant-AI-Answering-Service.md": {
+	id: "Measuring-the-Effectiveness-of-Virtual-Assistant-AI-Answering-Service.md";
+  slug: "Measuring-the-Effectiveness-of-Virtual-Assistant-AI-Answering-Service";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"To-AI-Answering-Service-for-2024-Rapid-Response-with-AI.md": {
+	id: "To-AI-Answering-Service-for-2024-Rapid-Response-with-AI.md";
+  slug: "To-AI-Answering-Service-for-2024-Rapid-Response-with-AI";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"Top-Tips-and-Tricks-for-Building-Your-First-AI-Voice-Agent.md": {
+	id: "Top-Tips-and-Tricks-for-Building-Your-First-AI-Voice-Agent.md";
+  slug: "Top-Tips-and-Tricks-for-Building-Your-First-AI-Voice-Agent";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"Understand-the-impact-of-AI-in-e-commerce-customer-service.md": {
+	id: "Understand-the-impact-of-AI-in-e-commerce-customer-service.md";
+  slug: "Understand-the-impact-of-AI-in-e-commerce-customer-service";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"Voice-AI-and-Storytelling-Creating-Immersive-Experiences.md": {
+	id: "Voice-AI-and-Storytelling-Creating-Immersive-Experiences.md";
+  slug: "Voice-AI-and-Storytelling-Creating-Immersive-Experiences";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"What-Is-the-Hardest-Question-to-Ask-AI.md": {
+	id: "What-Is-the-Hardest-Question-to-Ask-AI.md";
+  slug: "What-Is-the-Hardest-Question-to-Ask-AI";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"Which-AI-is-Best-for-Answering-Questions.md": {
+	id: "Which-AI-is-Best-for-Answering-Questions.md";
+  slug: "Which-AI-is-Best-for-Answering-Questions";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"how-ai-phone-agents-change-customer-support-for-all-ecommerce-businesses.md": {
+	id: "how-ai-phone-agents-change-customer-support-for-all-ecommerce-businesses.md";
+  slug: "how-ai-phone-agents-change-customer-support-for-all-ecommerce-businesses";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"how-to-improve-and-optimize-voice-ai-performance.md": {
+	id: "how-to-improve-and-optimize-voice-ai-performance.md";
+  slug: "how-to-improve-and-optimize-voice-ai-performance";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"how-to-make-millions-with-your-ecommerce-store-this-black-friday.md": {
+	id: "how-to-make-millions-with-your-ecommerce-store-this-black-friday.md";
+  slug: "how-to-make-millions-with-your-ecommerce-store-this-black-friday";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+};
+
+	};
+
+	type DataEntryMap = {
+		
+	};
+
+	type AnyEntryMap = ContentEntryMap & DataEntryMap;
+
+	export type ContentConfig = never;
+}
