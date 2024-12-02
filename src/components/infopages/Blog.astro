@@ -226,6 +226,20 @@
     image: "/images/Blogs/blog25.jpg",
     link: "/Measuring-the-Effectiveness-of-Virtual-Assistant-AI-Answering-Service",
   },
+  {
+    id: 26,
+    title: "A Complete Guide to AI Phone Agents in 2024",
+    description: "Explore how AI tools can boost your sales strategy.",
+    image: "/images/Blogs/blog26.jpg",
+    link: "/A-Complete-Guide-to-AI-Phone-Agents-in-2024",
+  },
+  {
+    id: 27,
+    title: "How AI Voice Agents Help Small Businesses Grow",
+    description: "Explore how AI tools can boost your sales strategy.",
+    image: "/images/Blogs/blog27.jpg",
+    link: "/How-AI-Voice-Agents-Help-Small-Businesses-Grow",
+  },
 ];
 
  const reversedBlogs = [...blogs].reverse();
@@ -255,7 +269,7 @@ function showBlogsForPage(page) {
       (blog) => `
         <div class="blog-card w-full mx-auto border border-gray-200 rounded-lg overflow-hidden bg-white hover:shadow-2xl transition duration-300">
           <a href="${blog.link}">
-            <img src="${blog.image}" alt="Image for ${blog.title}" class="w-full h-48 object-cover" />
+            <img src="${blog.image}" alt="Image for ${blog.title}" class="w-full h-[20vh] object-cover" />
           </a>
           <div class="p-4">
             <h3 class="text-lg font-semibold mb-2">${blog.title}</h3>
