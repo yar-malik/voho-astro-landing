@@ -269,7 +269,7 @@ function showBlogsForPage(page) {
       (blog) => `
         <div class="blog-card w-full mx-auto border border-gray-200 rounded-lg overflow-hidden bg-white hover:shadow-2xl transition duration-300">
           <a href="${blog.link}">
-            <img src="${blog.image}" alt="Image for ${blog.title}" class="w-full h-[20vh] object-cover !important" />
+            <img src="${blog.image}" alt="Image for ${blog.title}" class="w-full h-[20vh] object-cover !important" style="height: 20vh !important;"  />
           </a>
           <div class="p-4">
             <h3 class="text-lg font-semibold mb-2">${blog.title}</h3>
