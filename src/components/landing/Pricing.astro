@@ -199,7 +199,7 @@ import Annual from "./components/annual.astro";
   </div>
 </section>
 
-<script>
+<script client:load>
   document.addEventListener("DOMContentLoaded", () => {
     // Buttons
     const monthlyButton = document.getElementById("monthly-button");
@@ -221,9 +221,9 @@ import Annual from "./components/annual.astro";
 
         // Update button styles
         monthlyButton.className =
-          "px-6 py-3 text-sm font-display rounded-lg bg-[#F9FAFB]  border-2 border-gray-300   text-black";
+          "px-6 py-3 text-sm font-display rounded-lg bg-[#F9FAFB] border-2 border-gray-300 text-black";
         annualButton.className =
-          "px-6 py-3 ml-4 text-sm font-display rounded-lg bg-black   text-white";
+          "px-6 py-3 ml-4 text-sm font-display rounded-lg bg-black text-white";
       } else {
         // Show Monthly Plan, Hide Annual Plan
         monthlyPlan.style.display = "block";
@@ -252,3 +252,4 @@ import Annual from "./components/annual.astro";
     updateView();
   });
 </script>
+
