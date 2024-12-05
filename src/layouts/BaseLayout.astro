@@ -3,59 +3,68 @@ import BaseHead from "../components/BaseHead.astro";
 import Navigation from "../components/global/Navigation.astro";
 import Footer from "../components/global/Footer.astro";
 ---
+
 <html
   lang="en"
   class="scroll-smooth selection:bg-accent-500 selection:text-white no-touchevents hydrated"
 >
   <head>
-   <link rel="icon" href="/CallSupportfavicon.svg" />
+    <link rel="icon" href="/CallSupportfavicon.svg" />
     <!-- <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/c09d1cedf170b.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script> -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
+    ></script>
     <!-- Google Tag Manager (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y1H8R29PCD"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y1H8R29PCD"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@3.0.1/dist/cookieconsent.css"
+    />
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-Y1H8R29PCD');
+      gtag("config", "G-Y1H8R29PCD");
     </script>
-    <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/c09d1cedf170b.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script>
-
+    <!-- <script type="text/javascript" data-cmp-ab="1" src="https://cdn.consentmanager.net/delivery/autoblocking/c09d1cedf170b.js" data-cmp-host="d.delivery.consentmanager.net" data-cmp-cdn="cdn.consentmanager.net" data-cmp-codesrc="16"></script> -->
+    <script>
+      window.addEventListener("load", function () {
+        window.cookieconsent.initialise({
+          palette: {
+            popup: {
+              background: "#000",
+            },
+            button: {
+              background: "#4CAF50",
+            },
+          },
+          theme: "classic",
+          position: "bottom",
+          content: {
+            message:
+              "We use cookies to enhance your browsing experience, analyze site traffic, and personalize content.By clicking Accept, you consent to our use of cookies. <br>To learn more about how we use cookies or to change your preferences, please see our Cookie Policy.",
+            dismiss: "Accept All",
+            allow: "Allow Essential",
+            deny: "Reject",
+            // link: 'Learn more',
+            // href: '/cookie-policy', // Replace with your policy page link
+          },
+        });
+      });
+    </script>
     <BaseHead />
-
   </head>
   <body class="bg-white flex flex-col min-h-svh">
-    <Navigation/>
+    <Navigation />
     <main class="grow"><slot /></main>
-    <Footer/>
+    <Footer />
   </body>
-
- <script>
-    window.addEventListener('load', function () {
-      window.cookieconsent.initialise({
-        palette: {
-          popup: {
-            background: '#000',
-          },
-          button: {
-            background: '#4CAF50',
-          },
-        },
-        theme: 'classic',
-        position: 'bottom',
-        content: {
-          message: 'We use cookies to enhance your browsing experience, analyze site traffic, and personalize content.By clicking Accept, you consent to our use of cookies. <br>To learn more about how we use cookies or to change your preferences, please see our Cookie Policy.',
-          dismiss: 'Accept All',
-          allow: 'Allow Essential',
-          deny: 'Reject',
-          // link: 'Learn more',
-          // href: '/cookie-policy', // Replace with your policy page link
-        },
-      });
-    });
-  </script> 
-  
 </html>
