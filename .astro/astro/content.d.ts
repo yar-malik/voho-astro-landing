@@ -376,6 +376,13 @@ declare module 'astro:content' {
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
+"blog. 45.md": {
+	id: "blog. 45.md";
+  slug: "Benefits-of-Voice-AI-for-Business";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
 "how-ai-phone-agents-change-customer-support-for-all-ecommerce-businesses.md": {
 	id: "how-ai-phone-agents-change-customer-support-for-all-ecommerce-businesses.md";
   slug: "how-ai-phone-agents-change-customer-support-for-all-ecommerce-businesses";
