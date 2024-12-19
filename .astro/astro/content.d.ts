@@ -229,6 +229,13 @@ declare module 'astro:content' {
   collection: "posts";
   data: InferEntrySchema<"posts">
 } & { render(): Render[".md"] };
+"AI-Voice-Agents-for-E-Commerce-Benefits-&-Examples.md": {
+	id: "AI-Voice-Agents-for-E-Commerce-Benefits-&-Examples.md";
+  slug: "AI-Voice-Agents-for-E-Commerce-Benefits-&-Examples";
+  body: string;
+  collection: "posts";
+  data: InferEntrySchema<"posts">
+} & { render(): Render[".md"] };
 "AI-Voice-Chatbot-for-Product-Demos-and-Trials.md": {
 	id: "AI-Voice-Chatbot-for-Product-Demos-and-Trials.md";
   slug: "AI-Voice-Chatbot-for-Product-Demos-and-Trials";
@@ -372,13 +379,6 @@ declare module 'astro:content' {
 "Which-AI-is-Best-for-Answering-Questions.md": {
 	id: "Which-AI-is-Best-for-Answering-Questions.md";
   slug: "Which-AI-is-Best-for-Answering-Questions";
-  body: string;
-  collection: "posts";
-  data: InferEntrySchema<"posts">
-} & { render(): Render[".md"] };
-"blog. 45.md": {
-	id: "blog. 45.md";
-  slug: "Benefits-of-Voice-AI-for-Business";
   body: string;
   collection: "posts";
   data: InferEntrySchema<"posts">
