@@ -1,0 +1,200 @@
+---
+import LogoSlider from "../../global/slider/LogoSlider";
+import Pricing from "../../landing/Pricing.astro";
+import Faq from "./components/faq.astro";
+import Testimonial from "./components/ProduuctTestimonials.astro";
+import Integration from "./components/Integration.astro";
+import Discover from "./components/discover.astro";
+---
+
+<section class="bg-g max-w-6xl mx-auto mt-4  justify-center text-gray-800">
+  <!-- Hero Section -->
+  <div
+    class="hero-section bg-black text-white rounded-lg text-center py-16 px-4 relative"
+  >
+    <!-- Background Image -->
+    <div
+      class="absolute inset-0 bg-cover bg-center rounded-lg"
+      style="background-image: url('/images/compressed/AI Answering Service-min.png');"
+    >
+    </div>
+    <!-- Light Color Overlay -->
+    <!-- <div class="absolute inset-0 bg-black opacity-50 rounded-lg"></div> -->
+
+    <!-- Content -->
+    <div class="relative">
+      <h1 class="text-4xl font-bold">AI Answering Service</h1>
+      <p class="mt-4 text-lg">
+        Revolutionize customer interactions with our 24/7 AI-powered answering
+        service.
+      </p>
+      <a
+        href="/get-started"
+        class="inline-block mt-6 bg-white text-black font-semibold py-3 px-6 rounded-lg hover:bg-gray-200"
+      >
+        Try It Now for Free
+      </a>
+    </div>
+  </div>
+
+  <!-- Features Section -->
+  <div class="features-section text-center container mx-auto py-16 px-4">
+    <h2 class="text-3xl font-bold text-center mb-8 text-black">Key Features</h2>
+    <div>
+      <div
+        class="grid gap-12 grid-cols-1 lg:space-y-0 lg:text-center md:grid-cols-3"
+      >
+        <!-- Feature 1: Instant Response -->
+        <div>
+          <div>
+            <div
+              class="items-center justify-center text-accent-500 bg-gray-100 rounded-xl flex h-10 w-10 lg:mx-auto"
+            >
+            <img src="/images/svgs/Instant Response.svg" alt="Instant Response" />
+            </div>
+            <p
+              class="mt-4 text-lg font-semibold leading-6 text-black font-display tracking-tight"
+            >
+              Instant Response
+            </p>
+          </div>
+          <div class="mt-4 text-gray-500 text-sm">
+            Provide immediate replies to customer queries, no matter the time of
+            day.
+          </div>
+        </div>
+
+        <!-- Feature 2: Cost-Efficient -->
+        <div>
+          <div>
+            <div
+              class="items-center justify-center text-accent-500 bg-gray-100 rounded-xl flex h-10 w-10 lg:mx-auto"
+            >
+            <img src="/images/svgs/Cost-Efficient.svg" alt="Cost-Efficient" />
+            </div>
+            <p
+              class="mt-4 text-lg font-semibold leading-6 text-black font-display tracking-tight"
+            >
+              Cost-Efficient
+            </p>
+          </div>
+          <div class="mt-4 text-gray-500 text-sm">
+            Save on staffing costs while maintaining exceptional customer
+            service.
+          </div>
+        </div>
+
+        <!-- Feature 3: 24/7 Availability -->
+        <div>
+          <div>
+            <div
+              class="items-center justify-center text-accent-500 bg-gray-100 rounded-xl flex h-10 w-10 lg:mx-auto"
+            >
+            <img src="/images/svgs/24 Availability.svg" alt="24 Availability" />
+            </div>
+            <p
+              class="mt-4 text-lg font-semibold leading-6 text-black font-display tracking-tight"
+            >
+              24/7 Availability
+            </p>
+          </div>
+          <div class="mt-4 text-gray-500 text-sm">
+            Ensure your business is always accessible, even during off-hours.
+          </div>
+        </div>
+
+        <!-- Feature 4: Scalable Solutions -->
+        <div>
+          <div>
+            <div
+              class="items-center justify-center text-accent-500 bg-gray-100 rounded-xl flex h-10 w-10 lg:mx-auto"
+            >
+            <img src="/images/svgs/Scalable Solutions.svg" alt="Scalable Solutions" />
+            </div>
+            <p
+              class="mt-4 text-lg font-semibold leading-6 text-black font-display tracking-tight"
+            >
+              Scalable Solutions
+            </p>
+          </div>
+          <div class="mt-4 text-gray-500 text-sm">
+            Seamlessly handle increased call volumes during peak times.
+          </div>
+        </div>
+
+        <!-- Feature 5: Multilingual Support -->
+        <div>
+          <div>
+            <div
+              class="items-center justify-center text-accent-500 bg-gray-100 rounded-xl flex h-10 w-10 lg:mx-auto"
+            >
+            <img src="/images/svgs/Multilingual Support.svg" alt="Multilingual Support" />
+            </div>
+            <p
+              class="mt-4 text-lg font-semibold leading-6 text-black font-display tracking-tight"
+            >
+              Multilingual Support
+            </p>
+          </div>
+          <div class="mt-4 text-gray-500 text-sm">
+            Communicate with customers in their preferred language effortlessly.
+          </div>
+        </div>
+
+        <!-- Feature 6: Intelligent Routing -->
+        <div>
+          <div>
+            <div
+              class="items-center justify-center text-accent-500 bg-gray-100 rounded-xl flex h-10 w-10 lg:mx-auto"
+            >
+            <img src="/images/svgs/Intelligent Routing.svg" alt="Intelligent Routing" />
+            </div>
+            <p
+              class="mt-4 text-lg font-semibold leading-6 text-black font-display tracking-tight"
+            >
+              Intelligent Routing
+            </p>
+          </div>
+          <div class="mt-4 text-gray-500 text-sm">
+            Automatically direct calls to the appropriate department or person.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Discover Section -->
+  <Discover />
+
+  <!--  Slider -->
+  <section class="my-12 py-12 px-6 ">
+    <img src="/images/compressed/Integration image-min.png" alt="Integration" />
+    <!-- <div class="text-left gap-10 mb-8 flex justify-between">
+      <h2 class="text-4xl tracking-tight font-semibold text-black md:text-5xl font-display">
+        Connect CallSupport to Your Existing System
+      </h2>
+      <p class="text-gray-500 max-w-2xl text-2xl mx-auto mb-8">
+        Maximize efficiency by integrating CallSupport with platforms like
+        HubSpot, GoHighLevel, Zoho, and other CRM or booking systems. Enhance
+        the consistency of customer interactions across all channels seamlessly.
+      </p>
+    </div>
+    <div>
+      <LogoSlider client:only="react" />
+    </div> -->
+  </section>
+
+  <!-- Integration Section -->
+  <Integration />
+
+  <!-- Pricing  Section -->
+  <Pricing />
+
+  <!-- Testimonial Section -->
+  <!-- <div class="features-section text-center container mx-auto py-16 px-4"> -->
+  <Testimonial />
+  <!-- </div> -->
+
+  <!-- Ai FAQ Section -->
+  <Faq />
+</section>
