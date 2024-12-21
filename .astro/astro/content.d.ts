@@ -327,6 +327,13 @@ declare module 'astro:content' {
   collection: "posts";
   data: any
 } & { render(): Render[".md"] };
+"The-Benefits-of-AI-Voice-Agents-in-Car-Dealerships.md": {
+	id: "The-Benefits-of-AI-Voice-Agents-in-Car-Dealerships.md";
+  slug: "The-Benefits-of-AI-Voice-Agents-in-Car-Dealerships";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
 "The-Rise-of-AI-Voiceovers-in-Film-and-Animation.md": {
 	id: "The-Rise-of-AI-Voiceovers-in-Film-and-Animation.md";
   slug: "The-Rise-of-AI-Voiceovers-in-Film-and-Animation";
