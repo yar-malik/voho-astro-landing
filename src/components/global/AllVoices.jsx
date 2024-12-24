@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { GB, DE, RO, FR, AR, LK, SA, CZ, ES, CN, JP, IN, TR, IT, KR, PT, UA, SE, RU, VN, TA, SK, PL, NO, MY, ID, HU, GR, FI, PH, NL, DK, HR, BG } from 'country-flag-icons/react/3x2'
+import { GB, DE, RO, FR, AR, LK, SA, CZ, ES, CN, JP, IN, TR, IT, KR, PT, UA, SE, RU, VN, TA, SK, PL, NO, MY, ID, HU, GR, FI, PH, NL, DK, HR, BG, PK } from 'country-flag-icons/react/3x2'
 import VoiceModal from "./VoiceModal";
 
 const languageOptions = [
@@ -35,6 +35,7 @@ const languageOptions = [
   { code: "cz", name: "Czech" },
   { code: "hr", name: "Croatian" },
   { code: "bg", name: "Bulgarian" },
+  { code: "pk", name: "Urdu" },
 ];
 
 const avatars = [
@@ -119,10 +120,12 @@ const avatars = [
   { src: "https://i.pravatar.cc/150?img=20", alt: "Female18", fallback: "F18" },
   { src: "https://i.pravatar.cc/150?img=25", alt: "Female19", fallback: "F19" },
   { src: "https://i.pravatar.cc/150?img=38", alt: "Female20", fallback: "F20" },
+  { src: "https://i.pravatar.cc/150?img=38", alt: "Female20", fallback: "F20" },
 ];
 
 const AllVoices = () => {
   const [voices, setVoices] = useState([]);
+  console.log(voices);
   const [filteredVoices, setFilteredVoices] = useState([]);
   console.log(voices);
   const [filters, setFilters] = useState({
@@ -223,13 +226,14 @@ const AllVoices = () => {
       czech: ["Hana - CZ", "Adam", "Pawel TV™️ - High Quality "],
       croatian: ["Maja", "Luka - Narration", "Ana  -  Warm and Expressive"],
       bulgarian: ["Julian", "Elena", "Valentin"],
+      pakistani: ["Shoaib Jasra", "Saba", "Asad", "Sara"],
     };
 
     // const allPredefinedVoices = Object.values(predefinedLists).flat();
 
     const inferGenderFromName = (voiceName) => {
       const femaleNames = [
-        "Kate - attractive and cheeky", "Delia", "Emilia - German narrator", "Laura", "Cristina", "Elena", "Ana  -  Warm and Expressive", "Sissel", "Ruth - Professional Dutch female voiceover", "Aurora", "The Dubbing Princess - Pinky Rebucas: Smooth, Great, and Versatile TagaBoses", "Niki 2 - native Greek female", "Ingrid", "Bea", "Afifah", "Corina", "Nila - Warm & Expressive Tamil Voice", "Vira", "Anna - Calm and pleasant", "Antonia", "Sanna Hartfield - Swedish Conversational", "Anna Kim", "Keren - Young Brazilian Female", "Adina", "Linda Fiore", "Camille", "Mamaie", "Jessica", "Mademoiselle", "Sana", "Miss", "Ava", "Nova", "Shimmer", "Stacy - Sweet and Cute Chinese", "Coco Li", "Sara Martin 1", "Sakura Suzuki", "Muskaan - Casual Hindi Voice", "Derya - Youthful Female Narrator"
+        "Kate - attractive and cheeky","Saba", "Delia","Sara", "Emilia - German narrator", "Laura", "Cristina", "Elena", "Ana  -  Warm and Expressive", "Sissel", "Ruth - Professional Dutch female voiceover", "Aurora", "The Dubbing Princess - Pinky Rebucas: Smooth, Great, and Versatile TagaBoses", "Niki 2 - native Greek female", "Ingrid", "Bea", "Afifah", "Corina", "Nila - Warm & Expressive Tamil Voice", "Vira", "Anna - Calm and pleasant", "Antonia", "Sanna Hartfield - Swedish Conversational", "Anna Kim", "Keren - Young Brazilian Female", "Adina", "Linda Fiore", "Camille", "Mamaie", "Jessica", "Mademoiselle", "Sana", "Miss", "Ava", "Nova", "Shimmer", "Stacy - Sweet and Cute Chinese", "Coco Li", "Sara Martin 1", "Sakura Suzuki", "Muskaan - Casual Hindi Voice", "Derya - Youthful Female Narrator"
       ];
       const lowerName = voiceName.toLowerCase();
       return femaleNames.some((name) => lowerName.includes(name.toLowerCase())) ? "female" : "male";
@@ -268,6 +272,7 @@ const AllVoices = () => {
       if (predefinedLists.czech.includes(voiceName)) return { country: "Czech", flag: "cz" };
       if (predefinedLists.croatian.includes(voiceName)) return { country: "Croatian", flag: "hr" };
       if (predefinedLists.bulgarian.includes(voiceName)) return { country: "Bulgarian", flag: "bg" };
+      if (predefinedLists.pakistani.includes(voiceName)) return { country: "Pakistani", flag: "pk" };
       return { country: "Unknown", flag: "unknown" };
     };
 
@@ -301,9 +306,109 @@ const AllVoices = () => {
         fable: { gender: "male", accent: "American", previewUrl: "/voices/media/fable_.wav" },
         onyx: { gender: "male", accent: "American", previewUrl: "/voices/media/onyx_.wav" },
       };
-
+const UrduVoices = [
+  {
+    id: "new", 
+    name: "Shoaib Jasra", 
+    gender: "male", 
+    country: "Urdu", 
+    flag: "pk", 
+    previewUrl: "/voices/ElevenLabs_2024-12-20T06_25_52_Sohaib Jasra _pvc_s100_sb100_se0_b_m2.mp3", 
+    avatar: {
+      src: "https://i.pravatar.cc/150?img=42", 
+      alt: "Male Urdu",
+      fallback: "UM" 
+    },
+    provider: "11labs", 
+    providerId: "unique-provider-id-urdu", 
+    slug: "unique-slug-for-urdu", 
+    orgId: "organization-id-related-to-urdu", 
+    isPublic: true, 
+    isDeleted: false, 
+    createdAt: new Date().toISOString(), 
+    updatedAt: new Date().toISOString(), 
+    __v: 0, 
+    _id: "unique-database-id-for-urdu" 
+  },
+  {
+    id: "new-id", 
+    name: "Saba", 
+    gender: "female", 
+    country: "Urdu", 
+    flag: "pk", 
+    previewUrl: "/voices/ElevenLabs_2024-12-20T06_48_59_Sana-Pakistani Urdu Female_gen_s50_sb75_se0_b_m2.mp3", 
+    avatar: {
+      src: "https://imgs.search.brave.com/8LGptmP3i6GtodMtKw96ubQIWTgXsaXFswuI8yF1HxU/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4y/LnN0eWxlY3JhemUu/Y29tL3dwLWNvbnRl/bnQvdXBsb2Fkcy8y/MDEzLzA2L0JlYXV0/aWZ1bC1QYWtpc3Rh/bmktV29tZW4uanBn", 
+      alt: "Male Urdu",
+      fallback: "UM" 
+    },
+    provider: "11labs", 
+    providerId: "unique-provider-id-urdu", 
+    slug: "unique-slug-for-urdu", 
+    orgId: "organization-id-related-to-urdu", 
+    isPublic: true, 
+    isDeleted: false, 
+    createdAt: new Date().toISOString(), 
+    updatedAt: new Date().toISOString(), 
+    __v: 0, 
+    _id: "unique-database-id-for-urdu" 
+  },
+  {
+    id: "new-id-for", 
+    name: "Asad", 
+    gender: "male", 
+    country: "Urdu", 
+    flag: "pk", 
+    previewUrl: "/voices/fa419d5187df4f5d9385b3f094949daf.mp3", 
+    avatar: {
+      src: "https://i.pravatar.cc/150?img=42", 
+      alt: "Male Urdu",
+      fallback: "UM" 
+    },
+    provider: "11labs", 
+    providerId: "unique-provider-id-urdu", 
+    slug: "unique-slug-for-urdu", 
+    orgId: "organization-id-related-to-urdu", 
+    isPublic: true, 
+    isDeleted: false, 
+    createdAt: new Date().toISOString(), 
+    updatedAt: new Date().toISOString(), 
+    __v: 0, 
+    _id: "unique-database-id-for-urdu" 
+  },
+  {
+    id: "new-id-for-urdu", 
+    name: "Sara", 
+    gender: "female", 
+    country: "Urdu", 
+    flag: "pk", 
+    previewUrl: "/voices/ElevenLabs_2024-12-20T08_51_09_Sara-Pakistani Urdu Female_gen_s100_sb50_se0_b_m2.mp3", 
+    avatar: {
+      src: "https://i.pravatar.cc/150?img=42", 
+      alt: "Male Urdu",
+      fallback: "UM" 
+    },
+    provider: "11labs", 
+    providerId: "unique-provider-id-urdu", 
+    slug: "unique-slug-for-urdu", 
+    orgId: "organization-id-related-to-urdu", 
+    isPublic: true, 
+    isDeleted: false, 
+    createdAt: new Date().toISOString(), 
+    updatedAt: new Date().toISOString(), 
+    __v: 0, 
+    _id: "unique-database-id-for-urdu" 
+  },
+]
       try {
         setLoading(true);
+        if(localStorage.getItem("voices")){
+          console.log("voices found in local storage");
+          const voices = JSON.parse(localStorage.getItem("voices"));
+          filterAndSetVoices(voices);
+          setLoading(false);
+          return;
+        }
         const response = await fetch("https://api.callsupport.ai/api/voice/voicelist");
 
         if (!response.ok) {
@@ -331,8 +436,9 @@ const AllVoices = () => {
             }
             : voice;
         });
-
-        filterAndSetVoices(updatedVoices);
+        const combinedVoices = [...updatedVoices, ...UrduVoices];
+        filterAndSetVoices(combinedVoices);
+        localStorage.setItem("voices", JSON.stringify(combinedVoices));
         setLoading(false);
       } catch (err) {
         setError(err.message);
@@ -359,12 +465,8 @@ const AllVoices = () => {
     setShowModal(false);
   };
 
-  return (
-    loading ? (
-      <div className="text-center py-10">Loading voices...</div>
-    ) : (
+  return ( 
       <div className="mx-auto">
-        {showModal && (
           <VoiceModal
             voices={filteredVoices}
             onClose={handleCloseModal}
@@ -372,17 +474,7 @@ const AllVoices = () => {
             onFiltersChange={handleSearch}
             refer={refer}
           />
-        )}
-        <button
-          onClick={() => setShowModal(true)}
-          className="bg-blue-400 text-white px-8 py-2 rounded-md hover:bg-blue-600 cursor-pointer transition duration-200"
-        >
-          Avalible Voices
-        </button>
       </div>
-    )
-    
-
   );
 };
 
