@@ -1,5 +1,6 @@
 ---
 import VoiceAIButton from "../infopages/VoiceAIButton.astro";
+import AllVoices from "../global/AllVoices.jsx";
 ---
 
 <section>
@@ -20,6 +21,9 @@ import VoiceAIButton from "../infopages/VoiceAIButton.astro";
             </span>
           </a>
         </div>
+      </div>
+      <div class="hidden">
+        <AllVoices client:load />
       </div>
       <p
         class="text-4xl tracking-tight font-semibold text-black md:text-5xl font-display mt-8"
