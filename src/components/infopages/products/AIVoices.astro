@@ -5,6 +5,7 @@ import Faq from "./components/faq.astro";
 import Testimonial from "./components/ProduuctTestimonials.astro";
 import Integration from "./components/Integration.astro";
 import Discover from "./components/discover.astro";
+import AllVoices from "../../global/AllVoices.jsx";
 ---
 
 <section class="bg-g max-w-6xl mx-auto mt-4  justify-center text-gray-800">
@@ -36,6 +37,7 @@ import Discover from "./components/discover.astro";
       </a>
     </div>
   </div>
+  
  <!-- Voice Demo Section -->
  <div class="voice-demo-section text-center container mx-auto py-16 px-4 rounded-lg">
     <h2 class="text-3xl font-bold text-center mb-8 text-black">Voice Demos</h2>
@@ -45,7 +47,7 @@ import Discover from "./components/discover.astro";
     <div class="grid gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2">
       <!-- Voice Demo 1 -->
       <div class="bg-white shadow-md rounded-lg p-4">
-        <h3 class="text-xl font-semibold text-black mb-2">Shoaib Jasra</h3>
+        <h3 class="text-xl font-semibold text-black mb-2">Shoaib Jasra (coming soon)</h3>
         <audio controls class="w-full">
           <source src="/voices/ElevenLabs_2024-12-20T06_25_52_Sohaib Jasra _pvc_s100_sb100_se0_b_m2.mp3" type="audio/mpeg" />
           Your browser does not support the audio element.
@@ -54,7 +56,7 @@ import Discover from "./components/discover.astro";
   
       <!-- Voice Demo 2 -->
       <div class="bg-white shadow-md rounded-lg p-4">
-        <h3 class="text-xl font-semibold text-black mb-2">Sana</h3>
+        <h3 class="text-xl font-semibold text-black mb-2">Sana (coming soon)</h3>
         <audio controls class="w-full">
           <source src="/voices/ElevenLabs_2024-12-20T06_48_59_Sana-Pakistani Urdu Female_gen_s50_sb75_se0_b_m2.mp3" type="audio/mpeg" />
           Your browser does not support the audio element.
@@ -63,7 +65,7 @@ import Discover from "./components/discover.astro";
   
       <!-- Voice Demo 3 -->
       <div class="bg-white shadow-md rounded-lg p-4">
-        <h3 class="text-xl font-semibold text-black mb-2">Asad</h3>
+        <h3 class="text-xl font-semibold text-black mb-2">Asad (coming soon)</h3>
         <audio controls class="w-full">
           <source src="/voices/fa419d5187df4f5d9385b3f094949daf.mp3" type="audio/mpeg" />
           Your browser does not support the audio element.
@@ -72,12 +74,15 @@ import Discover from "./components/discover.astro";
   
       <!-- Voice Demo 4 -->
       <div class="bg-white shadow-md rounded-lg p-4">
-        <h3 class="text-xl font-semibold text-black mb-2">Sara</h3>
+        <h3 class="text-xl font-semibold text-black mb-2">Sara (coming soon)</h3>
         <audio controls class="w-full">
           <source src="/voices/ElevenLabs_2024-12-20T08_51_09_Sara-Pakistani Urdu Female_gen_s100_sb50_se0_b_m2.mp3" type="audio/mpeg" />
           Your browser does not support the audio element.
         </audio>
       </div>
+    </div>
+    <div class="mt-8">
+      <AllVoices client:only="react" />
     </div>
   </div>
   
@@ -242,3 +247,4 @@ import Discover from "./components/discover.astro";
   <!-- Ai FAQ Section -->
   <Faq />
 </section>
+https://api.callsupport.ai/api/voice/voicelist
