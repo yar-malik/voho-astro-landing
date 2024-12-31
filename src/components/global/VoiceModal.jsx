@@ -68,13 +68,12 @@ const VoiceModal = ({ voices, onClose,  filters, onFiltersChange, refer,  }) => 
             <div className="bg-white border border-gray-200 rounded-lg  w-3/4 max-w-7xl">
                 <div className="flex justify-between items-center p-6 border-b border-gray-100">
                     <div>
-                        <h2 className="text-lg text-left font-semibold">Explore a wide range of voices from 32 countries, featuring diverse accents and styles to suit your needs.</h2>
+                    
+                        <h2 className="text-lg text-left font-semibold">32 Voices available and adding new daily</h2>
                         <p className="">
-                            Can’t find a voice you like? Explore the  <a href="https://elevenlabs.io/app/voice-lab" target="_blank" rel="noopener noreferrer" className=" text-blue-500">
-                                elevenLabs Voice Library
-                            </a>, and email your choice to  <a href="mailto:support@callsupport.ai" className=" text-blue-500">
+                        Can’t find a voice you like? Email us at  <a href="mailto:support@callsupport.ai" className=" text-blue-500">
                                 support@callsupport.ai
-                            </a> we’ll add it right away!
+                            </a> and we will add it.
                         </p>
                     </div>
 
@@ -143,7 +142,7 @@ const VoiceModal = ({ voices, onClose,  filters, onFiltersChange, refer,  }) => 
                             <option value="Bulgarian">Bulgarian</option>
                             <option value="Pakistani">Pakistani</option>
                         </select>
-                        <select
+                        {/* <select
                             name="provider"
                             className="border border-gray-100 rounded-md p-2 mb-4 w-full"
                             value={filters.provider || ""}
@@ -152,8 +151,7 @@ const VoiceModal = ({ voices, onClose,  filters, onFiltersChange, refer,  }) => 
                             <option value="">All Providers</option>
                             <option value="11labs">11labs</option>
                             <option value="openai">Openai</option>
-                            {/* <option value="provider3">Provider 3</option> */}
-                        </select>
+                        </select> */}
                     </div>
                     {/* Voice Table */}
                     <div className="overflow-y-auto max-h-96">
@@ -162,7 +160,7 @@ const VoiceModal = ({ voices, onClose,  filters, onFiltersChange, refer,  }) => 
                                 <tr className="border-b border-gray-100">
                                     <th className="p-2">Voice</th>
                                     <th className="p-2">Traits</th>
-                                    <th className="p-2">Provider</th>
+                                    {/* <th className="p-2">Provider</th> */}
                                     <th className="p-2" style={{ visibility: 'hidden' }}>something</th>
                                 </tr>
                             </thead>
@@ -198,7 +196,7 @@ const VoiceModal = ({ voices, onClose,  filters, onFiltersChange, refer,  }) => 
                                                 </div>
 
                                             </td>
-                                            <td className="p-2">{voice.provider || "Unknown"}</td>
+                                            {/* <td className="p-2">{voice.provider || "Unknown"}</td> */}
                                             {/* <td className="p-2">
                                                 <button
                                                     className="text-blue-500 hover:text-blue-700  "
