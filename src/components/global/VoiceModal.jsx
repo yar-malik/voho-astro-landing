@@ -66,7 +66,7 @@ const VoiceModal = ({ voices, onClose,  filters, onFiltersChange, refer,  }) => 
     return (
         <div className=" inset-0  flex items-center w-full justify-center  ">
             <div className="bg-white border border-gray-200 rounded-lg  w-3/4 max-w-7xl">
-                <div className="flex justify-between items-center p-6 border-b">
+                <div className="flex justify-between items-center p-6 border-b border-gray-100">
                     <div>
                         <h2 className="text-lg text-left font-semibold">Explore a wide range of voices from 32 countries, featuring diverse accents and styles to suit your needs.</h2>
                         <p className="">
@@ -90,11 +90,11 @@ const VoiceModal = ({ voices, onClose,  filters, onFiltersChange, refer,  }) => 
                             value={filters.search || ""}
                             onChange={onFiltersChange}
                             ref={refer}
-                            className="border rounded-md p-2 mb-4 w-full"
+                            className="border border-gray-100 rounded-md p-2 mb-4 w-full"
                         />
                         <select
                             name="gender"
-                            className="border rounded-md p-2 mb-4 w-full"
+                            className="border border-gray-100 rounded-md p-2 mb-4 w-full"
                             value={filters.gender || ""}
                             onChange={onFiltersChange}
                         >
@@ -104,7 +104,7 @@ const VoiceModal = ({ voices, onClose,  filters, onFiltersChange, refer,  }) => 
                         </select>
                         <select
                             name="accent"
-                            className="border rounded-md p-2 mb-4 w-full"
+                            className="border border-gray-100 rounded-md p-2 mb-4 w-full"
                             value={filters.accent || ""}
                             onChange={onFiltersChange}
                         >
@@ -145,7 +145,7 @@ const VoiceModal = ({ voices, onClose,  filters, onFiltersChange, refer,  }) => 
                         </select>
                         <select
                             name="provider"
-                            className="border rounded-md p-2 mb-4 w-full"
+                            className="border border-gray-100 rounded-md p-2 mb-4 w-full"
                             value={filters.provider || ""}
                             onChange={onFiltersChange}
                         >
@@ -159,7 +159,7 @@ const VoiceModal = ({ voices, onClose,  filters, onFiltersChange, refer,  }) => 
                     <div className="overflow-y-auto max-h-96">
                         <table className="w-full text-left">
                             <thead>
-                                <tr className="border-b">
+                                <tr className="border-b border-gray-100">
                                     <th className="p-2">Voice</th>
                                     <th className="p-2">Traits</th>
                                     <th className="p-2">Provider</th>
@@ -171,7 +171,7 @@ const VoiceModal = ({ voices, onClose,  filters, onFiltersChange, refer,  }) => 
                                     if (!voice) return null;
                                     const flagIcon = getFlagIcon(voice.flag)
                                     return (
-                                        <tr key={voice.id} className="border-b hover:bg-gray-100 cursor-pointer group">
+                                        <tr key={voice.id} className="border-b border-gray-100 hover:bg-gray-100 cursor-pointer group">
                                             <td className="p-2 flex items-center">
                                                 <button onClick={() => handlePlayPause(voice)} className="mr-3">
                                                     {playingVoiceId === voice.id ? <Pause /> : <Play />}
