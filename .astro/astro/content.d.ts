@@ -299,6 +299,13 @@ declare module 'astro:content' {
   collection: "posts";
   data: any
 } & { render(): Render[".md"] };
+"How-AI-Voice-Enhances-the-Restaurant-Customer-Experience.md": {
+	id: "How-AI-Voice-Enhances-the-Restaurant-Customer-Experience.md";
+  slug: "How-AI-Voice-Enhances-the-Restaurant-Customer-Experience";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
 "How-Much-Does-an-AI-Virtual-Receptionist-Cost.md": {
 	id: "How-Much-Does-an-AI-Virtual-Receptionist-Cost.md";
   slug: "How-Much-Does-an-AI-Virtual-Receptionist-Cost";
