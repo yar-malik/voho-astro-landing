@@ -243,6 +243,13 @@ declare module 'astro:content' {
   collection: "posts";
   data: any
 } & { render(): Render[".md"] };
+"AI-Voice-Receptionist-Prompts-to-Gain-Better-Customer-Service.md": {
+	id: "AI-Voice-Receptionist-Prompts-to-Gain-Better-Customer-Service.md";
+  slug: "AI-Voice-Receptionist-Prompts-to-Gain-Better-Customer-Service";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
 "Benefits-of-Voice-AI-for-Business.md": {
 	id: "Benefits-of-Voice-AI-for-Business.md";
   slug: "Benefits-of-Voice-AI-for-Business";
@@ -379,6 +386,13 @@ declare module 'astro:content' {
 "To-AI-Answering-Service-for-2024-Rapid-Response-with-AI.md": {
 	id: "To-AI-Answering-Service-for-2024-Rapid-Response-with-AI.md";
   slug: "To-AI-Answering-Service-for-2024-Rapid-Response-with-AI";
+  body: string;
+  collection: "posts";
+  data: any
+} & { render(): Render[".md"] };
+"Top-5-AI-Answering-Service-Features-Your-Business-Needs.md": {
+	id: "Top-5-AI-Answering-Service-Features-Your-Business-Needs.md";
+  slug: "Top-5-AI-Answering-Service-Features-Your-Business-Needs";
   body: string;
   collection: "posts";
   data: any
