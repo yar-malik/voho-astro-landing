@@ -16,6 +16,6 @@ vite: {
     plugins: [tailwindcss()],
   },
     // add yur domain name here
-   site: 'https://callsupport.ai',
+   site: 'https://vohoai.com',
   integrations: [sitemap(),mdx(), react()]
 });

@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://callsupport.ai
+Host: https://vohoai.com
 
 # Sitemaps
-Sitemap: https://callsupport.ai/sitemap.xml
+Sitemap: https://vohoai.com/sitemap.xml

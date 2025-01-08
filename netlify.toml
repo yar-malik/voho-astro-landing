@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/*"
+  to = "https://vohoai.com"
+  status = 301
