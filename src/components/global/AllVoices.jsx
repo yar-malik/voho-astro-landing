@@ -409,7 +409,7 @@ const UrduVoices = [
           setLoading(false);
           return;
         }
-        const response = await fetch("https://api.callsupport.ai/api/voice/voicelist");
+        const response = await fetch("https://api.vohoai.com/api/voice/voicelist");
 
         if (!response.ok) {
           throw new Error(`Failed to fetch voices: ${response.statusText}`);

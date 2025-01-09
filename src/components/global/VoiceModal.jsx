@@ -71,7 +71,7 @@ const VoiceModal = ({ voices, onClose,  filters, onFiltersChange, refer,  }) => 
                     
                         <h2 className="text-lg text-left font-semibold">32 Voices available and adding new daily</h2>
                         <p className="">
-                        Can’t find a voice you like? Email us at  <a href="mailto:support@callsupport.ai" className=" text-blue-500">
+                        Can’t find a voice you like? Email us at  <a href="mailto:support@vohoai.com" className=" text-blue-500">
                                 support@vohoai.com
                             </a> and we will add it.
                         </p>
