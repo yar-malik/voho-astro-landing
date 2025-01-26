@@ -212,7 +212,7 @@ const AIPhoneUI = () => {
                     ref={trackRef}
                     className="slide-btn relative w-64 h-14 rounded-full flex items-center justify-center text-white font-bold overflow-hidden"
                     style={{
-                      background: `linear-gradient(to right, rgb(254, 145, 75) ${slideX}px, rgba(50, 50, 50, 0.6) ${slideX}px)`,
+                      background: `linear-gradient(to right, rgb(40, 60, 255) ${slideX}px, rgba(40, 60, 255, 0.3) ${slideX + 50}px)`,
                       transition: "background 0.2s ease-out",
                     }}
                   >
