@@ -2,8 +2,10 @@ import { useEffect, useRef, useState, useCallback } from "react";
 import Vapi from "@vapi-ai/web";
 
 const publicKey = import.meta.env.PUBLIC_VAPI_PUBLIC_KEY || "e5c00e52-3011-4a65-a46c-270c9d0fa091"; // Replace with your actual public key
-const assistantId = import.meta.env.PUBLIC_VAPI_ASSISTANT_ID || "00d6a328-d20a-4e35-bbff-819f8a515d70"; // Replace with your actual assistant ID
-
+// const assistantId = import.meta.env.PUBLIC_VAPI_ASSISTANT_ID || "00d6a328-d20a-4e35-bbff-819f8a515d70"; // Replace with your actual assistant ID
+let assistantId ="1a2e2533-33f7-474f-8b97-4e89f11a7764"
+// const chris = "1a2e2533-33f7-474f-8b97-4e89f11a7764"
+// const jessica ="675f59f0-cce4-4c4b-8049-08f7da175458"
 // console.log('publicKey',publicKey)
 // console.log('assistantId',assistantId)
 const useVapi = () => {
@@ -13,9 +15,20 @@ const useVapi = () => {
   const [conversation, setConversation] = useState<
     { role: string; text: string; timestamp: string; isFinal: boolean }[]
   >([]);
-  const [statusText, setStatusText] = useState("Give it a try!");
+  const [statusText, setStatusText] = useState("Talk to AI Employee now!");
   const vapiRef = useRef<any>(null);
-
+const Currentassistant = (voice) => {
+  switch(voice){
+    case "Chris":
+      return assistantId = "1a2e2533-33f7-474f-8b97-4e89f11a7764"
+    case "Jessica":
+      return assistantId = "675f59f0-cce4-4c4b-8049-08f7da175458"
+    case "Frida":
+      return assistantId = "59dbd031-3998-4650-9192-8ed86706515f"
+    case "Niander":
+      return assistantId = "2bfddc0f-c16f-454d-b02f-11b1a218a58a"
+  }
+}
   const initializeVapi = useCallback(() => {
     // setStatusText("One sec...");
     if (!vapiRef.current) {
@@ -29,7 +42,7 @@ const useVapi = () => {
 
       vapiInstance.on("call-end", () => {
         setIsSessionActive(false);
-        setStatusText("Give it a try!");
+        setStatusText("Talk to AI Employee now!");
         setConversation([]); // Reset conversation on call end
       });
 
@@ -125,12 +138,23 @@ const useVapi = () => {
         await vapiRef.current.stop();
       } else {
         await vapiRef.current.start(assistantId);
+        setIsSessionActive(true)
       }
     } catch (err) {
       console.error("Error toggling Vapi session:", err);
     }
   };
-
+  const endCall = async () => {
+    try {
+      if (isSessionActive && vapiRef.current) {
+        await vapiRef.current.stop();
+        setIsSessionActive(false);
+        setStatusText("Call ended");
+      }
+    } catch (err) {
+      console.error("Error ending call:", err);
+    }
+  };
   const sendMessage = (role: string, content: string) => {
     if (vapiRef.current) {
       vapiRef.current.send({
@@ -164,6 +188,8 @@ const useVapi = () => {
     toggleMute,
     statusText,
     isMuted,
+    endCall,
+    Currentassistant,
   };
 };
 
