@@ -29,3 +29,26 @@
     font-family: InterVariable, sans-serif;
   }
 }
+
+.phone {
+  @apply relative bg-gray-900 w-72 h-[545px] rounded-3xl border-4 border-[#fe914b] shadow-lg flex flex-col items-center justify-center;
+}
+.slide-btn {
+  @apply relative w-64 h-14 rounded-full flex items-center justify-center text-white font-bold overflow-hidden;
+}
+.slide-btn-inner {
+  @apply absolute left-0 w-12 h-12 bg-white rounded-full flex items-center justify-center cursor-pointer;
+}
+
+.voice-grid {
+  @apply grid grid-cols-4 gap-4 mt-4;
+}
+.voice-btn {
+  @apply p-3 border rounded-md flex flex-col items-center text-gray-700 text-lg transition;
+}
+.slide-btn-container {
+  @apply absolute bottom-6 w-full flex justify-center;
+}
+.call-end-btn {
+  @apply bg-red-500 text-white px-4 py-2 rounded-md;
+}
