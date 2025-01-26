@@ -202,7 +202,7 @@ const AIPhoneUI = () => {
                 <h2 className="text-white text-xl font-bold mt-2">
                   Incoming call
                 </h2>
-                <h3 className="text-[#283CFF] text-lg font-semibold mt-2">
+                <h3 className="selected-voice text-[#283CFF] text-lg font-semibold mt-2">
                   {selectedVoice} AI  Assistant
                 </h3>
                 {/* <p className="text-gray-300 text-sm">Office Number</p> */}
