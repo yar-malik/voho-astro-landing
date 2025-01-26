@@ -107,7 +107,7 @@ const AIPhoneUI = () => {
       {/* Title Section */}
       <div className="text-center mb-10">
         <h1 className="text-3xl font-bold text-gray-900 flex items-center">
-          <span className="text-[#283CFF] text-4xl mr-2">●</span>
+          <span className="dot text-[#283CFF] text-4xl mr-2">●</span>
           <span className="leading-tight">
             Customize The Voice And The Personality Of Your AI Calling
             Assistant.

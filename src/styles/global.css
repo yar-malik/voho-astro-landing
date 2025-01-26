@@ -55,4 +55,6 @@
 .selected-voice {
   @apply text-[#283CFF] text-lg font-semibold mt-2;
 }
-
+.dot {
+  @apply text-[#283CFF] text-4xl mr-2;
+}
