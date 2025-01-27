@@ -15,7 +15,7 @@ import useVapi from "../../hooks/use-vapi";
   const AIPhoneUI = () => {
     const [selectedVoice, setSelectedVoice] = useState("Chris");
     const [slideX, setSlideX] = useState(0);
-    const [answered, setAnswered] = useState(true);
+    const [answered, setAnswered] = useState(false);
     const [timer, setTimer] = useState(120);
     const [hasPermission, setHasPermission] = useState(null);
   
@@ -29,7 +29,7 @@ import useVapi from "../../hooks/use-vapi";
       try {
         const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
         setHasPermission(true);
-        stream.getTracks().forEach(track => track.stop()); // Stop stream after checking
+        stream.getTracks().forEach(track => track.stop()); 
       } catch (error) {
         setHasPermission(false);
       }
@@ -155,7 +155,7 @@ import useVapi from "../../hooks/use-vapi";
             </div>
           </div>
         </div>
-        {hasPermission === false && (
+        {/* {hasPermission === false && (
           <div className="bg-red-100 text-red-700 p-4 rounded-md text-center mb-6">
             <p>Microphone access is required for AI calls. Please grant permission.</p>
             <button
@@ -165,11 +165,11 @@ import useVapi from "../../hooks/use-vapi";
               Grant Microphone Access
             </button>
           </div>
-        )}
+        )} */}
         {/* Right - Virtual Phone UI */}
         <div className="w-full md:w-1/3 flex justify-center mt-6 md:mt-0">
           <div className="phone relative bg-gray-900 w-full max-w-xs md:w-72 h-[500px] md:h-[545px] rounded-3xl border-4 border-[#283CFF] shadow-lg flex flex-col items-center justify-center p-4">
-            {!answered ? (
+          {!answered ? (
              <div className="text-center w-full">
              {/* Call Header */}
              <div className="bg-gray-800 text-white text-center py-2 px-4 w-full rounded-md">
@@ -207,7 +207,9 @@ import useVapi from "../../hooks/use-vapi";
              </div>
            </div>
            
-            ) :   (
+          ) : !isSessionActive ? (
+            <p className="text-white text-center text-xl font-bold">Connecting...</p>
+          ) : (
               <div className="call-connected text-white text-center relative h-full flex flex-col ">
               <h2 className="text-lg md:text-xl font-bold">Call Connected</h2>
               <p className="text-sm md:text-lg font-semibold mt-1">Time Left: {formatTime(timer)}</p>
@@ -227,7 +229,7 @@ import useVapi from "../../hooks/use-vapi";
                 </button>
               </div>
             </div>
-              )}
+        )}
           </div>
         </div>
       </div>
