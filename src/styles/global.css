@@ -65,6 +65,6 @@
   @apply rounded-full p-4 bg-red-600 text-white w-16 h-16 flex items-center justify-center shadow-lg hover:bg-red-700 transition duration-300;
 }
 .call-slide-btn {
-  @apply absolute bottom-4 md:bottom-6 w-full flex justify-center;
+  @apply absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 w-full flex justify-center;
 }
 
