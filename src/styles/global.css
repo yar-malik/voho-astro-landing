@@ -2,7 +2,8 @@
 @plugin "@tailwindcss/typography";
 @plugin "@tailwindcss/forms";
 
-@theme {
+/* Theme Variables - Add this to `tailwind.config.js` under `theme.extend` */
+:root {
   --font-sans: "Inter", sans-serif;
   --font-display: "Bricolage Grotesque", sans-serif;
   --color-black: #121212;
@@ -17,56 +18,68 @@
   --color-accent-700: #0012B3;
   --color-accent-800: #000C75;
   --color-accent-900: #00063D;
-
 }
-/* CSS */
+
+/* General Font Settings */
 :root {
   font-family: Inter, sans-serif;
 }
 @supports (font-variation-settings: normal) {
-  /* Use variable font if supported */
   :root {
     font-family: InterVariable, sans-serif;
   }
 }
 
+/* Phone UI */
 .phone {
   @apply relative bg-gray-900 w-72 h-[545px] rounded-3xl border-4 border-[#283CFF] shadow-lg flex flex-col items-center justify-center;
 }
+
+/* Slide to Answer Button */
 .slide-btn {
-  @apply relative w-64 h-14 rounded-full flex items-center justify-center text-white font-bold overflow-hidden;
+  @apply relative w-64 h-14 rounded-full flex items-center justify-center text-white font-bold overflow-hidden bg-gray-700 transition-all duration-200;
 }
 .slide-btn-inner {
-  @apply absolute left-0 w-12 h-12 bg-white rounded-full flex items-center justify-center cursor-pointer;
+  @apply absolute left-0 w-12 h-12 bg-white rounded-full flex items-center justify-center cursor-pointer transition-transform duration-200;
 }
 
+/* Voice Grid */
 .voice-grid {
   @apply grid grid-cols-4 gap-4 mt-4;
 }
 .voice-btn {
   @apply p-3 border rounded-md flex flex-col items-center text-gray-700 text-lg transition;
 }
+
+/* Slide Button Container */
 .slide-btn-container {
   @apply absolute bottom-6 w-full flex justify-center;
 }
+
+/* Call End Button */
 .call-end-btn {
-  @apply bg-red-500 text-white px-4 py-2 rounded-md;
+  @apply absolute bottom-4 left-1/2 transform -translate-x-1/2 rounded-full bg-red-600 text-white w-16 h-16 flex items-center justify-center shadow-lg hover:bg-red-700 transition duration-300;
 }
+
+/* Selected Voice Style */
 .selected-voice {
   @apply text-[#283CFF] text-lg font-semibold mt-2;
 }
+
+/* Dot Icon */
 .dot {
   @apply text-[#283CFF] text-4xl mr-2;
 }
+
+/* Call Connected Container */
 .call-connected {
-  @apply text-white text-center relative h-full flex flex-col;
+  @apply text-white text-center relative h-full flex flex-col ;
 }
-.call-end-btn {
-  @apply rounded-full p-4 bottom-4 left-1/2 transform -translate-x-1/2 bg-red-600 text-white w-16 h-16 flex items-center justify-center shadow-lg hover:bg-red-700 transition duration-300;
-}
+
+/* Call Slide Button */
 .call-slide-btn {
   @apply absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 w-full flex justify-center;
 }
 .call-slide-btn-inner {
-  @apply absolute left-0 w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center cursor-pointer transition-transform duration-200;
+  @apply absolute left-0 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center cursor-pointer transition-transform duration-200;
 }
