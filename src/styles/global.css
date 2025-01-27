@@ -58,3 +58,13 @@
 .dot {
   @apply text-[#283CFF] text-4xl mr-2;
 }
+.call-connected {
+  @apply text-white text-center relative h-full flex flex-col;
+}
+.call-end-btn {
+  @apply rounded-full p-4 bg-red-600 text-white w-16 h-16 flex items-center justify-center shadow-lg hover:bg-red-700 transition duration-300;
+}
+.call-slide-btn {
+  @apply absolute bottom-4 md:bottom-6 w-full flex justify-center;
+}
+
