@@ -78,7 +78,7 @@ const DataModal = ({ closeModal }) => {
             required
           />
 
-          <select
+          {/* <select
             name="language"
             value={formData.language}
             onChange={handleChange}
@@ -86,7 +86,7 @@ const DataModal = ({ closeModal }) => {
           >
             <option value="english">🇬🇧 English</option>
             <option value="german">🇩🇪 German</option>
-          </select>
+          </select> */}
 
           <button
             onClick={() => redirectTo('/demo')}
