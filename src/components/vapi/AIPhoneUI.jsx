@@ -194,7 +194,7 @@ import useVapi from "../../hooks/use-vapi";
                  {/* Sliding Button */}
                  <div
                    ref={sliderRef}
-                   className="absolute left-0 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center cursor-pointer transition-transform duration-200"
+                   className="call-slide-btn-inner absolute left-0 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center cursor-pointer transition-transform duration-200"
                    onMouseDown={handleStart}
                    onTouchStart={handleStart}
                    style={{ transform: `translateX(${slideX}px)` }}

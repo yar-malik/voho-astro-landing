@@ -62,9 +62,11 @@
   @apply text-white text-center relative h-full flex flex-col;
 }
 .call-end-btn {
-  @apply rounded-full p-4 bg-red-600 text-white w-16 h-16 flex items-center justify-center shadow-lg hover:bg-red-700 transition duration-300;
+  @apply rounded-full p-4 bottom-4 left-1/2 transform -translate-x-1/2 bg-red-600 text-white w-16 h-16 flex items-center justify-center shadow-lg hover:bg-red-700 transition duration-300;
 }
 .call-slide-btn {
   @apply absolute bottom-4 md:bottom-6 left-1/2 transform -translate-x-1/2 w-full flex justify-center;
 }
-
+.call-slide-btn-inner {
+  @apply absolute left-0 w-10 h-10 md:w-12 md:h-12 bg-white rounded-lg flex items-center justify-center cursor-pointer transition-transform duration-200;
+}
