@@ -16,66 +16,48 @@ import useVapi from "../../hooks/use-vapi";
     const [selectedVoice, setSelectedVoice] = useState("Chris");
     const [slideX, setSlideX] = useState(0);
     const [answered, setAnswered] = useState(false);
-    const [timer, setTimer] = useState(120);
-    const [hasPermission, setHasPermission] = useState(null);
-  
+    const [timer, setTimer] = useState();
     const sliderRef = useRef(null);
     const trackRef = useRef(null);
-    
     const { volumeLevel, isSessionActive, toggleCall, statusText, endCall, Currentassistant } = useVapi();
   
-    /** 🔹 Check and Request Microphone Permission */
-    const checkMicrophonePermission = useCallback(async () => {
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        setHasPermission(true);
-        stream.getTracks().forEach(track => track.stop()); 
-      } catch (error) {
-        setHasPermission(false);
-      }
-    }, []);
-  
     useEffect(() => {
-      checkMicrophonePermission();
-    }, [checkMicrophonePermission]);
-  
-    /** 🔹 Timer Logic */
-    useEffect(() => {
-      if (answered && !isSessionActive && hasPermission) {
-        setTimer(120);
+      if (answered && isSessionActive === false) {
+        setTimer(300)
         toggleCall();
       }
-      
-      if (isSessionActive) {
+      if (isSessionActive === true) {
         const countdown = setInterval(() => {
-          setTimer(prev => (prev > 0 ? prev - 1 : 0));
+          setTimer((prev) => (prev > 0 ? prev - 1 : 0));
         }, 1000);
         return () => clearInterval(countdown);
       }
-    }, [answered, isSessionActive, toggleCall]);
   
+    }, [answered, isSessionActive]);
     useEffect(() => {
       if (timer === 0) {
-        endCall();
+        endCall()
         setAnswered(false);
       }
-    }, [timer, endCall]);
-  
-    /** 🔹 Format Timer */
+    }, [timer])
     const formatTime = (seconds) => {
       const minutes = Math.floor(seconds / 60);
-      return `${minutes}:${seconds % 60 < 10 ? "0" : ""}${seconds % 60}`;
+      const secs = seconds % 60;
+      return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
     };
   
-    /** 🔹 Handle Slide to Answer */
-    const handleStart = useCallback((e) => {
+  
+    console.log(slideX);
+    const handleStart = (e) => {
       e.preventDefault();
       const startX = e.clientX || e.touches[0].clientX;
       const trackWidth = trackRef.current.clientWidth - 50;
   
       const handleMove = (moveEvent) => {
         const moveX = moveEvent.clientX || moveEvent.touches[0].clientX;
-        let newX = Math.max(0, Math.min(trackWidth, moveX - startX));
+        let newX = moveX - startX;
+        newX = Math.max(0, Math.min(trackWidth, newX));
+  
         setSlideX(newX);
   
         if (newX >= trackWidth) {
@@ -85,7 +67,9 @@ import useVapi from "../../hooks/use-vapi";
       };
   
       const handleEnd = () => {
-        if (!answered) setSlideX(0);
+        if (!answered) {
+          setSlideX(0);
+        }
         cleanup();
       };
   
@@ -100,13 +84,12 @@ import useVapi from "../../hooks/use-vapi";
       document.addEventListener("mouseup", handleEnd);
       document.addEventListener("touchmove", handleMove);
       document.addEventListener("touchend", handleEnd);
-    }, [answered]);
-  
-    /** 🔹 Handle Voice Selection */
-    const onVoiceChange = (voice) => {
-      setSelectedVoice(voice);
-      Currentassistant(voice);
     };
+  
+    const onVoiceChange = (voice) => {
+      setSelectedVoice(voice)
+      Currentassistant(voice)
+    }
   return (
     <div className="flex flex-col items-center p-4 md:p-10 min-h-screen">
       {/* Title Section */}
