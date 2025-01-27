@@ -41,7 +41,7 @@ import useVapi from "../../hooks/use-vapi";
   
     /** 🔹 Timer Logic */
     useEffect(() => {
-      if (answered && !isSessionActive) {
+      if (answered && !isSessionActive && hasPermission) {
         setTimer(120);
         toggleCall();
       }
