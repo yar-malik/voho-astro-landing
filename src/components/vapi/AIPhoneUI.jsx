@@ -6,14 +6,14 @@ import useVapi from "../../hooks/use-vapi";
     German: ["Frida", "Niander", "Andreas","Ava","Ben","Lana"],
   };
   const VOICE_LIST = [
-  "Chris", "Jessica",
+  // "Chris", "Jessica",
     "Frida", "Niander", "Andreas","Ava","Ben","Lana"
   ];
 
   const PREMADE_VOICES = ["6-Month Checkup", "John Is Calling You", "Sue Is Calling You"];
   
   const AIPhoneUI = () => {
-    const [selectedVoice, setSelectedVoice] = useState("Chris");
+    const [selectedVoice, setSelectedVoice] = useState("Frida");
     const [slideX, setSlideX] = useState(0);
     const [answered, setAnswered] = useState(false);
     const [timer, setTimer] = useState();
