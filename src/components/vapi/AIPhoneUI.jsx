@@ -196,7 +196,7 @@ const waveEffect = {
         </div>
 
         {/* VOICES on mobile is order-2, on desktop is order-1 (left side) */}
-        <div className="order-2 md:order-1 w-full md:w-2/3 flex flex-col items-center md:items-start justify-center h-full mt-6 md:mt-0">
+        <div className="voice-container order-2 md:order-1 w-full md:w-2/3 flex flex-col items-center md:items-start justify-center h-full mt-6 md:mt-0">
           <div className="w-full bg-white shadow-lg rounded-lg p-6">
             <h2 className="hidden lg:block text-xl font-semibold text-[#283CFF]">
               Select a voice to Experience the AI Calling Assistant

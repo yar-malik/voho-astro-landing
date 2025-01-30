@@ -94,3 +94,7 @@
 .voice-name {
   @apply text-[#283CFF] text-lg font-semibold mt-2;
 }
+.voice-description {
+  @apply order-2 md:order-1 w-full md:w-2/3 flex flex-col items-center md:items-start justify-center h-full mt-6 md:mt-0;
+}
+
