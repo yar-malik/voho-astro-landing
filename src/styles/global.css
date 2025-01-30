@@ -91,3 +91,6 @@
 .call {
   @apply relative w-64 h-14 bg-[#283CFF] rounded-full flex items-center justify-center text-white font-bold cursor-pointer hover:bg-[#283CFF];
 }
+.voice-name {
+  @apply text-[#283CFF] text-lg font-semibold mt-2;
+}

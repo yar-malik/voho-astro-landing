@@ -123,7 +123,7 @@ const waveEffect = {
                 <h2 className="text-white text-xl font-bold mt-2">
                   Incoming call
                 </h2>
-                <h3 className="text-[#283CFF] text-lg font-semibold mt-2">
+                <h3 className="voice-name !text-[#283CFF] text-lg font-semibold mt-2">
                   {selectedVoice} AI Assistant
                 </h3>
 
