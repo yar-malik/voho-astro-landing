@@ -88,3 +88,6 @@
 .call-slide-btn-inner {
   @apply absolute left-0 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full flex items-center justify-center cursor-pointer transition-transform duration-200;
 }
+.call {
+  @apply relative w-64 h-14 bg-[#283CFF] rounded-full flex items-center justify-center text-white font-bold cursor-pointer hover:bg-[#283CFF];
+}
