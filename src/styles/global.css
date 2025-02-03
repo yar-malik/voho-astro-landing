@@ -19,7 +19,13 @@
   --color-accent-800: #000C75;
   --color-accent-900: #00063D;
 }
+@layer utilities {
+  ::selection {
+    background-color: #283CFF;
+    color: #000;
+  }
 
+}
 /* General Font Settings */
 :root {
   font-family: Inter, sans-serif;
