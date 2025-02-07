@@ -20,11 +20,11 @@ const waveEffect = {
 
   const VOICES = {
     English: ["Chris", "Jessica"],
-    German: ["Frida", "Niander", "Andreas","Ava","Ben","Lana"],
+    German: ["Frida", "Niander", "Maryam","Ava","Ben","Lana"],
   };
   const VOICE_LIST = [
   // "Chris", "Jessica",
-    "Frida", "Niander", "Andreas","Ava","Ben","Lana"
+    "Frida", "Niander", "Maryam","Ava","Ben","Lana"
   ];
 
   const PREMADE_VOICES = ["6-Month Checkup", "John Is Calling You", "Sue Is Calling You"];
@@ -37,7 +37,7 @@ const waveEffect = {
     const sliderRef = useRef(null);
     const trackRef = useRef(null);
     const { volumeLevel, isSessionActive, toggleCall, statusText, endCall, Currentassistant } = useVapi();
-    const [showQRModal, setShowQRModal] = useState(true);
+    const [showQRModal, setShowQRModal] = useState(false);
 
 const closeModal = () => {
   setShowQRModal(false);
@@ -123,8 +123,18 @@ console.log(showQRModal);
       setSelectedVoice(voice)
       Currentassistant(voice)
     }
+
+    const Accent = [
+      "UK",
+      "US",
+      "Arabic",
+      "Indian",
+      "US",
+      "British",
+    ]
   return (
     <>
+
     <div className="flex flex-col items-center p-4 sm:p-10 min-h-screen">
  
 
@@ -233,10 +243,7 @@ console.log(showQRModal);
                   key={voice}
                   onClick={() => onVoiceChange(voice)}
                   disabled={answered === true}
-                  className={`voice-btn p-3 border rounded-md flex flex-col items-center text-gray-700 text-lg transition ${selectedVoice === voice
-                      ? "border-[#283CFF] bg-[#283CFF] !text-white shadow-md"
-                      : "border-gray-300 hover:bg-gray-200"
-                    }`}
+                  className={`voice-btn ${selectedVoice === voice ? "selected" : "default"}`}
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-xl mr-1.5">
@@ -256,7 +263,10 @@ console.log(showQRModal);
                     className={`text-xs ${selectedVoice === voice ? "text-white" : "text-gray-500"
                       }`}
                   >
-                    {VOICE_LIST.includes(voice) ? "English" : "German"}
+                     {VOICE_LIST.includes(voice) 
+  ? `English (${Accent[VOICE_LIST.indexOf(voice)] || "Unknown"})` 
+  : "English"}
+                    {/* {VOICE_LIST.includes(voice) ? "English" : "German"} */}
                   </span>
                 </button>
               ))}
