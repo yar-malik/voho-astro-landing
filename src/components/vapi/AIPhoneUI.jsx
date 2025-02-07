@@ -38,7 +38,7 @@ const waveEffect = {
     const trackRef = useRef(null);
     const { volumeLevel, isSessionActive, toggleCall, statusText, endCall, Currentassistant } = useVapi();
     const [showQRModal, setShowQRModal] = useState(true);
-
+console.log(showQRModal);
     const closeModal = () =>{
       setShowQRModal(false);
     }
