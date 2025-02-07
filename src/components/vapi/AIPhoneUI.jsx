@@ -234,7 +234,7 @@ console.log(showQRModal);
                   onClick={() => onVoiceChange(voice)}
                   disabled={answered === true}
                   className={`voice-btn p-3 border rounded-md flex flex-col items-center text-gray-700 text-lg transition ${selectedVoice === voice
-                      ? "border-[#283CFF] bg-[#283CFF] text-white shadow-md"
+                      ? "border-[#283CFF] bg-[#283CFF] !text-white shadow-md"
                       : "border-gray-300 hover:bg-gray-200"
                     }`}
                 >
