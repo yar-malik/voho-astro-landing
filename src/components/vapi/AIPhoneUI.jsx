@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import useVapi from "../../hooks/use-vapi";
 import { motion } from "framer-motion";
-import QRModal from "./qrModal";
+import QRModal from "./QRModal";
 const vibrateEffect = {
   animate: {
     x: [0, -2, 2, -2, 2, 0],
