@@ -38,19 +38,19 @@ const waveEffect = {
     const trackRef = useRef(null);
     const { volumeLevel, isSessionActive, toggleCall, statusText, endCall, Currentassistant } = useVapi();
     const [showQRModal, setShowQRModal] = useState(true);
+
+const closeModal = () => {
+  setShowQRModal(false);
+};
+
+useEffect(() => {
+  const submittedData = sessionStorage.getItem("submittedFormData");
+  if (submittedData) {
+    setShowQRModal(false);
+  }
+}, []); // ✅ Runs only once on mount
+
 console.log(showQRModal);
-    const closeModal = () =>{
-      setShowQRModal(false);
-    }
-
-    useEffect(() => {
-      if (sessionStorage.getItem("submittedFormData")) {
-        setShowQRModal(false);
-      }else{
-        setShowQRModal(true);
-      }
-
-    }, [showQRModal]);
     
 
 
