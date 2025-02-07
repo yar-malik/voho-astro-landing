@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import useVapi from "../../hooks/use-vapi";
 import { motion } from "framer-motion";
+import QRModal from "./qrModal";
 const vibrateEffect = {
   animate: {
     x: [0, -2, 2, -2, 2, 0],
@@ -36,7 +37,23 @@ const waveEffect = {
     const sliderRef = useRef(null);
     const trackRef = useRef(null);
     const { volumeLevel, isSessionActive, toggleCall, statusText, endCall, Currentassistant } = useVapi();
-  
+    const [showQRModal, setShowQRModal] = useState(false);
+
+    const closeModal = () =>{
+      setShowQRModal(false);
+    }
+
+    useEffect(() => {
+      if (sessionStorage.getItem("submittedFormData")) {
+        setShowQRModal(false);
+      }else{
+        setShowQRModal(true);
+      }
+
+    }, []);
+    
+
+
     useEffect(() => {
       if (answered && isSessionActive === false) {
         setTimer(300)
@@ -107,8 +124,10 @@ const waveEffect = {
       Currentassistant(voice)
     }
   return (
+    <>
     <div className="flex flex-col items-center p-4 sm:p-10 min-h-screen">
  
+
       <div className="phone-container-con flex flex-col md:flex-row items-start w-full max-w-5xl">
 
         <div className= "phone-container order-1 md:order-2 w-full md:w-1/3 flex md:h-[400px] justify-center">
@@ -246,8 +265,10 @@ const waveEffect = {
         </div>
       </div>
     </div>
-
+{showQRModal && <QRModal closeModal={closeModal} />}
+</>
   );
 };
+
 
 export default AIPhoneUI;

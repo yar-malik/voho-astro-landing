@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 
-const DataModal = ({ closeModal }) => {
+const QRModal = ({ closeModal }) => {
   const modalRef = useRef(null);
 
   // ----------------------------
@@ -84,9 +84,8 @@ const DataModal = ({ closeModal }) => {
 
       if (response.ok) {
         sessionStorage.setItem("submittedFormData", JSON.stringify(formData));
-
-        window.location.href = "/demo";
-
+        closeModal();
+        // window.location.href = "/demo";
       } else {
         console.error("Submission failed with status:", response.status);
         setSubmitError("Something went wrong. Please try again.");
@@ -100,18 +99,18 @@ const DataModal = ({ closeModal }) => {
   // --------------------------------------------------------------
   // 5) Close the modal if user clicks outside the modal content box
   // --------------------------------------------------------------
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
-        closeModal();
-      }
-    };
+//   useEffect(() => {
+//     const handleClickOutside = (event) => {
+//       if (modalRef.current && !modalRef.current.contains(event.target)) {
+//         closeModal();
+//       }
+//     };
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [closeModal]);
+//     document.addEventListener("mousedown", handleClickOutside);
+//     return () => {
+//       document.removeEventListener("mousedown", handleClickOutside);
+//     };
+//   }, [closeModal]);
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-[#12121221] bg-opacity-50 z-50">
@@ -212,4 +211,4 @@ const DataModal = ({ closeModal }) => {
   );
 };
 
-export default DataModal;
+export default QRModal;
