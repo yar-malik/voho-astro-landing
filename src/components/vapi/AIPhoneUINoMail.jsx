@@ -30,7 +30,7 @@ const waveEffect = {
 
   const PREMADE_VOICES = ["6-Month Checkup", "John Is Calling You", "Sue Is Calling You"];
   
-  const AIPhoneUI = () => {
+  const AIPhoneUINoMail = () => {
     const [selectedVoice, setSelectedVoice] = useState("Frida");
     const [slideX, setSlideX] = useState(0);
     const [answered, setAnswered] = useState(false);
@@ -277,11 +277,9 @@ console.log(showQRModal);
       </div>
     <AICallDemo />
     </div>
-{showQRModal && <QRModal closeModal={closeModal} />}
+{/* {showQRModal && <QRModal closeModal={closeModal} />} */}
 </>
 
   );
 };
-
-
-export default AIPhoneUI;
+export default AIPhoneUINoMail;
