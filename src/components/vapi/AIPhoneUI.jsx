@@ -21,11 +21,11 @@ const waveEffect = {
 
   const VOICES = {
     English: ["Chris", "Jessica"],
-    German: ["Frida", "Niander", "Maryam","Ava","Ben","Lana"],
+    German: ["Otto","Mila"],
   };
   const VOICE_LIST = [
   // "Chris", "Jessica",
-    "Frida", "Niander", "Maryam","Ava","Ben","Lana"
+    "Frida", "Niander", "Maryam","Ava","Ben","Lana","Otto","Mila"
   ];
 
   const PREMADE_VOICES = ["6-Month Checkup", "John Is Calling You", "Sue Is Calling You"];
@@ -132,9 +132,12 @@ console.log(showQRModal);
       "Indian",
       "US",
       "British",
+      "German",
+      "German",
     ]
   return (
     <>
+
 
     <div className="flex flex-col items-center p-4 sm:p-10 min-h-screen">
  
