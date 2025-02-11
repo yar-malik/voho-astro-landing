@@ -24,11 +24,56 @@ const waveEffect = {
     German: ["Otto","Mila"],
   };
   const VOICE_LIST = [
-  // "Chris", "Jessica",
-    "Frida", "Niander", "Maryam","Ava","Ben","Lana","Otto","Mila"
+    {
+      name: "Frida",
+      accent: "UK",
+      gender: "Male",
+      language: "English",
+    },
+    {
+      name: "Niander",
+      accent: "US",
+      gender: "Female",
+      language: "English",
+    }, 
+    {
+      name: "Maryam",
+      accent: "Arabic",
+      gender: "Male",
+      language: "English",
+    },
+    {
+      name: "Ava",
+      accent: "Indian",
+      gender: "Female",
+      language: "English",
+    },
+    {
+      name: "Ben",
+      accent: "US",
+      gender: "Female",
+      language: "English",
+    },
+    {
+      name: "Lana",
+      accent: "British",
+      gender: "Male",
+      language: "English",
+    },
+    {
+      name: "Otto",
+      accent: "German",
+      gender: "Male",
+      language: "German",
+    },
+    {
+      name: "Mila",
+      accent: "German",
+      gender: "Female",
+      language: "German",
+    },
   ];
 
-  const PREMADE_VOICES = ["6-Month Checkup", "John Is Calling You", "Sue Is Calling You"];
   
   const AIPhoneUINoMail = () => {
     const [selectedVoice, setSelectedVoice] = useState("Frida");
@@ -243,10 +288,10 @@ console.log(showQRModal);
             <div className="voice-grid grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4">
               {VOICE_LIST.map((voice) => (
                 <button
-                  key={voice}
-                  onClick={() => onVoiceChange(voice)}
+                  key={voice.name}
+                  onClick={() => onVoiceChange(voice.name)}
                   disabled={answered === true}
-                  className={`voice-btn ${selectedVoice === voice ? "selected" : "default"}`}
+                  className={`voice-btn ${selectedVoice === voice.name ? "selected" : "default"}`}
                 >
                   <div className="flex items-center justify-between">
                     <span className="text-xl mr-1.5">
@@ -260,15 +305,13 @@ console.log(showQRModal);
                         <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-.73-3.37-1.9-4.53l1.41-1.41C17.36 7.19 18.5 9.45 18.5 12s-1.14 4.81-2.49 5.94l-1.41-1.41c1.17-1.16 1.9-2.76 1.9-4.53zM14 12c0-1.1-.9-2-2-2v4c1.1 0 2-.9 2-2zm3.5-9.09l-1.41 1.41C18.99 6.3 21 9.03 21 12s-2.01 5.7-4.91 7.68l1.41 1.41C20.99 18.54 23 15.43 23 12s-2.01-6.54-5.5-9.09z" />
                       </svg>
                     </span>
-                    <span>{voice}</span>
+                    <span>{voice.name}</span>
                   </div>
                   <span
-                    className={`text-xs ${selectedVoice === voice ? "text-white" : "text-gray-500"
+                    className={`text-xs ${selectedVoice === voice.name ? "text-white" : "text-gray-500"
                       }`}
                   >
-                     {VOICE_LIST.includes(voice) 
-  ? `English (${Accent[VOICE_LIST.indexOf(voice)] || "Unknown"})` 
-  : "English"}
+                         {voice.language} ({voice.accent})
                     {/* {VOICE_LIST.includes(voice) ? "English" : "German"} */}
                   </span>
                 </button>
