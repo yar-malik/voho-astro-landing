@@ -39,6 +39,8 @@ const Currentassistant = (voice) => {
       return assistantId = "d3cab4db-e65e-4b6f-8b80-bdc8d3030038"
     case "Mila":
       return assistantId = "e5ee5a17-df7c-4f69-ae6c-272acfcb38b5"
+    case "Amar":
+      return assistantId = "983930d1-81d8-4dc6-af89-7b937917bfdc"
   }
 }
   const initializeVapi = useCallback(() => {

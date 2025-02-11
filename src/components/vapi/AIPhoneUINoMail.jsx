@@ -43,6 +43,12 @@ const waveEffect = {
       language: "English",
     },
     {
+      name: "Amar",
+      accent: "Arabic",
+      gender: "Male",
+      language: "Arabic",
+    },
+    {
       name: "Muskaan",
       accent: "Indian",
       gender: "Female",
@@ -278,11 +284,11 @@ console.log(showQRModal);
             <h2 className="hidden lg:block text-xl font-semibold text-[#283CFF]">
               Select a voice to Experience the AI Calling Assistant
             </h2>
-            <p className="hidden lg:block text-gray-500 mt-2">
+            {/* <p className="hidden lg:block text-gray-500 mt-2">
               We offer a selection of over 70 different AI assistant voices for you
               to choose from. Below, you will find a few sample options. Please select
               one to experience the demo.
-            </p>
+            </p> */}
 
             {/* Voice Grid */}
             <div className="voice-grid grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4">

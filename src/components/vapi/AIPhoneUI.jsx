@@ -43,6 +43,12 @@ const waveEffect = {
       language: "English",
     },
     {
+      name: "Amar",
+      accent: "Arabic",
+      gender: "Male",
+      language: "Arabic",
+    },
+    {
       name: "Muskaan",
       accent: "Indian",
       gender: "Female",
