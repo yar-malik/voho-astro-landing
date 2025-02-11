@@ -29,7 +29,7 @@ const Currentassistant = (voice) => {
       return assistantId = "2bfddc0f-c16f-454d-b02f-11b1a218a58a"
     case "Maryam":
       return assistantId = "4cd96bfc-fdf3-4c3e-beba-ed7e94e4bc44"
-    case "Ava":
+    case "Muskaan":
       return assistantId = "580c6916-0bd7-4ee1-a3d1-2c725f98a393"
     case "Ben":
       return assistantId = "a0df527f-92cb-407d-ae5b-89f3f26b17c2"
