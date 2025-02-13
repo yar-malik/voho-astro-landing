@@ -12,6 +12,7 @@ const DataModal = ({ closeModal }) => {
     email: "",
     phone: "",
     language: "english",
+    createdAt: new Date().toISOString(),
   });
 
   const [errors, setErrors] = useState({
