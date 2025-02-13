@@ -31,11 +31,23 @@ const waveEffect = {
       language: "English",
     },
     {
-      name: "Niander",
-      accent: "German",
+      name: "Ben",
+      accent: "US",
+      gender: "Female",
+      language: "English",
+    },
+    {
+      name: "Lana",
+      accent: "British",
       gender: "Male",
-      language: "German",
-    }, 
+      language: "English",
+    },
+    {
+      name: "Muskaan",
+      accent: "Indian",
+      gender: "Female",
+      language: "English",
+    },
     {
       name: "Maryam",
       accent: "Arabic",
@@ -49,23 +61,14 @@ const waveEffect = {
       language: "Arabic",
     },
     {
-      name: "Muskaan",
-      accent: "Indian",
-      gender: "Female",
-      language: "English",
-    },
-    {
-      name: "Ben",
-      accent: "US",
-      gender: "Female",
-      language: "English",
-    },
-    {
-      name: "Lana",
-      accent: "British",
+      name: "Niander",
+      accent: "German",
       gender: "Male",
-      language: "English",
-    },
+      language: "German",
+    }, 
+    
+  
+  
     {
       name: "Otto",
       accent: "German",
