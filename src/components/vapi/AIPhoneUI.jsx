@@ -32,9 +32,9 @@ const waveEffect = {
     },
     {
       name: "Niander",
-      accent: "US",
-      gender: "Female",
-      language: "English",
+      accent: "German",
+      gender: "Male",
+      language: "German",
     }, 
     {
       name: "Maryam",
