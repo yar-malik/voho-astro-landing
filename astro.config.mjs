@@ -10,7 +10,8 @@ vite: {
       '@': '/src', // Add alias for cleaner imports
     },
     ssr: {
-      noExternal: ["@splidejs/splide", "@splidejs/splide-extension-auto-scroll"],
+      
+      noExternal: ["@splidejs/splide", "@splidejs/splide-extension-auto-scroll", "gabber-client-react", "gabber-client-core"],
     },
   },
     plugins: [tailwindcss()],
